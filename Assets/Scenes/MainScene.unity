@@ -586,6 +586,9 @@ MonoBehaviour:
   speed: 10
   myanimator: {fileID: 2090585568}
   playerInputs: {fileID: 517932560}
+  counterLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &899107696
 GameObject:
   m_ObjectHideFlags: 0

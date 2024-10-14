@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 7f;
     [SerializeField] Animator myanimator;
     [SerializeField] PlayerInputs playerInputs;
+    [SerializeField] private LayerMask counterLayerMask;
 
     Vector3 lastInteractDirection;
 
@@ -14,12 +15,40 @@ public class Player : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
+    }
+
+    private void PlayerInputs_OnInteractAction(object sender, System.EventArgs e)
+    {
+        //Planteo hacer el raycast mas ancho porque desde el lado no detecta bien la mesa
+
+        Vector2 inputMovement = playerInputs.GetMovementNormalized();
+
+        //Movement Vector
+        Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
+
+        if (moveDirection != Vector3.zero)
+        {
+            lastInteractDirection = moveDirection;
+        }
+
+        float interactDistance = 2f;
+        RaycastHit raycastHit;
+
+        if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                //Has ClearCounter
+                clearCounter.Interact();
+            }
+        }
     }
 
     void Update()
     {
         Movement();
-        Interact();
+
     }
 
     void Movement()
@@ -55,24 +84,4 @@ public class Player : MonoBehaviour
         myanimator.SetBool("IsWalking", isWalking);
     }
 
-    void Interact()
-    {
-        Vector2 inputMovement = playerInputs.GetMovementNormalized();
-
-        //Movement Vector
-        Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
-
-        if (moveDirection != Vector3.zero)
-        {
-            lastInteractDirection = moveDirection;
-        }
-
-        float interactDistance = 2f;
-        RaycastHit raycastHit;
-
-        if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
-        {
-            Debug.Log(raycastHit.transform);
-        }
-    }
 }
