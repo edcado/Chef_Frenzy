@@ -9,11 +9,12 @@ public class PlayerInputs : MonoBehaviour
 
     private void Awake()
     {
-        playerInputActions = GetComponent<PlayerInputActions>();
+        playerInputActions = new PlayerInputActions();
+        playerInputActions.Player.Enable();
     }
     public Vector2 GetMovementNormalized()
     {
-        Vector2 inputMovement = new Vector2(0, 0);
+        Vector2 inputMovement = playerInputActions.Player.PlayerMovement.ReadValue<Vector2>();
 
 
         inputMovement = inputMovement.normalized;
