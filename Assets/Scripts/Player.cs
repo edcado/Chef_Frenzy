@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 7f;
     [SerializeField] Animator myanimator;
+    [SerializeField] PlayerInputs playerInputs;
 
     private void Start()
     {
@@ -15,29 +16,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Vector2 inputMovement = new Vector2(0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputMovement.y += 1;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputMovement.y -= 1;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputMovement.x -= 1;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputMovement.x += 1;
-        }
-
-        inputMovement = inputMovement.normalized;
+        Vector2 inputMovement = playerInputs.GetMovementNormalized();
 
         Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
 
