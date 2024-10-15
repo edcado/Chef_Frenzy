@@ -814,6 +814,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cocina1
       objectReference: {fileID: 0}
+    - target: {fileID: 4179934749926445586, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680427705883838064, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_LocalPosition.x

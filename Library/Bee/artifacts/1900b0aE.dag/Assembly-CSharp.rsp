@@ -374,6 +374,7 @@
 "Assets/Scripts/ClearCounter.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerInputs.cs"
+"Assets/Scripts/SelectedPrefabVisual.cs"
 -langversion:9.0
 /deterministic
 /optimize+

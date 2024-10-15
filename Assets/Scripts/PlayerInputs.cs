@@ -24,10 +24,8 @@ public class PlayerInputs : MonoBehaviour
     public Vector2 GetMovementNormalized()
     {
         Vector2 inputMovement = playerInputActions.Player.PlayerMovement.ReadValue<Vector2>();
-
-
         inputMovement = inputMovement.normalized;
-
         return inputMovement;
     }
 }
+
