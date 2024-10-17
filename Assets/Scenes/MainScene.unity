@@ -130,11 +130,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191053310132213212, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 1fd88bf78759363498858439f088ede4,
+        type: 2}
     - target: {fileID: 2478794311853108525, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_Name
       value: Cocina1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3318857304244145405, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_Name
+      value: CounterSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827353287241982340, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827353287241982340, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080832555125755223, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: clearCounter
+      value: 
+      objectReference: {fileID: 1862216786}
     - target: {fileID: 8680427705883838064, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,6 +721,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069365428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1191053310132213212, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+    type: 3}
+  m_PrefabInstance: {fileID: 5058787750924620915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5650684d35c51ba49a4495a38b2f185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1234265992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -768,6 +806,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2090585568}
   m_SourcePrefab: {fileID: 100100000, guid: 1c5dda3c7cd3cf742afcade5419faeab, type: 3}
+--- !u!114 &1862216786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1191053310132213212, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+    type: 3}
+  m_PrefabInstance: {fileID: 96314860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5650684d35c51ba49a4495a38b2f185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2090585566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3294758251327466535, guid: 1c5dda3c7cd3cf742afcade5419faeab,
@@ -809,16 +859,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191053310132213212, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 39c83ffd1e92a0149a9e848d397fbc2c,
+        type: 2}
     - target: {fileID: 2478794311853108525, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_Name
       value: Cocina1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318857304244145405, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_Name
+      value: CounterSpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4179934749926445586, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4827353287241982340, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827353287241982340, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080832555125755223, guid: 3887a7e3a17c26f4fabc192c4845aa47,
+        type: 3}
+      propertyPath: clearCounter
+      value: 
+      objectReference: {fileID: 1069365428}
     - target: {fileID: 8680427705883838064, guid: 3887a7e3a17c26f4fabc192c4845aa47,
         type: 3}
       propertyPath: m_LocalPosition.x

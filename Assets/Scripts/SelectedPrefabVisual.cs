@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class SelectedPrefabVisual : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private ClearCounter clearCounter;
+    [SerializeField] GameObject visualGameObject;
+
     void Start()
     {
-        
+        Player.Instance.OnSelectedCounterChange += Player_OnSelectedCounterChange;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Player_OnSelectedCounterChange(object sender, Player.OnSelectedCounterChangeEventArgs e)
     {
-        
+       if (e.selectedCounter == clearCounter)
+       {
+            Show();
+       }
+        else
+        {
+            Hide();
+        }
+    }
+
+    private void Show()
+    {
+        visualGameObject.SetActive(true);
+    }
+
+    private void Hide()
+    {
+        visualGameObject.SetActive(false);
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
     public event EventHandler <OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public class OnSelectedCounterChangeEventArgs : EventArgs
     {
@@ -19,6 +21,11 @@ public class Player : MonoBehaviour
 
     Vector3 lastInteractDirection;
     private ClearCounter selectedCounter;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -43,48 +50,39 @@ public class Player : MonoBehaviour
 
     void Interact()
     {
+        Vector2 inputMovement = playerInputs.GetMovementNormalized();
+        Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
+
+        if (moveDirection != Vector3.zero)
         {
-            // Obtener la dirección de movimiento normalizada
-            Vector2 inputMovement = playerInputs.GetMovementNormalized();
+            lastInteractDirection = moveDirection;
+        }
+        else
+        {
+            lastInteractDirection = transform.forward;
+        }
 
-            // Vector de movimiento
-            Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
+        float interactDistance = 2f;
+        RaycastHit raycastHit;
 
-            // Si el jugador está en movimiento, actualizamos la dirección de interacción
-            if (moveDirection != Vector3.zero)
+        if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
-                lastInteractDirection = moveDirection;
-            }
-            else
-            {
-                // Si no se está moviendo, usamos la dirección en la que el jugador está mirando
-                lastInteractDirection = transform.forward;
-            }
-
-            // Definir distancia de interacción
-            float interactDistance = 2f;
-            RaycastHit raycastHit;
-
-            // Lanzar el Raycast en la dirección de interacción
-            if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
-            {
-                if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+                // Solo cambiar si el selectedCounter es diferente
+                if (clearCounter != selectedCounter)
                 {
-                    if (clearCounter != selectedCounter)
-                    {
-                        selectedCounter = clearCounter;
-                    }
-                    else
-                    {
-                        selectedCounter = null;
-                    }
-                }
-
-                else
-                {
-                    selectedCounter = null;
+                    SetSelectedCounter(clearCounter);
                 }
             }
+            else if (selectedCounter != null) // Asegúrate de que solo se llame si el selectedCounter ya no es válido
+            {
+                SetSelectedCounter(null);
+            }
+        }
+        else if (selectedCounter != null)
+        {
+            SetSelectedCounter(null);
         }
     }
 
@@ -118,5 +116,17 @@ public class Player : MonoBehaviour
         // Actualizar animación de caminar
         bool isWalking = moveDirection.magnitude > 0;
         myanimator.SetBool("IsWalking", isWalking);
+    }
+
+    private void SetSelectedCounter(ClearCounter newSelectedCounter)
+    {
+        if (selectedCounter == newSelectedCounter) return;  // Si ya es el seleccionado, no hacer nada
+
+        selectedCounter = newSelectedCounter;
+
+        OnSelectedCounterChange?.Invoke(this, new OnSelectedCounterChangeEventArgs
+        {
+            selectedCounter = selectedCounter
+        });
     }
 }
