@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5650684d35c51ba49a4495a38b2f185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSO: {fileID: 0}
+  kitchenObjectSO: {fileID: 11400000, guid: 1fd88bf78759363498858439f088ede4, type: 2}
   spawnPoint: {fileID: 4827353287241982340}
 --- !u!1 &3318857304244145405
 GameObject:
