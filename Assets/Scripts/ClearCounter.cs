@@ -16,6 +16,11 @@ public class ClearCounter : MonoBehaviour
             Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.Prefab, spawnPoint);
             kitchenObjectTransform.localPosition = Vector3.zero;
             kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
+            kitchenObject.SetClearCounter(this);
+        }
+        else
+        {
+            Debug.Log(kitchenObject.GetClearCounter());
         }
 
         
