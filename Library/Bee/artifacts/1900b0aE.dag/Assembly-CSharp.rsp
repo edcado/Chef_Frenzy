@@ -372,6 +372,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Inputs/PlayerInputActions.cs"
 "Assets/Scripts/ClearCounter.cs"
+"Assets/Scripts/IKitchenObject.cs"
 "Assets/Scripts/KitchenObject.cs"
 "Assets/Scripts/KitchenObjectSO.cs"
 "Assets/Scripts/Player.cs"
