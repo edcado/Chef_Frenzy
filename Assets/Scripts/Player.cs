@@ -111,7 +111,7 @@ public class Player : MonoBehaviour, IKitchenObject
         // Rotación del jugador
         if (moveDirection != Vector3.zero)
         {
-            float rotationSpeed = 10f;
+            float rotationSpeed = 20f;
             transform.forward = Vector3.Slerp(transform.forward, moveDirection, rotationSpeed * Time.deltaTime);
         }
 
