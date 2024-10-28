@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectedPrefabVisual : MonoBehaviour
 {
     [SerializeField] private BaseCounter baseCounter;
-    [SerializeField] GameObject visualGameObject;
+    [SerializeField] GameObject[] visualGameObjectArray;
 
     void Start()
     {
@@ -26,11 +26,18 @@ public class SelectedPrefabVisual : MonoBehaviour
 
     private void Show()
     {
-        visualGameObject.SetActive(true);
+        foreach (GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(true);
+        }
+        
     }
 
     private void Hide()
     {
-        visualGameObject.SetActive(false);
+        foreach (GameObject visualGameObject in visualGameObjectArray)
+        {
+            visualGameObject.SetActive(false);
+        }
     }
 }
