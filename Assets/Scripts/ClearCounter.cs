@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour, IKitchenObject
+public class ClearCounter : BaseCounter, IKitchenObject
 {
     [SerializeField] KitchenObjectSO kitchenObjectSO;
     [SerializeField] Transform spawnPoint;
     private KitchenObject kitchenObject;
 
-    public void Interact(Player player)
+    public override void Interact(Player player)
     {
         if (kitchenObject == null)
         {

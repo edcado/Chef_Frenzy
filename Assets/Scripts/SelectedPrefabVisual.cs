@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectedPrefabVisual : MonoBehaviour
 {
-    [SerializeField] private ClearCounter clearCounter;
+    [SerializeField] private BaseCounter baseCounter;
     [SerializeField] GameObject visualGameObject;
 
     void Start()
@@ -14,7 +14,7 @@ public class SelectedPrefabVisual : MonoBehaviour
 
     private void Player_OnSelectedCounterChange(object sender, Player.OnSelectedCounterChangeEventArgs e)
     {
-       if (e.selectedCounter == clearCounter)
+       if (e.selectedCounter == baseCounter)
        {
             Show();
        }

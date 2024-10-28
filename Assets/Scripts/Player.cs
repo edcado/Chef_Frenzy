@@ -11,7 +11,7 @@ public class Player : MonoBehaviour, IKitchenObject
     public event EventHandler <OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public class OnSelectedCounterChangeEventArgs : EventArgs
     {
-        public ClearCounter selectedCounter;
+        public BaseCounter selectedCounter;
     }
 
     [SerializeField] private float speed = 7f;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour, IKitchenObject
     [SerializeField] Transform kitchenObjectPoint;
 
     Vector3 lastInteractDirection;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
     private void Awake()
@@ -69,12 +69,12 @@ public class Player : MonoBehaviour, IKitchenObject
 
         if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
         {
-            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {
                 // Solo cambiar si el selectedCounter es diferente
-                if (clearCounter != selectedCounter)
+                if (baseCounter != selectedCounter)
                 {
-                    SetSelectedCounter(clearCounter);
+                    SetSelectedCounter(baseCounter);
                 }
             }
             else if (selectedCounter != null) // Asegúrate de que solo se llame si el selectedCounter ya no es válido
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour, IKitchenObject
         myanimator.SetBool("IsWalking", isWalking);
     }
 
-    private void SetSelectedCounter(ClearCounter newSelectedCounter)
+    private void SetSelectedCounter(BaseCounter newSelectedCounter)
     {
         if (selectedCounter == newSelectedCounter) return;  // Si ya es el seleccionado, no hacer nada
 
