@@ -34,6 +34,7 @@ public class Player : MonoBehaviour, IKitchenObject
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
+        playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
     }
 
     private void PlayerInputs_OnInteractAction(object sender, System.EventArgs e)
@@ -41,6 +42,14 @@ public class Player : MonoBehaviour, IKitchenObject
         if (selectedCounter != null)
         {
             selectedCounter.Interact(this);
+        }
+    }
+
+    private void PlayerInputs_OnInteractAlternativeAction(object sender, System.EventArgs e)
+    {
+        if (selectedCounter != null)
+        {
+            selectedCounter.InteractAlternate(this);
         }
     }
 

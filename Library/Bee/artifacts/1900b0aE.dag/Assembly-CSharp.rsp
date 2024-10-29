@@ -374,6 +374,7 @@
 "Assets/Scripts/BaseCounter.cs"
 "Assets/Scripts/ClearCounter.cs"
 "Assets/Scripts/ContainerCounter.cs"
+"Assets/Scripts/CuttingCounter.cs"
 "Assets/Scripts/IKitchenObject.cs"
 "Assets/Scripts/KitchenObject.cs"
 "Assets/Scripts/KitchenObjectSO.cs"

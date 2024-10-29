@@ -11,9 +11,14 @@ public class BaseCounter : MonoBehaviour, IKitchenObject
     private void Start()
     {
         
-        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z - 0.920f);
+      
     }
     public virtual void Interact(Player player)
+    {
+
+    }
+
+    public virtual void InteractAlternate(Player player)
     {
 
     }

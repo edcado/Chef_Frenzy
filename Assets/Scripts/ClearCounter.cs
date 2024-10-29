@@ -15,11 +15,24 @@ public class ClearCounter : BaseCounter
             {
                 player.GetKitchenObject().SetKitchenObjectParent(this);
             }
+
+            else
+            {
+
+            }
         }
 
         else
         {
+            if (player.HasKitchenObject())
+            {
+                //Nothing happens
+            }
 
+            else
+            {
+                GetKitchenObject().SetKitchenObjectParent(player);
+            }
         }
     }
 
