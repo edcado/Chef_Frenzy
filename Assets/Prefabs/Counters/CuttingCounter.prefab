@@ -281,7 +281,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2682326053604922442}
-  cutKitchenObject: {fileID: 11400000, guid: 14f0b789f3bd2594fb1d8fcd949dc1cd, type: 2}
+  cuttingObjectSOArray:
+  - {fileID: 11400000, guid: 95149dd0a86f5e340ae667f13cef16c4, type: 2}
+  - {fileID: 11400000, guid: 431dd9b4edc219f46a73c45c69237a45, type: 2}
+  - {fileID: 11400000, guid: 83a62b3802cf3374a983a23be488d3f3, type: 2}
 --- !u!1001 &8261058613470763470
 PrefabInstance:
   m_ObjectHideFlags: 0

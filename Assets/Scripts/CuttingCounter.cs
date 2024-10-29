@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter
 {
-    [SerializeField] private KitchenObjectSO cutKitchenObject;
+    [SerializeField] private CuttingObjectsSO[] cuttingObjectSOArray;
 
     public override void Interact(Player player)
     {
@@ -13,7 +13,10 @@ public class CuttingCounter : BaseCounter
             {
                 if (player.HasKitchenObject())
                 {
-                    player.GetKitchenObject().SetKitchenObjectParent(this);
+                    if (HasRecipeWithInput(player.GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        player.GetKitchenObject().SetKitchenObjectParent(this);
+                    }      
                 }
 
                 else
@@ -39,11 +42,42 @@ public class CuttingCounter : BaseCounter
 
     public override void InteractAlternate(Player player)
     {
-        if (HasKitchenObject())
+        if (HasKitchenObject() && HasRecipeWithInput(GetKitchenObject().GetKitchenObjectSO()))
         {
+            KitchenObjectSO outputKitchenObjectSO = GetOutputForInput(GetKitchenObject().GetKitchenObjectSO()); 
+
             GetKitchenObject().Destroy();
 
-            KitchenObject.SpawnKitchenObject(cutKitchenObject, this);
+            KitchenObject.SpawnKitchenObject(outputKitchenObjectSO, this);
         }
     }
+
+    public bool HasRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
+    {
+        foreach (CuttingObjectsSO cuttingObjectSO in cuttingObjectSOArray)
+        {
+            if (cuttingObjectSO.input == inputKitchenObjectSO)
+            {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
+    private KitchenObjectSO GetOutputForInput(KitchenObjectSO inputKitchenObjectSO)
+    {
+        foreach(CuttingObjectsSO cuttingObjectSO in cuttingObjectSOArray)
+        {
+            if (cuttingObjectSO.input == inputKitchenObjectSO)
+            {
+                return cuttingObjectSO.output;
+            }
+            
+        }
+
+        return null;
+    }
+  
 }
