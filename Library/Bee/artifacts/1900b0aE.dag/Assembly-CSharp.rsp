@@ -375,12 +375,14 @@
 "Assets/Scripts/ClearCounter.cs"
 "Assets/Scripts/ContainerCounter.cs"
 "Assets/Scripts/CuttingCounter.cs"
+"Assets/Scripts/CuttingCounterAnimation.cs"
 "Assets/Scripts/CuttingObjectsSO.cs"
 "Assets/Scripts/IKitchenObject.cs"
 "Assets/Scripts/KitchenObject.cs"
 "Assets/Scripts/KitchenObjectSO.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/PlayerInputs.cs"
+"Assets/Scripts/ProgressBarUI.cs"
 "Assets/Scripts/SelectedPrefabVisual.cs"
 -langversion:9.0
 /deterministic

@@ -1,9 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CuttingCounter : BaseCounter
 {
+    public event EventHandler<OnProgressChangedEventsArgs> OnProgressChanged;
+    public class OnProgressChangedEventsArgs : EventArgs
+    {
+        public float progressNormalized; 
+    }
+
+    public event EventHandler onCut;
+
     [SerializeField] private CuttingObjectsSO[] cuttingObjectSOArray;
 
     public int cuttingProgress;
@@ -18,6 +27,14 @@ public class CuttingCounter : BaseCounter
                     if (HasRecipeWithInput(player.GetKitchenObject().GetKitchenObjectSO()))
                     {
                         player.GetKitchenObject().SetKitchenObjectParent(this);
+                        cuttingProgress = 0;
+
+                        CuttingObjectsSO cuttingObjectSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
+
+                        OnProgressChanged?.Invoke(this, new OnProgressChangedEventsArgs
+                        {
+                            progressNormalized = (float)cuttingProgress / cuttingObjectSO.maxCutProgress
+                        });
                     }      
                 }
 
@@ -48,7 +65,14 @@ public class CuttingCounter : BaseCounter
         {
             cuttingProgress++;
 
+            onCut?.Invoke(this, EventArgs.Empty);
+
             CuttingObjectsSO cuttingObjectSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
+
+            OnProgressChanged?.Invoke(this, new OnProgressChangedEventsArgs
+            {
+                progressNormalized = (float)cuttingProgress / cuttingObjectSO.maxCutProgress
+            });
 
             if (cuttingProgress >= cuttingObjectSO.maxCutProgress)
             {
@@ -57,7 +81,9 @@ public class CuttingCounter : BaseCounter
                 GetKitchenObject().Destroy();
 
                 KitchenObject.SpawnKitchenObject(outputKitchenObjectSO, this);
-                cuttingProgress = 0;
+                
+
+               
             }
             
         }
