@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3884790820657778591}
   - component: {fileID: 1405349782878536061}
   - component: {fileID: 2998364575562705898}
+  - component: {fileID: 1078582095539034167}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -193,6 +194,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBarImage: {fileID: 6462699004956120237}
   cuttingObject: {fileID: 1514087837678710463}
+--- !u!114 &1078582095539034167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251103651283748304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cea8d9dd1ba2ec48a89e46345c74c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7160581226888047189
 GameObject:
   m_ObjectHideFlags: 0

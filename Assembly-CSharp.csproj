@@ -63,17 +63,21 @@
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
     <Compile Include="Assets\Inputs\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\CuttingCounterAnimation.cs" />
-    <Compile Include="Assets\Scripts\CuttingObjectsSO.cs" />
+    <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
     <Compile Include="Assets\Scripts\ProgressBarUI.cs" />
-    <Compile Include="Assets\Scripts\ContainerCounter.cs" />
-    <Compile Include="Assets\Scripts\KitchenObjectSO.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\ClearCounter.cs" />
+    <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
+    <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
+    <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
+    <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
+    <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />
-    <Compile Include="Assets\Scripts\BaseCounter.cs" />
-    <Compile Include="Assets\Scripts\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\IKitchenObject.cs" />
-    <Compile Include="Assets\Scripts\PlayerInputs.cs" />
+    <Compile Include="Assets\Scripts\BarLookAt.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\FryingObjectSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Assets\KitchenChaos_COMPLETE_PROJECT.txt" />
