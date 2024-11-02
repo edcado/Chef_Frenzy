@@ -377,6 +377,7 @@
 "Assets/Scripts/Counters/ContainerCounter.cs"
 "Assets/Scripts/Counters/CuttingCounter.cs"
 "Assets/Scripts/Counters/StoveCounter.cs"
+"Assets/Scripts/Counters/StoveCounterVisual.cs"
 "Assets/Scripts/Counters/TrashCounter.cs"
 "Assets/Scripts/CuttingCounterAnimation.cs"
 "Assets/Scripts/IKitchenObject.cs"
