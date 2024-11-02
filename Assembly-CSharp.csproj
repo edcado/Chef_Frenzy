@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\IKitchenObject.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\FryingObjectSO.cs" />

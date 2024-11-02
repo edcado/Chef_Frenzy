@@ -384,6 +384,7 @@
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerInputs.cs"
 "Assets/Scripts/ProgressBarUI.cs"
+"Assets/Scripts/Scriptable Objects/BurningRecipeSO.cs"
 "Assets/Scripts/Scriptable Objects/CuttingObjectsSO.cs"
 "Assets/Scripts/Scriptable Objects/FryingObjectSO.cs"
 "Assets/Scripts/Scriptable Objects/KitchenObjectSO.cs"

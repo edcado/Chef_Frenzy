@@ -240,6 +240,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 8159317013439116651}
   fryingRecipeSOArray:
   - {fileID: 11400000, guid: e02a61786ac43df438f1ee7ed4fda451, type: 2}
+  burnedRecipeSOArray:
+  - {fileID: 11400000, guid: 3af640f5d2ac4d34e8239475dc912ac0, type: 2}
+  fryingTimer: 0
+  burnedTimer: 0
 --- !u!4 &5454581136827339423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8680427705883838064, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
