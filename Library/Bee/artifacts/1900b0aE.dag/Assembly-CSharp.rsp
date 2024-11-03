@@ -390,6 +390,7 @@
 "Assets/Scripts/Scriptable Objects/FryingObjectSO.cs"
 "Assets/Scripts/Scriptable Objects/KitchenObjectSO.cs"
 "Assets/Scripts/SelectedPrefabVisual.cs"
+"Assets/Scripts/UI/IHasProgress.cs"
 -langversion:9.0
 /deterministic
 /optimize+

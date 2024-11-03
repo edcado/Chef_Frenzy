@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\IKitchenObject.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\FryingObjectSO.cs" />
+    <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Assets\KitchenChaos_COMPLETE_PROJECT.txt" />
