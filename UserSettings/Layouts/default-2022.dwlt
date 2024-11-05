@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 128
+  controlID: 134
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 27
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -195,8 +195,8 @@ MonoBehaviour:
     y: 416
     width: 966
     height: 523
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -711,9 +711,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.5181603, y: 1.8731204, z: -0.1311847}
+    m_Target: {x: 7.2529755, y: 1.8258003, z: -0.33686668}
     speed: 2
-    m_Value: {x: 6.5181603, y: 1.8731204, z: -0.1311847}
+    m_Value: {x: 7.2529755, y: 1.8258003, z: -0.33686668}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -759,9 +759,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.12584896, y: 0.38131544, z: -0.052576754, w: -0.9143746}
+    m_Target: {x: -0.23998667, y: 0.17132771, z: -0.043166943, w: -0.9546066}
     speed: 2
-    m_Value: {x: -0.12866646, y: 0.37976852, z: -0.05352542, w: -0.91452503}
+    m_Value: {x: -0.2399766, y: 0.17132053, z: -0.043165132, w: -0.95456654}
   m_Size:
     m_Target: 0.7519155
     speed: 2
@@ -1028,23 +1028,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a41fffff
-      m_LastClickedID: -57436
-      m_ExpandedIDs: 1626ffff5834ffff5e34ffff3435ffff3a35ffff6c36ffff7236ffff1c37ffff2237ffff2e37ffff3437ffff8ed1ffff96d1ffff0afbffff
+      m_SelectedIDs: e2daffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: e6daffff00fbffff08fbffff0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Plate_Visual
-        m_OriginalName: Plate_Visual
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -55792
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -1100,7 +1100,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Kitchen
+    - Assets/Prefabs/Counters
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1108,16 +1108,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Kitchen
+  - Assets/Prefabs/Counters
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a2770000
-    m_LastClickedID: 30626
-    m_ExpandedIDs: 00000000a6750000a8750000aa750000ac750000ae750000b0750000b27500009a77000000ca9a3b
+    m_SelectedIDs: 7c780000
+    m_LastClickedID: 30844
+    m_ExpandedIDs: 00000000387600003a7600003c7600003e7600004076000042760000447600004676000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1145,7 +1145,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a6750000a8750000aa750000ac750000ae750000b0750000b2750000
+    m_ExpandedIDs: 00000000387600003a7600003c7600003e76000040760000427600004476000046760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1184,7 +1184,7 @@ MonoBehaviour:
         y: 0
         width: 0
         height: 0
-      m_UserData: 30678
+      m_UserData: 28308
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
