@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 134
+  controlID: 26
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -711,9 +711,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.2529755, y: 1.8258003, z: -0.33686668}
+    m_Target: {x: 6.54041, y: 1.9937544, z: -0.8111861}
     speed: 2
-    m_Value: {x: 7.2529755, y: 1.8258003, z: -0.33686668}
+    m_Value: {x: 6.54041, y: 1.9937544, z: -0.8111861}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -759,9 +759,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.23998667, y: 0.17132771, z: -0.043166943, w: -0.9546066}
+    m_Target: {x: -0.16161624, y: 0.4674726, z: -0.08746986, w: -0.8647442}
     speed: 2
-    m_Value: {x: -0.2399766, y: 0.17132053, z: -0.043165132, w: -0.95456654}
+    m_Value: {x: -0.16160946, y: 0.467453, z: -0.08746619, w: -0.8647079}
   m_Size:
     m_Target: 0.7519155
     speed: 2
@@ -1028,9 +1028,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e2daffff
+      m_SelectedIDs: 4ab0ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: e6daffff00fbffff08fbffff0afbffff
+      m_ExpandedIDs: 44b0ffff4ab0ffff6ce1ffff72e1ffff14f9ffff30f9ffff0afbffffba6d0000be6d0000d66d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1100,7 +1100,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Counters
+    - Assets/ScriptableObjects/KitchenSO
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1108,15 +1108,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/Counters
+  - Assets/ScriptableObjects/KitchenSO
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7c780000
-    m_LastClickedID: 30844
+    m_SelectedIDs: 8a780000
+    m_LastClickedID: 30858
     m_ExpandedIDs: 00000000387600003a7600003c7600003e7600004076000042760000447600004676000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1176,15 +1176,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 08780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PlatesCounter
-      m_OriginalName: PlatesCounter
+      m_Name: PlateKitchenObject
+      m_OriginalName: PlateKitchenObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 28308
+      m_UserData: 30898
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Inspector
+    m_Text: Debug
     m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
-  m_InspectorMode: 0
+  m_InspectorMode: 1
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}

@@ -376,6 +376,7 @@
 "Assets/Scripts/Counters/ClearCounter.cs"
 "Assets/Scripts/Counters/ContainerCounter.cs"
 "Assets/Scripts/Counters/CuttingCounter.cs"
+"Assets/Scripts/Counters/PlateKitchenObject.cs"
 "Assets/Scripts/Counters/Plates.cs"
 "Assets/Scripts/Counters/PlatesCounter.cs"
 "Assets/Scripts/Counters/PlatesCounterVisual.cs"
