@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 26
+  controlID: 82
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 27
+  controlID: 19
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -168,14 +168,14 @@ MonoBehaviour:
     y: 0
     width: 966
     height: 416
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,8 +222,8 @@ MonoBehaviour:
     y: 0
     width: 236
     height: 939
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -711,9 +711,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.54041, y: 1.9937544, z: -0.8111861}
+    m_Target: {x: 6.435805, y: 2.156807, z: -0.8834661}
     speed: 2
-    m_Value: {x: 6.54041, y: 1.9937544, z: -0.8111861}
+    m_Value: {x: 6.435805, y: 2.156807, z: -0.8834661}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -759,13 +759,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.16161624, y: 0.4674726, z: -0.08746986, w: -0.8647442}
+    m_Target: {x: -0.109542616, y: 0.50663877, z: -0.06518156, w: -0.8527328}
     speed: 2
-    m_Value: {x: -0.16160946, y: 0.467453, z: -0.08746619, w: -0.8647079}
+    m_Value: {x: -0.109538004, y: 0.5066174, z: -0.06517882, w: -0.8526969}
   m_Size:
-    m_Target: 0.7519155
+    m_Target: 1.8134054
     speed: 2
-    m_Value: 0.7519155
+    m_Value: 1.8134054
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1028,9 +1028,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4ab0ffff
+      m_SelectedIDs: da620000
       m_LastClickedID: 0
-      m_ExpandedIDs: 44b0ffff4ab0ffff6ce1ffff72e1ffff14f9ffff30f9ffff0afbffffba6d0000be6d0000d66d0000
+      m_ExpandedIDs: 0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1100,7 +1100,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ScriptableObjects/KitchenSO
+    - Assets/Scripts/Counters
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1108,16 +1108,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ScriptableObjects/KitchenSO
+  - Assets/Scripts/Counters
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8a780000
-    m_LastClickedID: 30858
-    m_ExpandedIDs: 00000000387600003a7600003c7600003e7600004076000042760000447600004676000000ca9a3b
+    m_SelectedIDs: 8e780000
+    m_LastClickedID: 30862
+    m_ExpandedIDs: 000000003a7600003c7600003e760000407600004276000044760000467600004876000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1145,7 +1145,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000387600003a7600003c7600003e76000040760000427600004476000046760000
+    m_ExpandedIDs: 000000003a7600003c7600003e7600004076000042760000447600004676000048760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,18 +1176,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 08780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PlateKitchenObject
-      m_OriginalName: PlateKitchenObject
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30898
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
