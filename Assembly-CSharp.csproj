@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
+    <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\Plates.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />

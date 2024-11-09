@@ -386,6 +386,7 @@
 "Assets/Scripts/CuttingCounterAnimation.cs"
 "Assets/Scripts/IKitchenObject.cs"
 "Assets/Scripts/KitchenObject.cs"
+"Assets/Scripts/PlateCompleteVisual.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerInputs.cs"
 "Assets/Scripts/ProgressBarUI.cs"
