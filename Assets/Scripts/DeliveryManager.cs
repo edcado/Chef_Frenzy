@@ -6,7 +6,7 @@ public class DelyveryManager : MonoBehaviour
 {
     [SerializeField] private ReciveListSO reciveListSO;
     private List<RecipeSO> waitingRecipeSOList;
-
+    public static DelyveryManager Instance { get; private set;  }
 
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
@@ -14,6 +14,7 @@ public class DelyveryManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         waitingRecipeSOList = new List<RecipeSO>();
     }
 
@@ -67,9 +68,12 @@ public class DelyveryManager : MonoBehaviour
                     Debug.Log("Se entrego " + plateDelivered );
 
                     waitingRecipeSOList.RemoveAt(i);
+                    return;
                 }
             }
         }
+
+        Debug.Log("No se ha entregado bien");
     }
 
 }
