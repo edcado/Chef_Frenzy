@@ -11,4 +11,20 @@ public class DeliverManagerUI : MonoBehaviour
     {
         recipeTemplate.gameObject.SetActive(false); 
     }
+
+    public void UpdateVisual()
+
+    {
+        foreach (Transform child in container)
+        {
+            if (child == recipeTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
+        foreach (RecipeSO recipeSo in DelyveryManager.Instance.WaitingRecipeSOList())
+        {
+            Transform recipeTransform = Instantiate(recipeTemplate, container);
+            recipeTransform.gameObject.SetActive(true);
+        }
+    }
 }

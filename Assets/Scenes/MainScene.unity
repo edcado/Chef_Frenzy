@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e0c9705c5e9d144b2477cb619072e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
-  recipeTemplate: {fileID: 0}
+  container: {fileID: 1086689999}
+  recipeTemplate: {fileID: 780684576}
 --- !u!1 &90336737
 GameObject:
   m_ObjectHideFlags: 0

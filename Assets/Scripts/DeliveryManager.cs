@@ -76,4 +76,9 @@ public class DelyveryManager : MonoBehaviour
         Debug.Log("No se ha entregado bien");
     }
 
+    public List<RecipeSO> WaitingRecipeSOList()
+    {
+        return waitingRecipeSOList;
+    }
+
 }
