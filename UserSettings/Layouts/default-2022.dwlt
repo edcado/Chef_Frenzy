@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 2679
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 2561
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 430
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -710,9 +710,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 454.93985, y: 210.2814, z: 278.57715}
+    m_Target: {x: 63.01851, y: 363.8935, z: 0}
     speed: 2
-    m_Value: {x: 454.93985, y: 210.2814, z: 278.57715}
+    m_Value: {x: 63.01851, y: 363.8935, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -758,13 +758,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.049473044, y: -0.016479082, z: 0.00081637537, w: 0.99864}
+    m_Target: {x: 0.017998677, y: -0.005999023, z: 0.00010798756, w: 0.99982095}
     speed: 2
-    m_Value: {x: 0.049473003, y: -0.01647907, z: 0.00081637467, w: 0.99863917}
+    m_Value: {x: -0.017998677, y: 0.005999023, z: -0.00010798756, w: -0.99982095}
   m_Size:
-    m_Target: 374.95828
+    m_Target: 51.732475
     speed: 2
-    m_Value: 374.95828
+    m_Value: 51.732475
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -862,9 +862,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9a6e0000
-      m_LastClickedID: 28314
-      m_ExpandedIDs: 0afbffff1c6e00002c6e00009a6e0000ea6e0000
+      m_SelectedIDs: 02580000
+      m_LastClickedID: 0
+      m_ExpandedIDs: e6f1ffffd6f3ffff0afbffff2e6e00009c6e0000ee6e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -934,7 +934,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scripts/Scriptable Objects
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -942,16 +942,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scripts/Scriptable Objects
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ea7a0000
-    m_LastClickedID: 31466
-    m_ExpandedIDs: 00000000867a0000887a00008a7a00008c7a00008e7a0000907a0000927a000000ca9a3b
+    m_SelectedIDs: ec7a0000
+    m_LastClickedID: 31468
+    m_ExpandedIDs: 000000008a7a00008c7a00008e7a0000907a0000927a0000947a0000967a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -979,7 +979,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000867a0000887a00008a7a00008c7a00008e7a0000907a0000927a0000
+    m_ExpandedIDs: 000000008a7a00008c7a00008e7a0000907a0000927a0000947a0000967a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
