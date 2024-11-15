@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
     <Compile Include="Assets\Inputs\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\CuttingCounterAnimation.cs" />
+    <Compile Include="Assets\Scripts\UI\DeliveryManagerSingleUI.cs" />
     <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />

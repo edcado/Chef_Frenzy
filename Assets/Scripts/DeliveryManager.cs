@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DelyveryManager : MonoBehaviour
 {
+    public event EventHandler OnRecipeSpawned;
+    public event EventHandler OnRecipeCompleted;
+
     [SerializeField] private ReciveListSO reciveListSO;
     private List<RecipeSO> waitingRecipeSOList;
     public static DelyveryManager Instance { get; private set;  }
@@ -26,10 +30,13 @@ public class DelyveryManager : MonoBehaviour
             spawnRecipeTimer = spawnRecipeTimerMax;
             if (waitingRecipeSOList.Count < waitingRecipesMax)
             {
-            RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[Random.Range(0, reciveListSO.recipeSOList.Count)];
+                RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count)];
                 Debug.Log(waitingRecipeSO.recipeName);
-            waitingRecipeSOList.Add(waitingRecipeSO);
-            }
+                waitingRecipeSOList.Add(waitingRecipeSO);
+                OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
+            }     
+            
+            
         }
     }
 
@@ -66,7 +73,7 @@ public class DelyveryManager : MonoBehaviour
                     //
                     string plateDelivered = waitingRecipeSOList[i].recipeName;
                     Debug.Log("Se entrego " + plateDelivered );
-
+                    OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     waitingRecipeSOList.RemoveAt(i);
                     return;
                 }

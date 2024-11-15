@@ -401,6 +401,7 @@
 "Assets/Scripts/Scriptable Objects/ReciveListSO.cs"
 "Assets/Scripts/SelectedPrefabVisual.cs"
 "Assets/Scripts/UI/DeliverManagerUI.cs"
+"Assets/Scripts/UI/DeliveryManagerSingleUI.cs"
 "Assets/Scripts/UI/IconTemplate.cs"
 "Assets/Scripts/UI/IHasProgress.cs"
 "Assets/Scripts/UI/SingleIconTemplate.cs"
