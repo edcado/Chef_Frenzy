@@ -28,15 +28,18 @@ public class DelyveryManager : MonoBehaviour
         if (spawnRecipeTimer <= 0f)
         {
             spawnRecipeTimer = spawnRecipeTimerMax;
-            if (waitingRecipeSOList.Count < waitingRecipesMax)
-            {
-                RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count)];
-                Debug.Log(waitingRecipeSO.recipeName);
-                waitingRecipeSOList.Add(waitingRecipeSO);
-                OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
-            }     
-            
-            
+            SpawnRecipe();
+        }
+    }
+
+    public void SpawnRecipe()
+    {
+        if (waitingRecipeSOList.Count < waitingRecipesMax)
+        {
+            RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count)];
+            Debug.Log(waitingRecipeSO.recipeName);
+            waitingRecipeSOList.Add(waitingRecipeSO);
+            OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -70,12 +73,19 @@ public class DelyveryManager : MonoBehaviour
 
                 if (plateContentsMatchesRecipe)
                 {
-                    //
+                    if (waitingRecipeSOList.Count == 0)
+                    {
+                        SpawnRecipe();
+                        spawnRecipeTimer = spawnRecipeTimerMax;
+                    }
+
                     string plateDelivered = waitingRecipeSOList[i].recipeName;
                     Debug.Log("Se entrego " + plateDelivered );
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     waitingRecipeSOList.RemoveAt(i);
                     return;
+
+                    //Introducir Netcode : Quien ha entregado el plato?
                 }
             }
         }
