@@ -388,6 +388,7 @@
 "Assets/Scripts/CuttingCounterAnimation.cs"
 "Assets/Scripts/DeliveryManager.cs"
 "Assets/Scripts/IKitchenObject.cs"
+"Assets/Scripts/KitchenGameManager.cs"
 "Assets/Scripts/KitchenObject.cs"
 "Assets/Scripts/PlateCompleteVisual.cs"
 "Assets/Scripts/Player/Player.cs"
