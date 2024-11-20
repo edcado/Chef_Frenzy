@@ -53,6 +53,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GameOver"",
+                    ""type"": ""Button"",
+                    ""id"": ""043ce923-478b-4326-ad4e-33b9eada80c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MainMenuLoadOn"",
+                    ""type"": ""Button"",
+                    ""id"": ""83f69bca-7624-4bd1-bbba-595031bee288"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MainMenuQuit"",
+                    ""type"": ""Button"",
+                    ""id"": ""25a2c38c-6624-40c8-b0e6-6f3a98ee9435"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +192,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""InteractAlternative"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f719622-63fd-4ee4-8f3c-4fa8c3c94f16"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GameOver"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d49a763-47b4-492d-9bd9-ae77fc48225f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GameOver"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9560ea4-173b-4ad4-9ca2-fd392c714e13"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MainMenuLoadOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc946e65-0138-46f3-962f-3dbc2c18151f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MainMenuQuit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -176,6 +247,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_PlayerMovement = m_Player.FindAction("PlayerMovement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_InteractAlternative = m_Player.FindAction("InteractAlternative", throwIfNotFound: true);
+        m_Player_GameOver = m_Player.FindAction("GameOver", throwIfNotFound: true);
+        m_Player_MainMenuLoadOn = m_Player.FindAction("MainMenuLoadOn", throwIfNotFound: true);
+        m_Player_MainMenuQuit = m_Player.FindAction("MainMenuQuit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -240,6 +314,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PlayerMovement;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_InteractAlternative;
+    private readonly InputAction m_Player_GameOver;
+    private readonly InputAction m_Player_MainMenuLoadOn;
+    private readonly InputAction m_Player_MainMenuQuit;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -247,6 +324,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlayerMovement => m_Wrapper.m_Player_PlayerMovement;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @InteractAlternative => m_Wrapper.m_Player_InteractAlternative;
+        public InputAction @GameOver => m_Wrapper.m_Player_GameOver;
+        public InputAction @MainMenuLoadOn => m_Wrapper.m_Player_MainMenuLoadOn;
+        public InputAction @MainMenuQuit => m_Wrapper.m_Player_MainMenuQuit;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -265,6 +345,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @InteractAlternative.started += instance.OnInteractAlternative;
             @InteractAlternative.performed += instance.OnInteractAlternative;
             @InteractAlternative.canceled += instance.OnInteractAlternative;
+            @GameOver.started += instance.OnGameOver;
+            @GameOver.performed += instance.OnGameOver;
+            @GameOver.canceled += instance.OnGameOver;
+            @MainMenuLoadOn.started += instance.OnMainMenuLoadOn;
+            @MainMenuLoadOn.performed += instance.OnMainMenuLoadOn;
+            @MainMenuLoadOn.canceled += instance.OnMainMenuLoadOn;
+            @MainMenuQuit.started += instance.OnMainMenuQuit;
+            @MainMenuQuit.performed += instance.OnMainMenuQuit;
+            @MainMenuQuit.canceled += instance.OnMainMenuQuit;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -278,6 +367,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @InteractAlternative.started -= instance.OnInteractAlternative;
             @InteractAlternative.performed -= instance.OnInteractAlternative;
             @InteractAlternative.canceled -= instance.OnInteractAlternative;
+            @GameOver.started -= instance.OnGameOver;
+            @GameOver.performed -= instance.OnGameOver;
+            @GameOver.canceled -= instance.OnGameOver;
+            @MainMenuLoadOn.started -= instance.OnMainMenuLoadOn;
+            @MainMenuLoadOn.performed -= instance.OnMainMenuLoadOn;
+            @MainMenuLoadOn.canceled -= instance.OnMainMenuLoadOn;
+            @MainMenuQuit.started -= instance.OnMainMenuQuit;
+            @MainMenuQuit.performed -= instance.OnMainMenuQuit;
+            @MainMenuQuit.canceled -= instance.OnMainMenuQuit;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -300,5 +398,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlayerMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnInteractAlternative(InputAction.CallbackContext context);
+        void OnGameOver(InputAction.CallbackContext context);
+        void OnMainMenuLoadOn(InputAction.CallbackContext context);
+        void OnMainMenuQuit(InputAction.CallbackContext context);
     }
 }

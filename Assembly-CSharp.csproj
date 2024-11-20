@@ -61,11 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
     <Compile Include="Assets\Inputs\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\CuttingCounterAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerSingleUI.cs" />
     <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
@@ -74,17 +76,21 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\DeliverManagerUI.cs" />
     <Compile Include="Assets\Scripts\UI\SingleIconTemplate.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadMainMenu.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ReciveListSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
     <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\GamePlayingTimerUI.cs" />
     <Compile Include="Assets\Scripts\Counters\Plates.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />
+    <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounter.cs" />
+    <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />
@@ -93,6 +99,7 @@
     <Compile Include="Assets\Scripts\IKitchenObject.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\FryingObjectSO.cs" />
+    <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\KitchenGameManager.cs" />
   </ItemGroup>

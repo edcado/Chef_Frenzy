@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,10 @@ public class KitchenGameManager : MonoBehaviour
 
     private float waitingToStartTimer = 1f;
     private float countDownTimer = 3f;
-    private float playingTimer = 10f;
+    private float playingTimer;
+    private float playingTimerMax = 10f;
 
+   public event EventHandler OnStateChanged;
 
     private void Awake()
     {
@@ -26,20 +29,25 @@ public class KitchenGameManager : MonoBehaviour
         {
             case States.waitingToStart:
                 waitingToStartTimer -= Time.deltaTime;
-                if (waitingToStartTimer < 0f)
-                    state = States.CountDown;
+                if (waitingToStartTimer < 0f) state = States.CountDown;
+                OnStateChanged?.Invoke(this, EventArgs.Empty);              
                 break;
 
             case States.CountDown:
                 countDownTimer -= Time.deltaTime;
                 if (countDownTimer < 0f)
                     state = States.Playing;
+                playingTimer = playingTimerMax;
+                OnStateChanged?.Invoke(this, EventArgs.Empty);
+
                 break;
 
             case States.Playing:
                 playingTimer -= Time.deltaTime;
                 if (playingTimer < 0f)
                     state = States.GameOver;
+                OnStateChanged?.Invoke(this, EventArgs.Empty);
+
                 break;
 
             case States.GameOver:
@@ -51,5 +59,24 @@ public class KitchenGameManager : MonoBehaviour
     public bool isPlayingGame()
     {
         return state == States.Playing;
+    }
+
+    public bool isCountingDown()
+    {
+        return state == States.CountDown;
+    }
+
+    public float GetCountDownTimer()
+    {
+        return countDownTimer;
+    }
+    public bool isGameOver()
+    {
+        return state == States.GameOver;
+    }
+
+    public float GetGameTimerUI()
+    {
+        return 1 -(playingTimer / playingTimerMax);
     }
 }

@@ -401,10 +401,17 @@
 "Assets/Scripts/Scriptable Objects/RecipeSO.cs"
 "Assets/Scripts/Scriptable Objects/ReciveListSO.cs"
 "Assets/Scripts/SelectedPrefabVisual.cs"
+"Assets/Scripts/UI/CountDownStartUI.cs"
 "Assets/Scripts/UI/DeliverManagerUI.cs"
 "Assets/Scripts/UI/DeliveryManagerSingleUI.cs"
+"Assets/Scripts/UI/GameOverUI.cs"
+"Assets/Scripts/UI/GamePlayingTimerUI.cs"
 "Assets/Scripts/UI/IconTemplate.cs"
 "Assets/Scripts/UI/IHasProgress.cs"
+"Assets/Scripts/UI/Loader.cs"
+"Assets/Scripts/UI/LoadMainMenu.cs"
+"Assets/Scripts/UI/LoadManager.cs"
+"Assets/Scripts/UI/MainMenuUI.cs"
 "Assets/Scripts/UI/SingleIconTemplate.cs"
 -langversion:9.0
 /deterministic

@@ -16,6 +16,8 @@ public class DelyveryManager : MonoBehaviour
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 4;
 
+    public int succesfulRecipesAmount;
+
     private void Awake()
     {
         Instance = this;
@@ -81,6 +83,7 @@ public class DelyveryManager : MonoBehaviour
 
                     string plateDelivered = waitingRecipeSOList[i].recipeName;
                     Debug.Log("Se entrego " + plateDelivered );
+                    succesfulRecipesAmount++;
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     waitingRecipeSOList.RemoveAt(i);
                     return;
@@ -96,6 +99,11 @@ public class DelyveryManager : MonoBehaviour
     public List<RecipeSO> WaitingRecipeSOList()
     {
         return waitingRecipeSOList;
+    }
+
+    public int GetSuccesfulRecipesAmount()
+    {
+        return succesfulRecipesAmount;
     }
 
 }
