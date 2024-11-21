@@ -12,7 +12,7 @@ public class KitchenGameManager : MonoBehaviour
     private float waitingToStartTimer = 1f;
     private float countDownTimer = 3f;
     private float playingTimer;
-    private float playingTimerMax = 10f;
+    [SerializeField] private float playingTimerMax = 10f;
 
    public event EventHandler OnStateChanged;
 
@@ -51,6 +51,8 @@ public class KitchenGameManager : MonoBehaviour
                 break;
 
             case States.GameOver:
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 break;
         }
         Debug.Log(state);

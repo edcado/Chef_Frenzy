@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68383e56c10efde46bcf9d9eddd54448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playingTimerMax: 30
 --- !u!4 &151591298
 Transform:
   m_ObjectHideFlags: 0
@@ -1971,7 +1972,7 @@ PrefabInstance:
     - target: {fileID: 4298400416986613674, guid: 0897ce6145e81b04ea3e41c33c17de0d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.45000046
+      value: -1.599
       objectReference: {fileID: 0}
     - target: {fileID: 4298400416986613674, guid: 0897ce6145e81b04ea3e41c33c17de0d,
         type: 3}
@@ -4758,7 +4759,7 @@ PrefabInstance:
     - target: {fileID: 7472842081298279833, guid: d89adf0f18bf938419c6d2aa87e57460,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0090005
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7472842081298279833, guid: d89adf0f18bf938419c6d2aa87e57460,
         type: 3}

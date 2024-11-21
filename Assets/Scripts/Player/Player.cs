@@ -8,7 +8,8 @@ public class Player : MonoBehaviour, IKitchenObject
 {
     public static Player Instance { get; private set; }
 
-    public event EventHandler <OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
+    public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
+
     public class OnSelectedCounterChangeEventArgs : EventArgs
     {
         public BaseCounter selectedCounter;
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour, IKitchenObject
     [SerializeField] private LayerMask counterLayerMask;
     [SerializeField] Transform kitchenObjectPoint;
 
-    Vector3 lastInteractDirection;
+    private Vector3 lastInteractDirection;
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
@@ -31,7 +32,8 @@ public class Player : MonoBehaviour, IKitchenObject
 
     private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
         playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
     }
@@ -40,7 +42,6 @@ public class Player : MonoBehaviour, IKitchenObject
     {
         if (!KitchenGameManager.Instance.isPlayingGame())
             return;
-        
 
         if (selectedCounter != null)
         {
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour, IKitchenObject
         if (!KitchenGameManager.Instance.isPlayingGame())
             return;
 
-            if (selectedCounter != null)
+        if (selectedCounter != null)
         {
             selectedCounter.InteractAlternate(this);
         }
@@ -74,30 +75,24 @@ public class Player : MonoBehaviour, IKitchenObject
         {
             lastInteractDirection = moveDirection;
         }
-        else
-        {
-            lastInteractDirection = transform.forward;
-        }
 
         float interactDistance = 2f;
-        RaycastHit raycastHit;
 
-        if (Physics.Raycast(transform.position, lastInteractDirection, out raycastHit, interactDistance))
+        if (Physics.Raycast(transform.position, lastInteractDirection, out RaycastHit raycastHit, interactDistance, counterLayerMask))
         {
             if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {
-                // Solo cambiar si el selectedCounter es diferente
                 if (baseCounter != selectedCounter)
                 {
                     SetSelectedCounter(baseCounter);
                 }
             }
-            else if (selectedCounter != null) // Asegúrate de que solo se llame si el selectedCounter ya no es válido
+            else
             {
                 SetSelectedCounter(null);
             }
         }
-        else if (selectedCounter != null)
+        else
         {
             SetSelectedCounter(null);
         }
@@ -106,38 +101,52 @@ public class Player : MonoBehaviour, IKitchenObject
     void Movement()
     {
         Vector2 inputMovement = playerInputs.GetMovementNormalized();
-
-        // Vector de movimiento
-        Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
+        Vector3 moveDirection = new Vector3(inputMovement.x, 0f, inputMovement.y);
 
         float moveDistance = speed * Time.deltaTime;
-        float playerCheckRadious = .7f;
-        float playerHeight = 2.0f;
+        float playerRadius = .7f;
+        float playerHeight = 2f;
 
-        // Raycast para detectar objetos
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerCheckRadious, moveDirection, moveDistance);
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirection, moveDistance);
 
-        // Si puede moverse, mover al jugador
+        if (!canMove)
+        {
+            Vector3 moveDirX = new Vector3(moveDirection.x, 0, 0).normalized;
+            canMove = (moveDirection.x < -.5f || moveDirection.x > +.5f) && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
+
+            if (canMove)
+            {
+                moveDirection = moveDirX;
+            }
+            else
+            {
+                Vector3 moveDirZ = new Vector3(0, 0, moveDirection.z).normalized;
+                canMove = (moveDirection.z < -.5f || moveDirection.z > +.5f) && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
+
+                if (canMove)
+                {
+                    moveDirection = moveDirZ;
+                }
+            }
+        }
+
         if (canMove)
         {
-            transform.position += moveDirection * speed * Time.deltaTime;
+            transform.position += moveDirection * moveDistance;
         }
 
-        // Rotación del jugador
+        myanimator.SetBool("IsWalking", moveDirection != Vector3.zero);
+
         if (moveDirection != Vector3.zero)
         {
-            float rotationSpeed = 1000f;
-            transform.forward = Vector3.Slerp(transform.forward, moveDirection, rotationSpeed * Time.deltaTime);
+            float rotationSpeed = 10f;
+            transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotationSpeed);
         }
-
-        // Actualizar animación de caminar
-        bool isWalking = moveDirection.magnitude > 0;
-        myanimator.SetBool("IsWalking", isWalking);
     }
 
     private void SetSelectedCounter(BaseCounter newSelectedCounter)
     {
-        if (selectedCounter == newSelectedCounter) return;  // Si ya es el seleccionado, no hacer nada
+        if (selectedCounter == newSelectedCounter) return;
 
         selectedCounter = newSelectedCounter;
 
