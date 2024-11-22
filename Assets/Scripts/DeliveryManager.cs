@@ -86,6 +86,9 @@ public class DelyveryManager : MonoBehaviour
                     succesfulRecipesAmount++;
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     waitingRecipeSOList.RemoveAt(i);
+                    SpawnRecipe();
+                    spawnRecipeTimerMax = 0;
+
                     return;
 
                     //Introducir Netcode : Quien ha entregado el plato?
