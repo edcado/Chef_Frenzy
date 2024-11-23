@@ -36,6 +36,23 @@ public class Player : MonoBehaviour, IKitchenObject
         Cursor.visible = false;
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
         playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
+        OnSelectedCounterChange += Player_OnSelectedCounterChange;
+    }
+
+    private void Player_OnSelectedCounterChange(object sender, OnSelectedCounterChangeEventArgs e)
+    {
+        if (e.selectedCounter != null)
+        {
+            if (e.selectedCounter is ClearCounter)
+            {
+                Debug.Log("ClearCounter");
+            }
+
+            if (e.selectedCounter is ContainerCounter && !HasKitchenObject())
+            {
+                Debug.Log("ContainerCounter");
+            }
+        }
     }
 
     private void PlayerInputs_OnInteractAction(object sender, System.EventArgs e)
@@ -149,11 +166,12 @@ public class Player : MonoBehaviour, IKitchenObject
         if (selectedCounter == newSelectedCounter) return;
 
         selectedCounter = newSelectedCounter;
+        Debug.Log("SelectedCounter");
 
         OnSelectedCounterChange?.Invoke(this, new OnSelectedCounterChangeEventArgs
         {
-            selectedCounter = selectedCounter
-        });
+            selectedCounter = selectedCounter,
+        }) ;
     }
 
     public Transform GetKitchenObjectFollowTransform()
