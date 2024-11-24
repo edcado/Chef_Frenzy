@@ -76,9 +76,12 @@
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\DeliverManagerUI.cs" />
+    <Compile Include="Assets\Scripts\ImageControl.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\SingleIconTemplate.cs" />
     <Compile Include="Assets\Scripts\UI\LoadMainMenu.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\ReciveListSO.cs" />
+    <Compile Include="Assets\Scripts\Sound\PlayerFootSteps.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
     <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
@@ -90,9 +93,9 @@
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
+    <Compile Include="Assets\Scripts\Sound\StoveCounterSound.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounter.cs" />
     <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />

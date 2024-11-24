@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IKitchenObject
 {
@@ -25,10 +26,17 @@ public class Player : MonoBehaviour, IKitchenObject
     private Vector3 lastInteractDirection;
     private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
+    public bool isMoving;
+
+    [SerializeField] private Image image;
+    [SerializeField] private Image image2;
+
 
     private void Awake()
     {
         Instance = this;
+        image.gameObject.SetActive(false);
+        image2.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -37,24 +45,10 @@ public class Player : MonoBehaviour, IKitchenObject
         Cursor.visible = false;
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
         playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
-        OnSelectedCounterChange += Player_OnSelectedCounterChange;
+      
+        
     }
 
-    private void Player_OnSelectedCounterChange(object sender, OnSelectedCounterChangeEventArgs e)
-    {
-        if (e.selectedCounter != null)
-        {
-            if (e.selectedCounter is ClearCounter)
-            {
-                Debug.Log("ClearCounter");
-            }
-
-            if (e.selectedCounter is ContainerCounter && !HasKitchenObject())
-            {
-                Debug.Log("ContainerCounter");
-            }
-        }
-    }
 
     private void PlayerInputs_OnInteractAction(object sender, System.EventArgs e)
     {
@@ -102,16 +96,18 @@ public class Player : MonoBehaviour, IKitchenObject
             {
                 if (baseCounter != selectedCounter)
                 {
-                    SetSelectedCounter(baseCounter);
-                }
+                    SetSelectedCounter(baseCounter);                                  
+                }            
             }
             else
             {
+                image.gameObject.SetActive(false);
                 SetSelectedCounter(null);
             }
         }
         else
         {
+            image.gameObject.SetActive(false);
             SetSelectedCounter(null);
         }
     }
@@ -153,6 +149,7 @@ public class Player : MonoBehaviour, IKitchenObject
             transform.position += moveDirection * moveDistance;
         }
 
+        isMoving = moveDirection != Vector3.zero;
         myanimator.SetBool("IsWalking", moveDirection != Vector3.zero);
 
         if (moveDirection != Vector3.zero)
@@ -167,7 +164,6 @@ public class Player : MonoBehaviour, IKitchenObject
         if (selectedCounter == newSelectedCounter) return;
 
         selectedCounter = newSelectedCounter;
-        Debug.Log("SelectedCounter");
 
         OnSelectedCounterChange?.Invoke(this, new OnSelectedCounterChangeEventArgs
         {
