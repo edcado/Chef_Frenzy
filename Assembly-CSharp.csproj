@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
     <Compile Include="Assets\Inputs\PlayerInputActions.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\AudioClipSO.cs" />
     <Compile Include="Assets\Scripts\CuttingCounterAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\DeliveryManagerSingleUI.cs" />
     <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounter.cs" />
     <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />

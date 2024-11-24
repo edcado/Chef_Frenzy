@@ -7,6 +7,8 @@ public class DelyveryManager : MonoBehaviour
 {
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeCompleted;
+    public event EventHandler OnRecipeSuccess;
+    public event EventHandler OnRecipeFail;
 
     [SerializeField] private ReciveListSO reciveListSO;
     private List<RecipeSO> waitingRecipeSOList;
@@ -84,10 +86,14 @@ public class DelyveryManager : MonoBehaviour
                     string plateDelivered = waitingRecipeSOList[i].recipeName;
                     Debug.Log("Se entrego " + plateDelivered );
                     succesfulRecipesAmount++;
+
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
                     waitingRecipeSOList.RemoveAt(i);
+
                     SpawnRecipe();
                     spawnRecipeTimerMax = 0;
+
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty); 
 
                     return;
 
@@ -97,6 +103,7 @@ public class DelyveryManager : MonoBehaviour
         }
 
         Debug.Log("No se ha entregado bien");
+        OnRecipeFail?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> WaitingRecipeSOList()
