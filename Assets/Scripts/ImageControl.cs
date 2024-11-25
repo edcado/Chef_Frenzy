@@ -70,14 +70,14 @@ public class ImageControl : MonoBehaviour
 
                 if (cuttingCounter.HasKitchenObject() && cuttingCounter.HasRecipeWithInput(cuttingCounter.GetKitchenObject().GetKitchenObjectSO()))
                 {
-                    Debug.Log("CanCut");
+                    ShowImage1();
                 }
             }
 
 
             if (e.selectedCounter is ContainerCounter containerCounter)
             {
-                if (!containerCounter.HasKitchenObject())
+                if (!player.HasKitchenObject())
                 {
                     ShowImage1();
                 }
@@ -102,13 +102,28 @@ public class ImageControl : MonoBehaviour
                         ShowImage1();
                     }
                 }
-                
+
+                if (clearCounter.HasKitchenObject())
+                {
+                    KitchenObject kitchenObject = clearCounter.GetKitchenObject();
+
+                    if (kitchenObject is PlateKitchenObject plateKitchenObject)
+                    {
+                        ShowImage1();
+                    }
+                }
+
+                if (player.HasKitchenObject())
+                {
+
+                }
+
             }
 
             if (e.selectedCounter is PlatesCounter platesCounter)
             {
                 if (!player.HasKitchenObject() && platesCounter.spawnPlatesAmount >= 1)
-                ShowImage1();
+                    ShowImage1();
             }
 
             if (e.selectedCounter is StoveCounter stoveCounter)
@@ -123,7 +138,7 @@ public class ImageControl : MonoBehaviour
                     {
                         ShowImage1();
                     }
-                    
+
                 }
 
                 if (!player.HasKitchenObject())
@@ -136,10 +151,14 @@ public class ImageControl : MonoBehaviour
                     HideImage1();
                 }
 
-                else
+                KitchenObject kitchenObject = player.GetKitchenObject();
+
+                if (kitchenObject is PlateKitchenObject plateKitchenObject && stoveCounter.HasKitchenObject())
                 {
-                    Debug.Log("El jugador no tiene ningún objeto.");
+                    ShowImage1();
                 }
+
+
             }
 
             if (e.selectedCounter is DeliveryCounter deliveryCounter)
@@ -151,6 +170,14 @@ public class ImageControl : MonoBehaviour
                 else
                 {
                     HideImage1();
+                }
+            }
+
+            if (e.selectedCounter is TrashCounter trashCounter)
+            {
+                if (player.HasKitchenObject())
+                {
+                    ShowImage1();
                 }
             }
         }
@@ -185,7 +212,7 @@ public class ImageControl : MonoBehaviour
 
     private void HideImage1()
     {
-        image.gameObject.SetActive(false);  
+        image.gameObject.SetActive(false);
     }
 
     private void ShowImage1()
