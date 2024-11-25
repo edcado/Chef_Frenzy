@@ -12,7 +12,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
     public event EventHandler onCut;
     public static event EventHandler OnAnyCut;
 
-    [SerializeField] private CuttingObjectsSO[] cuttingObjectSOArray;
+    [SerializeField] public CuttingObjectsSO[] cuttingObjectSOArray;
 
     public int cuttingProgress;
 
@@ -123,7 +123,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
         
     }   
 
-    private CuttingObjectsSO GetCuttingRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
+    public CuttingObjectsSO GetCuttingRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         {
             foreach (CuttingObjectsSO cuttingObjectSO in cuttingObjectSOArray)

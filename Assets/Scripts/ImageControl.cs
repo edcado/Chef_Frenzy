@@ -61,16 +61,33 @@ public class ImageControl : MonoBehaviour
 
                 if (player.HasKitchenObject())
                 {
-                    ShowImage1();
-                }
-                else
-                {
-                    HideImage1();
+                    KitchenObjectSO playerKitchenObjectSO = player.GetKitchenObject().GetKitchenObjectSO();
+
+                    foreach (CuttingObjectsSO cuttingObjectSO in cuttingCounter.cuttingObjectSOArray)
+                    {
+                        if (cuttingObjectSO.input == playerKitchenObjectSO)
+                        {
+                            ShowImage1();
+                            break;
+                        }
+                    }
                 }
 
-                if (cuttingCounter.HasKitchenObject() && cuttingCounter.HasRecipeWithInput(cuttingCounter.GetKitchenObject().GetKitchenObjectSO()))
+                if (cuttingCounter.HasKitchenObject() && !player.HasKitchenObject())
                 {
+                    ShowImage2();
                     ShowImage1();
+                }
+
+
+
+                if (cuttingCounter.HasKitchenObject())
+                {
+                    KitchenObject kitchenObject = player.GetKitchenObject();
+                    if (kitchenObject is PlateKitchenObject plateKitchenObject && player.HasKitchenObject())
+                    {
+                        ShowImage1();                           
+                    }
                 }
             }
 
@@ -107,17 +124,29 @@ public class ImageControl : MonoBehaviour
                 {
                     KitchenObject kitchenObject = clearCounter.GetKitchenObject();
 
-                    if (kitchenObject is PlateKitchenObject plateKitchenObject)
+                    if (kitchenObject is PlateKitchenObject plateKitchenObject && player.HasKitchenObject())
                     {
-                        ShowImage1();
+                        KitchenObjectSO playerObjectSO = player.GetKitchenObject().GetKitchenObjectSO();
+
+                        if (plateKitchenObject.IsValidIngredient(playerObjectSO))
+                        {
+                            ShowImage1();
+                        }
                     }
                 }
 
-                if (player.HasKitchenObject())
+                if (player.HasKitchenObject() && player.GetKitchenObject() is PlateKitchenObject playerPlate)
                 {
+                    if (clearCounter.HasKitchenObject())
+                    {
+                        KitchenObjectSO counterObjectSO = clearCounter.GetKitchenObject().GetKitchenObjectSO();
 
+                        if (playerPlate.IsValidIngredient(counterObjectSO))
+                        {
+                            ShowImage1();
+                        }
+                    }
                 }
-
             }
 
             if (e.selectedCounter is PlatesCounter platesCounter)

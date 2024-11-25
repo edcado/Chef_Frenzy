@@ -13,7 +13,7 @@ public class PlateKitchenObject : KitchenObject
     }
 
     private List<KitchenObjectSO> kitchenObjectSOList;
-    [SerializeField] private List<KitchenObjectSO> validIngredientsSOList;
+    [SerializeField] public List<KitchenObjectSO> validIngredientsSOList;
 
     private void Awake()
     {
@@ -49,6 +49,11 @@ public class PlateKitchenObject : KitchenObject
     public List<KitchenObjectSO> GetKitchenSOList()
     {
         return kitchenObjectSOList;
+    }
+
+    public bool IsValidIngredient(KitchenObjectSO kitchenObjectSO)
+    {
+        return validIngredientsSOList.Contains(kitchenObjectSO);
     }
 }
 

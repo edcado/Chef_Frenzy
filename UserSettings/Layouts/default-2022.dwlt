@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 133
+  controlID: 131
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -726,9 +726,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.452778, y: 1.5908225, z: -0.48558497}
+    m_Target: {x: -0.24850662, y: 5.5310597, z: -2.797929}
     speed: 2
-    m_Value: {x: 6.452778, y: 1.5908225, z: -0.48558497}
+    m_Value: {x: -0.24850662, y: 5.5310597, z: -2.797929}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -774,9 +774,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.23824939, y: 0.30569923, z: -0.07930422, w: 0.9184523}
+    m_Target: {x: 0.3215019, y: -0.00538892, z: 0.0018285124, w: 0.9469239}
     speed: 2
-    m_Value: {x: 0.2382424, y: 0.30569026, z: -0.07930189, w: 0.9184254}
+    m_Value: {x: 0.32149214, y: -0.0053887563, z: 0.0018284569, w: 0.9468951}
   m_Size:
     m_Target: 1.3040197
     speed: 2
@@ -1168,9 +1168,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 806e0000
-      m_LastClickedID: 28288
-      m_ExpandedIDs: 8ef4fffffefaffff466f000084700000
+      m_SelectedIDs: 1a590000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1240,7 +1240,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/ScriptableObjects/CuttingObjectSO
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1248,15 +1248,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/ScriptableObjects/CuttingObjectSO
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e7c0000
-    m_LastClickedID: 31774
+    m_SelectedIDs: 8a7c0000
+    m_LastClickedID: 31882
     m_ExpandedIDs: 00000000147c0000167c0000187c00001a7c00001c7c00001e7c0000207c0000227c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1316,18 +1316,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PlateKitchenObject
+      m_OriginalName: PlateKitchenObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 24366
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 155
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
