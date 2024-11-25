@@ -15,6 +15,11 @@ public class StoveCounter : BaseCounter, IHasProgress
         public State state;
     }
 
+    public event EventHandler OnIdle;
+    public event EventHandler Onfrying;
+    public event EventHandler OnFried;
+    public event EventHandler OnBurned;
+
     [SerializeField] private FryingObjectSO[] fryingRecipeSOArray;
     [SerializeField] private BurningRecipeSO[] burnedRecipeSOArray;
 
@@ -39,10 +44,12 @@ public class StoveCounter : BaseCounter, IHasProgress
             switch (state)
             {
                 case State.idle:
+                    OnIdle?.Invoke(this, EventArgs.Empty);
                     break;
 
                 case State.frying:
                     fryingTimer += Time.deltaTime;
+                    Onfrying?.Invoke(this, EventArgs.Empty);
 
                     OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventsArgs
                     {
@@ -69,6 +76,7 @@ public class StoveCounter : BaseCounter, IHasProgress
 
                 case State.fried:
                     burnedTimer += Time.deltaTime;
+                    OnFried?.Invoke(this, EventArgs.Empty);
 
                     OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventsArgs
                     {
@@ -96,6 +104,7 @@ public class StoveCounter : BaseCounter, IHasProgress
                     break;
 
                 case State.burned:
+                    OnBurned?.Invoke(this, EventArgs.Empty);
                     break;
             }
 
@@ -190,7 +199,7 @@ public class StoveCounter : BaseCounter, IHasProgress
         }
     }
 
-    private bool HasRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
+    public bool HasRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
        FryingObjectSO fryingRecipeSO = GetFryingRecipeSOWithInput(inputKitchenObjectSO);
         return fryingRecipeSO != null;

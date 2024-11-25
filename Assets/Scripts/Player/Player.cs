@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, IKitchenObject
 
     public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public event EventHandler OnPickUpSomething;
+    public event EventHandler OnNotCounter;
 
     public class OnSelectedCounterChangeEventArgs : EventArgs
     {
@@ -28,15 +29,10 @@ public class Player : MonoBehaviour, IKitchenObject
     private KitchenObject kitchenObject;
     public bool isMoving;
 
-    [SerializeField] private Image image;
-    [SerializeField] private Image image2;
-
 
     private void Awake()
     {
         Instance = this;
-        image.gameObject.SetActive(false);
-        image2.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -101,13 +97,13 @@ public class Player : MonoBehaviour, IKitchenObject
             }
             else
             {
-                image.gameObject.SetActive(false);
+                OnNotCounter?.Invoke(this, EventArgs.Empty);
                 SetSelectedCounter(null);
             }
         }
         else
         {
-            image.gameObject.SetActive(false);
+            OnNotCounter?.Invoke(this, EventArgs.Empty);
             SetSelectedCounter(null);
         }
     }

@@ -23,7 +23,7 @@ public class LoadMainMenu : MonoBehaviour
         
         if (KitchenGameManager.Instance.isGameOver())
         {
-            SceneManager.LoadScene("MainMenu");         
+            SceneManager.LoadScene("MainScene");         
         }
     }
 }
