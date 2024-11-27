@@ -22,6 +22,12 @@ public class ImageControl : MonoBehaviour
         stoveCounter.Onfrying += StoveCounter_Onfrying;
         stoveCounter.OnFried += StoveCounter_OnFried;
         stoveCounter.OnBurned += StoveCounter_OnBurned;
+        TrashCounter.OnAnyObjectTrash += TrashCounter_OnAnyObjectTrash;
+    }
+
+    private void TrashCounter_OnAnyObjectTrash(object sender, EventArgs e)
+    {
+        HideImage1();
     }
 
     private void StoveCounter_OnBurned(object sender, EventArgs e)
