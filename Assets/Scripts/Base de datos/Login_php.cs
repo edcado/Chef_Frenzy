@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerLogin : MonoBehaviour
 {
@@ -12,8 +13,15 @@ public class PlayerLogin : MonoBehaviour
 
     public void LoginPlayer()
     {
-        string username = usernameField.text;
+        string username = usernameField.text.Trim();
         string password = passwordField.text;
+
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+        {
+            Debug.LogError("El nombre de usuario o la contraseña están vacíos.");
+            return;
+        }
+
 
         StartCoroutine(LoginCoroutine(username, password));
     }
@@ -31,6 +39,7 @@ public class PlayerLogin : MonoBehaviour
             if (www.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.downloadHandler.text);
+                SceneManager.LoadScene("MainMenu");
             }
             else
             {

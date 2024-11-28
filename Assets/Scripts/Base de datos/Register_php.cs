@@ -12,10 +12,16 @@ public class PlayerRegistration : MonoBehaviour
 
     public void RegisterPlayer()
     {
-        string username = usernameField.text;
+        string username = usernameField.text.Trim();
         string password = passwordField.text;
         string gameName = gameNameField.text;
 
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+        {
+            Debug.Log($"Registrando: {username}, {password}, {gameName}");
+            Debug.LogError("El nombre de usuario o la contraseña están vacíos");
+            return;
+        }
         StartCoroutine(RegisterCoroutine(username, password, gameName));
     }
 
