@@ -370,6 +370,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.37f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Inputs/PlayerInputActions.cs"
 "Assets/Scripts/BarLookAt.cs"
+"Assets/Scripts/Base de datos/GameData.cs"
 "Assets/Scripts/Base de datos/Login_php.cs"
 "Assets/Scripts/Base de datos/Register_php.cs"
 "Assets/Scripts/Counters/BaseCounter.cs"

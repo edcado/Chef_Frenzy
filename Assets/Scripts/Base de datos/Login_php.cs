@@ -10,7 +10,6 @@ public class PlayerLogin : MonoBehaviour
     public TMP_InputField usernameField;
     public TMP_InputField passwordField;
 
-
     public void LoginPlayer()
     {
         string username = usernameField.text.Trim();
@@ -39,7 +38,32 @@ public class PlayerLogin : MonoBehaviour
             if (www.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log(www.downloadHandler.text);
-                SceneManager.LoadScene("MainMenu");
+                string responseText = www.downloadHandler.text;
+                Debug.Log("Respuesta del servidor: " + responseText);
+
+                // Dividir la respuesta para obtener el estado y el nombre del juego
+                string[] responseParts = responseText.Split(':');
+                string status = responseParts[0];
+
+                if (status == "success")
+                {
+                    string gameName = responseParts[1];
+                    Debug.Log("Inicio de sesión exitoso. Game Name: " + gameName);
+
+                    PlayerPrefs.SetString("GameName", gameName);
+                    PlayerPrefs.Save();
+
+                    SceneManager.LoadScene("MainMenu");
+                }
+                else
+                {
+                    string errorMessage = responseParts[1];
+                    Debug.LogError("Error: " + errorMessage);
+                }
+
+
+
+
             }
             else
             {
@@ -47,4 +71,5 @@ public class PlayerLogin : MonoBehaviour
             }
         }
     }
+
 }

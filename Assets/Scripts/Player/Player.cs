@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour, IKitchenObject
 {
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour, IKitchenObject
     public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public event EventHandler OnPickUpSomething;
     public event EventHandler OnNotCounter;
+
+    public TMP_Text gameNameText;
 
     public class OnSelectedCounterChangeEventArgs : EventArgs
     {
@@ -29,7 +32,7 @@ public class Player : MonoBehaviour, IKitchenObject
     private KitchenObject kitchenObject;
     public bool isMoving;
 
-
+    public string gameName { get; private set; }
     private void Awake()
     {
         Instance = this;
@@ -41,8 +44,10 @@ public class Player : MonoBehaviour, IKitchenObject
         Cursor.visible = false;
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
         playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
-      
-        
+
+        gameName = PlayerPrefs.GetString("GameName", "Jugador");  // "Jugador" es el valor por defecto si no hay datos guardados
+        gameNameText.text = gameName;
+
     }
 
 
@@ -195,4 +200,6 @@ public class Player : MonoBehaviour, IKitchenObject
     {
         return kitchenObject != null;
     }
+
+
 }

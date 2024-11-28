@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
     <Compile Include="Assets\Scripts\ProgressBarUI.cs" />
+    <Compile Include="Assets\Scripts\Base de datos\GameData.cs" />
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\DeliverManagerUI.cs" />
