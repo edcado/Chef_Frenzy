@@ -15,10 +15,18 @@ public class GameEnd_php : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username);
+
+        //All the other players
+        //form.AddField("username", username);    
+        //form.AddField("username", username);
+        //form.AddField("username", username);
+
+        //To be aplied
         //form.AddField("IngredientsGenerated", IngredientsGenerated);
+
         form.AddField("platesDelivered", platesDelivered);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/chefrenzy/register_player.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/chefrenzy/Game_End.php", form))
         {
             yield return www.SendWebRequest();
 

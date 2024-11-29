@@ -31,7 +31,7 @@ public class GameOverUI : MonoBehaviour
             Show();
             recipesDeliveredNumber.text = Mathf.Ceil(DelyveryManager.Instance.GetSuccesfulRecipesAmount()).ToString();
             username = PlayerPrefs.GetString("Username", username);
-            gameEnd.GameEnd(username, recipesDeliveredNumber);
+            //gameEnd.GameEnd(username, recipesDeliveredNumber.);
         }
         else
         {
