@@ -13,6 +13,9 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private UnityEngine.UI.Button button;
 
+    private GameEnd_php gameEnd;
+    private Player player;
+    private string username;
     private void Start()
     {
         KitchenGameManager.Instance.OnStateChanged += KitchenGameManager_OnStateChanged;
@@ -27,6 +30,8 @@ public class GameOverUI : MonoBehaviour
         {
             Show();
             recipesDeliveredNumber.text = Mathf.Ceil(DelyveryManager.Instance.GetSuccesfulRecipesAmount()).ToString();
+            username = PlayerPrefs.GetString("Username", username);
+            gameEnd.GameEnd(username, recipesDeliveredNumber);
         }
         else
         {

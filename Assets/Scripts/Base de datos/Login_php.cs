@@ -51,6 +51,7 @@ public class PlayerLogin : MonoBehaviour
                     Debug.Log("Inicio de sesión exitoso. Game Name: " + gameName);
 
                     PlayerPrefs.SetString("GameName", gameName);
+                    PlayerPrefs.SetString("Username", username);
                     PlayerPrefs.Save();
 
                     SceneManager.LoadScene("MainMenu");
