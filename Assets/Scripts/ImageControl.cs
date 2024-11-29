@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,12 @@ public class ImageControl : MonoBehaviour
     [SerializeField] private Image image2;
     [SerializeField] private PlatesCounter platesCounter;
     [SerializeField] private StoveCounter stoveCounter;
+    [SerializeField] private TextMeshProUGUI playerNameText;
+
+    public event EventHandler OnShowButton;
+    public event EventHandler OnHideButton;
+
+    public static ImageControl Instance { get; private set; }
 
     private void Start()
     {
@@ -23,6 +30,8 @@ public class ImageControl : MonoBehaviour
         stoveCounter.OnFried += StoveCounter_OnFried;
         stoveCounter.OnBurned += StoveCounter_OnBurned;
         TrashCounter.OnAnyObjectTrash += TrashCounter_OnAnyObjectTrash;
+
+        Instance = this;
     }
 
     private void TrashCounter_OnAnyObjectTrash(object sender, EventArgs e)
@@ -224,6 +233,7 @@ public class ImageControl : MonoBehaviour
     private void ContainerCounter_OnObjectPicked(object sender, EventArgs e)
     {
         HideImage1();
+
     }
 
     private void CuttingCounter_OnCutFinished(object sender, EventArgs e)
@@ -245,22 +255,27 @@ public class ImageControl : MonoBehaviour
         }
     }
 
-    private void HideImage1()
+    public void HideImage1()
     {
         image.gameObject.SetActive(false);
+        playerNameText.gameObject.SetActive(true);
     }
 
-    private void ShowImage1()
-    {
-        image.gameObject.SetActive(true);
-    }
-
-    private void HideImage2()
+    public void HideImage2()
     {
         image2.gameObject.SetActive(false);
+        playerNameText.gameObject.SetActive(true);
     }
-    private void ShowImage2()
+
+    public void ShowImage1()
+    {
+        image.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
+    }
+
+    public void ShowImage2()
     {
         image2.gameObject.SetActive(true);
+        playerNameText.gameObject.SetActive(false);
     }
 }
