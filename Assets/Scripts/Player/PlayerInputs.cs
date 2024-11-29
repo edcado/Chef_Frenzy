@@ -21,18 +21,6 @@ public class PlayerInputs : MonoBehaviour
         playerInputActions.Player.Interact.performed += Interact_performed;
         playerInputActions.Player.InteractAlternative.performed += InteractAlternative_performed;
         playerInputActions.Player.GameOver.performed += GameOver_performed;
-        playerInputActions.Player.MainMenuLoadOn.performed += MainMenuLoadOn_performed;
-        playerInputActions.Player.MainMenuQuit.performed += MainMenuQuit_performed;
-    }
-
-    private void MainMenuQuit_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        onMainMenuQuit?.Invoke(this, EventArgs.Empty);
-    }
-
-    private void MainMenuLoadOn_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        onMainMenuLoadIn?.Invoke(this, EventArgs.Empty);    
     }
 
     private void GameOver_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
