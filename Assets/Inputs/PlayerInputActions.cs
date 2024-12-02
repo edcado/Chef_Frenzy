@@ -62,6 +62,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GamePaused"",
+                    ""type"": ""Button"",
+                    ""id"": ""d444aa10-dda9-47d4-85e1-d278b8dda83f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""GameOver"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8dc89ec-8b0b-4807-9f8e-c388e22f2f9b"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamePaused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +228,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_InteractAlternative = m_Player.FindAction("InteractAlternative", throwIfNotFound: true);
         m_Player_GameOver = m_Player.FindAction("GameOver", throwIfNotFound: true);
+        m_Player_GamePaused = m_Player.FindAction("GamePaused", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_InteractAlternative;
     private readonly InputAction m_Player_GameOver;
+    private readonly InputAction m_Player_GamePaused;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -281,6 +303,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @InteractAlternative => m_Wrapper.m_Player_InteractAlternative;
         public InputAction @GameOver => m_Wrapper.m_Player_GameOver;
+        public InputAction @GamePaused => m_Wrapper.m_Player_GamePaused;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +325,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @GameOver.started += instance.OnGameOver;
             @GameOver.performed += instance.OnGameOver;
             @GameOver.canceled += instance.OnGameOver;
+            @GamePaused.started += instance.OnGamePaused;
+            @GamePaused.performed += instance.OnGamePaused;
+            @GamePaused.canceled += instance.OnGamePaused;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -318,6 +344,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @GameOver.started -= instance.OnGameOver;
             @GameOver.performed -= instance.OnGameOver;
             @GameOver.canceled -= instance.OnGameOver;
+            @GamePaused.started -= instance.OnGamePaused;
+            @GamePaused.performed -= instance.OnGamePaused;
+            @GamePaused.canceled -= instance.OnGamePaused;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -341,5 +370,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnInteractAlternative(InputAction.CallbackContext context);
         void OnGameOver(InputAction.CallbackContext context);
+        void OnGamePaused(InputAction.CallbackContext context);
     }
 }
