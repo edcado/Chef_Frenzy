@@ -40,8 +40,7 @@ public class Player : MonoBehaviour, IKitchenObject
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
         playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
         playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
 

@@ -14,12 +14,29 @@ public class KitchenGameManager : MonoBehaviour
     private float playingTimer;
     [SerializeField] private float playingTimerMax = 10f;
 
-   public event EventHandler OnStateChanged;
+    public event EventHandler OnStateChanged;
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameUnPaused;
+
+    private bool isGamePaused;
 
     private void Awake()
     {
         Instance = this;
         state = States.waitingToStart;
+    }
+
+    private void Start()
+    {
+        PlayerInputs.Instance.OnGamePaused += PlayerInputs_OnGamePaused;
+    }
+
+    private void PlayerInputs_OnGamePaused(object sender, EventArgs e)
+    {
+        if (isPlayingGame())
+        {
+            GamePaused();
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +73,21 @@ public class KitchenGameManager : MonoBehaviour
                 break;
         }
         Debug.Log(state);
+    }
+
+    public void GamePaused()
+    {
+        isGamePaused = !isGamePaused;
+        if (isGamePaused)
+        {
+            OnGamePaused?.Invoke(this, EventArgs.Empty);
+            Time.timeScale = 0f;
+        }
+        if (!isGamePaused)
+        {
+            OnGameUnPaused?.Invoke(this, EventArgs.Empty);  
+            Time.timeScale = 1.0f;
+        }
     }
 
     public bool isPlayingGame()

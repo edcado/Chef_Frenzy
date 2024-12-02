@@ -414,6 +414,8 @@
 "Assets/Scripts/UI/DeliverManagerUI.cs"
 "Assets/Scripts/UI/DeliveryManagerSingleUI.cs"
 "Assets/Scripts/UI/GameOverUI.cs"
+"Assets/Scripts/UI/GamePausedButtonsUI.cs"
+"Assets/Scripts/UI/GamePausedUI.cs"
 "Assets/Scripts/UI/GamePlayingTimerUI.cs"
 "Assets/Scripts/UI/IconTemplate.cs"
 "Assets/Scripts/UI/IHasProgress.cs"
