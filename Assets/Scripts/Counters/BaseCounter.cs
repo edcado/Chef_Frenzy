@@ -10,6 +10,11 @@ public class BaseCounter : MonoBehaviour, IKitchenObject
 
     public static event EventHandler OnDropSomething;
 
+    public static void ResetStaticData()
+    {
+        OnDropSomething = null;
+    }
+
     private void Start()
     {
         

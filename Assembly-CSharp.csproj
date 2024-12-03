@@ -60,7 +60,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UI\GamePausedUI.cs" />
     <Compile Include="Assets\Scripts\Base de datos\GameEnd_php.cs" />
     <Compile Include="Assets\Scripts\UI\GamePausedButtonsUI.cs" />
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayingTimerUI.cs" />
     <Compile Include="Assets\Scripts\Counters\Plates.cs" />
+    <Compile Include="Assets\Scripts\ResetStaticClass.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />
     <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\KitchenGameManager.cs" />
+    <Compile Include="Assets\Scripts\UI\GamePausedUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -80,6 +80,8 @@ public class KitchenGameManager : MonoBehaviour
         isGamePaused = !isGamePaused;
         if (isGamePaused)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;  
             OnGamePaused?.Invoke(this, EventArgs.Empty);
             Time.timeScale = 0f;
         }
