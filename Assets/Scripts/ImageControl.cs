@@ -14,8 +14,7 @@ public class ImageControl : MonoBehaviour
     [SerializeField] private StoveCounter stoveCounter;
     [SerializeField] private TextMeshProUGUI playerNameText;
 
-    public event EventHandler OnShowButton;
-    public event EventHandler OnHideButton;
+    
 
     public static ImageControl Instance { get; private set; }
 

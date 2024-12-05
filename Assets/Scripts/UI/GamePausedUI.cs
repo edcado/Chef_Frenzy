@@ -2,9 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GamePausedUI : MonoBehaviour
 {
+    [SerializeField] private Button optionsButton;
+    public static GamePausedUI Instance { get; private set; }   
+
+    private void Awake()
+    {
+        optionsButton.onClick.AddListener(() =>
+        {
+            AudioOptionsUI.Instance.Show();
+        });
+
+        Instance = this;    
+    }
     private void Start()
     {
         KitchenGameManager.Instance.OnGamePaused += KitchenGameManager_OnGamePaused;
@@ -22,12 +35,12 @@ public class GamePausedUI : MonoBehaviour
         Show();
     }
 
-    private void Show()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    private void Hide()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Base de datos\GameEnd_php.cs" />
-    <Compile Include="Assets\Scripts\UI\GamePausedButtonsUI.cs" />
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
@@ -72,6 +71,7 @@
     <Compile Include="Assets\Scripts\Base de datos\Register_php.cs" />
     <Compile Include="Assets\Scripts\Counters\BaseCounter.cs" />
     <Compile Include="Assets\Scripts\UI\LoadManager.cs" />
+    <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\KitchenObject.cs" />
+    <Compile Include="Assets\Scripts\UI\AudioOptionsUI.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\IKitchenObject.cs" />
