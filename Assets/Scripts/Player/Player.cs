@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
-public class Player : MonoBehaviour, IKitchenObject
+public class Player : NetworkBehaviour, IKitchenObject
 {
     //public static Player Instance { get; private set; }
 
@@ -74,6 +75,8 @@ public class Player : MonoBehaviour, IKitchenObject
 
     void Update()
     {
+        if (!IsOwner)
+            return;
         Movement();
         Interact();
     }
@@ -149,6 +152,10 @@ public class Player : MonoBehaviour, IKitchenObject
             transform.position += moveDirection * moveDistance;
         }
 
+        if (!IsOwner)
+        {
+            return;
+        }
         isMoving = moveDirection != Vector3.zero;
         myanimator.SetBool("IsWalking", moveDirection != Vector3.zero);
 
