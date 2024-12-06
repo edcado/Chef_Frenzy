@@ -24,7 +24,7 @@ public class ImageControl : MonoBehaviour
         HideImage2();
         player.OnSelectedCounterChange += Player_OnSelectedCounterChange;
         player.OnNotCounter += Player_OnNotCounter;
-        platesCounter.OnPlateSpawned += PlatesCounter_OnPlateSpawned;
+        //platesCounter.OnPlateSpawned += PlatesCounter_OnPlateSpawned;
         stoveCounter.Onfrying += StoveCounter_Onfrying;
         stoveCounter.OnFried += StoveCounter_OnFried;
         stoveCounter.OnBurned += StoveCounter_OnBurned;

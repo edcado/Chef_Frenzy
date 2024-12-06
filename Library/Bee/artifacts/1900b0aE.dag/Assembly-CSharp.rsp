@@ -434,6 +434,7 @@
 "Assets/Scripts/UI/LoadMainMenu.cs"
 "Assets/Scripts/UI/LoadManager.cs"
 "Assets/Scripts/UI/MainMenuUI.cs"
+"Assets/Scripts/UI/NetcodeTestUI.cs"
 "Assets/Scripts/UI/SingleIconTemplate.cs"
 -langversion:9.0
 /deterministic

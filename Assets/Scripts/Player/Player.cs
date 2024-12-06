@@ -8,7 +8,7 @@ using TMPro;
 
 public class Player : MonoBehaviour, IKitchenObject
 {
-    public static Player Instance { get; private set; }
+    //public static Player Instance { get; private set; }
 
     public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public event EventHandler OnPickUpSomething;
@@ -35,14 +35,14 @@ public class Player : MonoBehaviour, IKitchenObject
     public string gameName { get; private set; }
     private void Awake()
     {
-        Instance = this;
+        //Instance = this;
     }
 
     private void Start()
     {
         
-        playerInputs.OnInteractAction += PlayerInputs_OnInteractAction;
-        playerInputs.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
+        PlayerInputs.Instance.OnInteractAction += PlayerInputs_OnInteractAction;
+        PlayerInputs.Instance.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
 
         gameName = PlayerPrefs.GetString("GameName", "Jugador");  // "Jugador" es el valor por defecto si no hay datos guardados
         gameNameText.text = gameName;
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour, IKitchenObject
 
     void Interact()
     {
-        Vector2 inputMovement = playerInputs.GetMovementNormalized();
+        Vector2 inputMovement = PlayerInputs.Instance.GetMovementNormalized();
         Vector3 moveDirection = new Vector3(inputMovement.x, 0, inputMovement.y);
 
         if (moveDirection != Vector3.zero)
@@ -114,7 +114,7 @@ public class Player : MonoBehaviour, IKitchenObject
 
     void Movement()
     {
-        Vector2 inputMovement = playerInputs.GetMovementNormalized();
+        Vector2 inputMovement = PlayerInputs.Instance.GetMovementNormalized();
         Vector3 moveDirection = new Vector3(inputMovement.x, 0f, inputMovement.y);
 
         float moveDistance = speed * Time.deltaTime;
