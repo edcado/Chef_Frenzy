@@ -403,7 +403,6 @@
 "Assets/Scripts/ImageControl.cs"
 "Assets/Scripts/KitchenGameManager.cs"
 "Assets/Scripts/KitchenObject.cs"
-"Assets/Scripts/Netcode/NetworClientTransform.cs"
 "Assets/Scripts/PlateCompleteVisual.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerInputs.cs"

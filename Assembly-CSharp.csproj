@@ -87,7 +87,6 @@
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\UI\AudioOptionsUI.cs" />
-    <Compile Include="Assets\Scripts\Netcode\NetworClientTransform.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
