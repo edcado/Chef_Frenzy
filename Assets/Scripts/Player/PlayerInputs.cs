@@ -10,16 +10,13 @@ public class PlayerInputs : MonoBehaviour
 
     public event EventHandler OnInteractAction;
     public event EventHandler OnInteractAlternativeAction;
-    public event EventHandler onGameOverAction;
-    public event EventHandler onMainMenuLoadIn;
-    public event EventHandler onMainMenuQuit;
     public event EventHandler OnGamePaused;
 
     private PlayerInputActions playerInputActions;
 
     public static PlayerInputs Instance { get; private set; }
 
-    public enum Binding { moveUp, moveDown, moveLeft, moveRight, interact, interactAlt, pause }
+    public enum Binding { moveUp, moveDown, moveLeft, moveRight, interact, interactAlt, pause, gamepadInteract, gamepadInteractAlt, gamepadPause }
 
 
     private void Awake()
@@ -38,7 +35,6 @@ public class PlayerInputs : MonoBehaviour
 
         playerInputActions.Player.Interact.performed += Interact_performed;
         playerInputActions.Player.InteractAlternative.performed += InteractAlternative_performed;
-        playerInputActions.Player.GameOver.performed += GameOver_performed;
         playerInputActions.Player.GamePaused.performed += GamePaused_performed;
 
         Debug.Log(GetBinding(Binding.interact));
@@ -48,7 +44,6 @@ public class PlayerInputs : MonoBehaviour
     {
         playerInputActions.Player.Interact.performed -= Interact_performed;
         playerInputActions.Player.InteractAlternative.performed -= InteractAlternative_performed;
-        playerInputActions.Player.GameOver.performed -= GameOver_performed;
         playerInputActions.Player.GamePaused.performed -= GamePaused_performed;
 
         playerInputActions.Dispose();
@@ -59,10 +54,7 @@ public class PlayerInputs : MonoBehaviour
         OnGamePaused?.Invoke(this, EventArgs.Empty);
     }
 
-    private void GameOver_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
-        onGameOverAction?.Invoke(this, EventArgs.Empty);    
-    }
+   
 
     private void InteractAlternative_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
@@ -99,6 +91,12 @@ public class PlayerInputs : MonoBehaviour
                 return playerInputActions.Player.PlayerMovement.bindings[3].ToDisplayString();
             case Binding.moveRight:
                 return playerInputActions.Player.PlayerMovement.bindings[4].ToDisplayString();
+            case Binding.gamepadInteract:
+                return playerInputActions.Player.Interact.bindings[1].ToDisplayString();
+            case Binding.gamepadInteractAlt:
+                return playerInputActions.Player.InteractAlternative.bindings[1].ToDisplayString();
+            case Binding.gamepadPause:
+                return playerInputActions.Player.GamePaused.bindings[1].ToDisplayString();
 
 
         }
@@ -136,18 +134,33 @@ public class PlayerInputs : MonoBehaviour
                 break;
 
             case Binding.interact:
-                inputAction = playerInputActions.Player.PlayerMovement;
+                inputAction = playerInputActions.Player.Interact;
                 rebingIndex = 0;
                 break;
 
             case Binding.interactAlt:
-                inputAction = playerInputActions.Player.PlayerMovement;
+                inputAction = playerInputActions.Player.InteractAlternative;
                 rebingIndex = 0;
                 break;
 
             case Binding.pause:
-                inputAction = playerInputActions.Player.PlayerMovement;
+                inputAction = playerInputActions.Player.GamePaused;
                 rebingIndex = 0;
+                break;
+
+            case Binding.gamepadInteract:
+                inputAction = playerInputActions.Player.Interact;
+                rebingIndex = 1;
+                break;
+
+            case Binding.gamepadInteractAlt:
+                inputAction = playerInputActions.Player.InteractAlternative;
+                rebingIndex = 1;
+                break;
+
+            case Binding.gamepadPause:
+                inputAction = playerInputActions.Player.GamePaused;
+                rebingIndex = 1;
                 break;
 
         }

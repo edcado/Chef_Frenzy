@@ -55,15 +55,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""GameOver"",
-                    ""type"": ""Button"",
-                    ""id"": ""043ce923-478b-4326-ad4e-33b9eada80c8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""GamePaused"",
                     ""type"": ""Button"",
                     ""id"": ""d444aa10-dda9-47d4-85e1-d278b8dda83f"",
@@ -134,7 +125,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""891014e0-6f91-45ef-a5ae-c51b8c2682b7"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=0.5)"",
                     ""groups"": """",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
@@ -154,7 +145,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8eed8039-3e39-4e45-bc42-1e0440719abe"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<DualShockGamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -176,7 +167,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c89e83b7-7d8b-43a3-b4a4-66849219edc4"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<DualShockGamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -186,30 +177,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1f719622-63fd-4ee4-8f3c-4fa8c3c94f16"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""GameOver"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5d49a763-47b4-492d-9bd9-ae77fc48225f"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""GameOver"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""e8dc89ec-8b0b-4807-9f8e-c388e22f2f9b"",
                     ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GamePaused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e72ed8fe-2e1e-4a77-bc86-b29912617491"",
+                    ""path"": ""<DualShockGamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -227,7 +207,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_PlayerMovement = m_Player.FindAction("PlayerMovement", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_InteractAlternative = m_Player.FindAction("InteractAlternative", throwIfNotFound: true);
-        m_Player_GameOver = m_Player.FindAction("GameOver", throwIfNotFound: true);
         m_Player_GamePaused = m_Player.FindAction("GamePaused", throwIfNotFound: true);
     }
 
@@ -293,7 +272,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PlayerMovement;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_InteractAlternative;
-    private readonly InputAction m_Player_GameOver;
     private readonly InputAction m_Player_GamePaused;
     public struct PlayerActions
     {
@@ -302,7 +280,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlayerMovement => m_Wrapper.m_Player_PlayerMovement;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @InteractAlternative => m_Wrapper.m_Player_InteractAlternative;
-        public InputAction @GameOver => m_Wrapper.m_Player_GameOver;
         public InputAction @GamePaused => m_Wrapper.m_Player_GamePaused;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -322,9 +299,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @InteractAlternative.started += instance.OnInteractAlternative;
             @InteractAlternative.performed += instance.OnInteractAlternative;
             @InteractAlternative.canceled += instance.OnInteractAlternative;
-            @GameOver.started += instance.OnGameOver;
-            @GameOver.performed += instance.OnGameOver;
-            @GameOver.canceled += instance.OnGameOver;
             @GamePaused.started += instance.OnGamePaused;
             @GamePaused.performed += instance.OnGamePaused;
             @GamePaused.canceled += instance.OnGamePaused;
@@ -341,9 +315,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @InteractAlternative.started -= instance.OnInteractAlternative;
             @InteractAlternative.performed -= instance.OnInteractAlternative;
             @InteractAlternative.canceled -= instance.OnInteractAlternative;
-            @GameOver.started -= instance.OnGameOver;
-            @GameOver.performed -= instance.OnGameOver;
-            @GameOver.canceled -= instance.OnGameOver;
             @GamePaused.started -= instance.OnGamePaused;
             @GamePaused.performed -= instance.OnGamePaused;
             @GamePaused.canceled -= instance.OnGamePaused;
@@ -369,7 +340,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlayerMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnInteractAlternative(InputAction.CallbackContext context);
-        void OnGameOver(InputAction.CallbackContext context);
         void OnGamePaused(InputAction.CallbackContext context);
     }
 }

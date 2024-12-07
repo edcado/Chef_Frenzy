@@ -11,11 +11,21 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image backGroundImage;
     [SerializeField] private TextMeshProUGUI gameOverRecipesDelivered;
     [SerializeField] private TextMeshProUGUI gameOverText;
-    [SerializeField] private UnityEngine.UI.Button button;
+    [SerializeField] private UnityEngine.UI.Button gameOverButton;
 
     private GameEnd_php gameEnd;
     private Player player;
     private string username;
+
+
+    private void Awake()
+    {
+        gameOverButton.onClick.AddListener(() =>
+        {
+            Loader.Load(Loader.Scene.MainMenu);
+        });
+    }
+
     private void Start()
     {
         KitchenGameManager.Instance.OnStateChanged += KitchenGameManager_OnStateChanged;
@@ -46,7 +56,8 @@ public class GameOverUI : MonoBehaviour
         backGroundImage.gameObject.SetActive(true);
         gameOverRecipesDelivered.gameObject.SetActive(true);    
         gameOverText.gameObject.SetActive(true);  
-        button.gameObject.SetActive(true);
+        gameOverButton.gameObject.SetActive(true);
+        gameOverButton.Select();
     }
 
     private void Hide()
@@ -55,6 +66,6 @@ public class GameOverUI : MonoBehaviour
         backGroundImage.gameObject.SetActive(false);
         gameOverRecipesDelivered.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
-        button.gameObject.SetActive(false);
+        gameOverButton.gameObject.SetActive(false);
     }
 }

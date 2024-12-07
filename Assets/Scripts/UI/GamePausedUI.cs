@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GamePausedUI : MonoBehaviour
 {
+    [SerializeField] private Button resumeButton;
+    [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button optionsButton;
     public static GamePausedUI Instance { get; private set; }   
 
@@ -14,6 +16,16 @@ public class GamePausedUI : MonoBehaviour
         optionsButton.onClick.AddListener(() =>
         {
             AudioOptionsUI.Instance.Show();
+        });
+
+        resumeButton.onClick.AddListener(() =>
+        {
+            KitchenGameManager.Instance.GamePaused();
+        });
+
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            Loader.Load(Loader.Scene.MainMenu);
         });
 
         Instance = this;    
@@ -38,6 +50,7 @@ public class GamePausedUI : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+        resumeButton.Select();
     }
 
     public void Hide()

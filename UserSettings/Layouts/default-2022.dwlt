@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 130
+  controlID: 12749
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 12594
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -168,8 +168,8 @@ MonoBehaviour:
     y: 0
     width: 907
     height: 482
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -197,8 +197,8 @@ MonoBehaviour:
     y: 482
     width: 907
     height: 457
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -224,8 +224,8 @@ MonoBehaviour:
     y: 0
     width: 270
     height: 939
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -721,14 +721,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 372.65826, y: 203.05823, z: -1.2504565}
+    m_Target: {x: 5.193863, y: 0.12925291, z: 1.1769586}
     speed: 2
-    m_Value: {x: 372.65826, y: 203.05823, z: -1.2504565}
+    m_Value: {x: 5.193863, y: 0.12925291, z: 1.1769586}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -756,17 +756,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -774,17 +774,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.043027878, y: 0.9415048, z: -0.3071112, w: -0.13190965}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.043027878, y: 0.9415048, z: -0.3071112, w: -0.13190965}
   m_Size:
-    m_Target: 138.63174
+    m_Target: 2.8126333
     speed: 2
-    m_Value: 138.63174
+    m_Value: 2.8126333
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 0.6269009
     m_SpeedNormalized: 0.31000045
@@ -863,9 +863,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9aa337b3
-    m_LastClickedID: -1288199270
-    m_ExpandedIDs: 844bead42ea3bc0164e99c1080ad916a
+    m_SelectedIDs: 4e119fa5
+    m_LastClickedID: -1516302002
+    m_ExpandedIDs: c832e58f8bd5b1af844bead42ea3bc0164e99c10db2d213180ad916a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -890,7 +890,7 @@ MonoBehaviour:
         selectedIndex: 2
         scroll: {x: 0, y: 0}
       - itemId: 403810634
-        selectedIndex: 0
+        selectedIndex: 1
         scroll: {x: 0, y: 0}
       - itemId: 1277967432
         selectedIndex: -1
@@ -899,7 +899,7 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: 1275948795
-        selectedIndex: 1
+        selectedIndex: 2
         scroll: {x: 0, y: 47.5}
       - itemId: 998472819
         selectedIndex: -1
@@ -923,10 +923,6 @@ MonoBehaviour:
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"InteractAlternative\",\n                   
       \"type\": \"Button\",\n                    \"id\": \"d93cc7c4-1919-4cb0-907c-02a1968faf05\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"GameOver\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"043ce923-478b-4326-ad4e-33b9eada80c8\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"GamePaused\",\n                   
@@ -961,16 +957,17 @@ MonoBehaviour:
       \"isPartOfComposite\": true\n                },\n                {\n                   
       \"name\": \"\",\n                    \"id\": \"891014e0-6f91-45ef-a5ae-c51b8c2682b7\",\n                   
       \"path\": \"<Gamepad>/leftStick\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"PlayerMovement\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"a0bba4b8-0953-494e-8eed-a1a3a44371b0\",\n                   
-      \"path\": \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"StickDeadzone(min=0.5)\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"PlayerMovement\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"a0bba4b8-0953-494e-8eed-a1a3a44371b0\",\n                    \"path\":
+      \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
       \"action\": \"Interact\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
       \"name\": \"\",\n                    \"id\": \"8eed8039-3e39-4e45-bc42-1e0440719abe\",\n                   
-      \"path\": \"<Gamepad>/buttonWest\",\n                    \"interactions\":
+      \"path\": \"<DualShockGamepad>/buttonWest\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"\",\n                    \"action\": \"Interact\",\n                    \"isComposite\":
       false,\n                    \"isPartOfComposite\": false\n                },\n               
@@ -980,27 +977,22 @@ MonoBehaviour:
       \"action\": \"InteractAlternative\",\n                    \"isComposite\":
       false,\n                    \"isPartOfComposite\": false\n                },\n               
       {\n                    \"name\": \"\",\n                    \"id\": \"c89e83b7-7d8b-43a3-b4a4-66849219edc4\",\n                   
-      \"path\": \"<Gamepad>/buttonSouth\",\n                    \"interactions\":
+      \"path\": \"<DualShockGamepad>/buttonSouth\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"\",\n                    \"action\": \"InteractAlternative\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
       },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"1f719622-63fd-4ee4-8f3c-4fa8c3c94f16\",\n                    \"path\":
-      \"<Keyboard>/g\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"GameOver\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"5d49a763-47b4-492d-9bd9-ae77fc48225f\",\n                   
-      \"path\": \"<Gamepad>/buttonEast\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"GameOver\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"e8dc89ec-8b0b-4807-9f8e-c388e22f2f9b\",\n                   
-      \"path\": \"<Keyboard>/p\",\n                    \"interactions\": \"\",\n                   
+      \"id\": \"e8dc89ec-8b0b-4807-9f8e-c388e22f2f9b\",\n                    \"path\":
+      \"<Keyboard>/p\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
       \"action\": \"GamePaused\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        }\n   
-      ],\n    \"controlSchemes\": []\n}"
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"e72ed8fe-2e1e-4a77-bc86-b29912617491\",\n                   
+      \"path\": \"<DualShockGamepad>/start\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"GamePaused\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      }\n            ]\n        }\n    ],\n    \"controlSchemes\": []\n}"
     m_IsDirty: 0
   m_Toolbar:
     m_IsDirty: 0
@@ -1159,9 +1151,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0cb4ffff
-      m_LastClickedID: -19444
-      m_ExpandedIDs: 389fffffd89fffff94a0ffff3ea1ffffdea1ffffaea2ffff0cb4ffffd2ddffffc4790000987a0000747b00008c7b0000ac7b0000
+      m_SelectedIDs: 1cfd0100
+      m_LastClickedID: 130332
+      m_ExpandedIDs: 2e4bfefff860feff3a87ffffaed1ffffc6ddfffffe9b0000ea9c0000ec9d0000e69e000076e701008ee701009ee70100eae70100c2fa0100cafb0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1231,7 +1223,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1239,16 +1231,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\OverCooked
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 14870000
-    m_LastClickedID: 34580
-    m_ExpandedIDs: 00000000988600009a8600009c8600009e860000a0860000fc8600000287000000ca9a3b
+    m_SelectedIDs: d0870000
+    m_LastClickedID: 34768
+    m_ExpandedIDs: 000000006a8700006c8700006e8700007087000072870000ce870000d487000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1276,7 +1268,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000988600009a8600009c8600009e860000a0860000
+    m_ExpandedIDs: 000000006a8700006c8700006e870000708700007287000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1307,18 +1299,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: OwnerNetworkAnimator
-      m_OriginalName: OwnerNetworkAnimator
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 34708
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

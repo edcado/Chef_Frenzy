@@ -10,8 +10,7 @@ public class MainMenuUI : MonoBehaviour
     
     void Start()
     {
-        playerInputs.onMainMenuLoadIn += PlayerInputs_onMainMenuLoadIn;
-        playerInputs.onMainMenuQuit += PlayerInputs_onMainMenuQuit;
+        
     }
 
     private void PlayerInputs_onMainMenuQuit(object sender, System.EventArgs e)
