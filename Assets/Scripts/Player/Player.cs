@@ -154,6 +154,10 @@ public class Player : NetworkBehaviour, IKitchenObject
             transform.position += moveDirection * moveDistance;
         }
 
+        if (!IsOwner)
+        {
+            return;
+        }
         isMoving = moveDirection != Vector3.zero;
         myanimator.SetBool("IsWalking", moveDirection != Vector3.zero);
 
