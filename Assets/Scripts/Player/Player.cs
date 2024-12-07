@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-public class Player : MonoBehaviour, IKitchenObject
+public class Player : NetworkBehaviour, IKitchenObject
 {
     //public static Player Instance { get; private set; }
 
@@ -74,6 +75,10 @@ public class Player : MonoBehaviour, IKitchenObject
 
     void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
         Movement();
         Interact();
     }

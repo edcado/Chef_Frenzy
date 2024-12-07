@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
     <Compile Include="Assets\Scripts\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\ClientNetworkTransform.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\SingleIconTemplate.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
