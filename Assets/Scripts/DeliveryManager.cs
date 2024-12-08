@@ -38,7 +38,7 @@ public class DelyveryManager : MonoBehaviour
 
     public void SpawnRecipe()
     {
-        if (waitingRecipeSOList.Count < waitingRecipesMax)
+        if (KitchenGameManager.Instance.isPlayingGame() && waitingRecipeSOList.Count < waitingRecipesMax)
         {
             RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count)];
             Debug.Log(waitingRecipeSO.recipeName);

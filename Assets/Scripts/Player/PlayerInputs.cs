@@ -14,6 +14,8 @@ public class PlayerInputs : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
 
+    public event EventHandler OnRebinBinding;
+
     public static PlayerInputs Instance { get; private set; }
 
     public enum Binding { moveUp, moveDown, moveLeft, moveRight, interact, interactAlt, pause, gamepadInteract, gamepadInteractAlt, gamepadPause }
@@ -174,6 +176,8 @@ public class PlayerInputs : MonoBehaviour
 
             PlayerPrefs.SetString(PLAYER_PREFS_BINDINGS, playerInputActions.SaveBindingOverridesAsJson());
             PlayerPrefs.Save();
+
+            OnRebinBinding?.Invoke(this, EventArgs.Empty);
         })
         .Start();
 

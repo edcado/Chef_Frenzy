@@ -9,7 +9,6 @@ public class KitchenGameManager : MonoBehaviour
     public enum States {waitingToStart, CountDown, Playing, GameOver }
     private States state;
 
-    private float waitingToStartTimer = 1f;
     private float countDownTimer = 3f;
     private float playingTimer;
     [SerializeField] private float playingTimerMax = 10f;
@@ -29,6 +28,18 @@ public class KitchenGameManager : MonoBehaviour
     private void Start()
     {
         PlayerInputs.Instance.OnGamePaused += PlayerInputs_OnGamePaused;
+        PlayerInputs.Instance.OnInteractAction += PlayerInputs_OnInteractAction;
+
+    }
+
+    private void PlayerInputs_OnInteractAction(object sender, EventArgs e)
+    {
+
+        if (state == States.waitingToStart)
+        {
+            state = States.CountDown;
+            OnStateChanged?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void PlayerInputs_OnGamePaused(object sender, EventArgs e)
@@ -45,10 +56,8 @@ public class KitchenGameManager : MonoBehaviour
         switch (state)
         {
             case States.waitingToStart:
-                waitingToStartTimer -= Time.deltaTime;
-                if (waitingToStartTimer < 0f) state = States.CountDown;
-                OnStateChanged?.Invoke(this, EventArgs.Empty);              
                 break;
+                
 
             case States.CountDown:
                 countDownTimer -= Time.deltaTime;

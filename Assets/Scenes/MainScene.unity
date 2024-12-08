@@ -6401,6 +6401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 647133644}
+  - component: {fileID: 647133645}
   m_Layer: 5
   m_Name: TutorialUI
   m_TagString: Untagged
@@ -6440,6 +6441,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &647133645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647133643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdca723cf53b2742b9345ebbd698a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyMoveUpText: {fileID: 704360901}
+  keyMoveDownText: {fileID: 110830393}
+  keyMoveLeftText: {fileID: 1489682104}
+  keyMoveRightText: {fileID: 1486888516}
+  keyInteractText: {fileID: 736235876}
+  keyInteractAltText: {fileID: 691270010}
+  keyPauseText: {fileID: 1219886309}
+  keyGamepadInteracText: {fileID: 2044500227}
+  keyGamePadInteractAltText: {fileID: 400262726}
+  keyGamepadPauseText: {fileID: 1270064944}
 --- !u!1 &660715239
 GameObject:
   m_ObjectHideFlags: 0

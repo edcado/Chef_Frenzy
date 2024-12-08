@@ -20,7 +20,7 @@ public class PlatesCounter : BaseCounter
 
         spawnPlatesTimer += Time.deltaTime;
 
-        if (spawnPlatesTimer > spawnPlatesTimeMax )
+        if (KitchenGameManager.Instance.isPlayingGame() && spawnPlatesTimer > spawnPlatesTimeMax )
         {
             spawnPlatesTimer = 0;
 

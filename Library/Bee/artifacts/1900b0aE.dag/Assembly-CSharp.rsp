@@ -408,7 +408,6 @@
 "Assets/Scripts/PlateCompleteVisual.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerInputs.cs"
-"Assets/Scripts/ProgressBarUI.cs"
 "Assets/Scripts/ResetStaticClass.cs"
 "Assets/Scripts/Scriptable Objects/AudioClipSO.cs"
 "Assets/Scripts/Scriptable Objects/BurningRecipeSO.cs"
@@ -437,7 +436,9 @@
 "Assets/Scripts/UI/LoadManager.cs"
 "Assets/Scripts/UI/MainMenuUI.cs"
 "Assets/Scripts/UI/NetcodeTestUI.cs"
+"Assets/Scripts/UI/ProgressBarUI.cs"
 "Assets/Scripts/UI/SingleIconTemplate.cs"
+"Assets/Scripts/UI/TutorialUI.cs"
 -langversion:9.0
 /deterministic
 /optimize+
