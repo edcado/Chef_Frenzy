@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Base de datos\GameEnd_php.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\Base de datos\Register_php.cs" />
+    <Compile Include="Assets\Scripts\UI\DeliverySuccesFailUI.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\OwnerNetworkAnimator.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
