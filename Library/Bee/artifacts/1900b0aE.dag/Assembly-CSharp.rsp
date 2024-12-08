@@ -437,6 +437,7 @@
 "Assets/Scripts/UI/MainMenuUI.cs"
 "Assets/Scripts/UI/NetcodeTestUI.cs"
 "Assets/Scripts/UI/ProgressBarUI.cs"
+"Assets/Scripts/UI/ShowBurnWarningUI.cs"
 "Assets/Scripts/UI/SingleIconTemplate.cs"
 "Assets/Scripts/UI/TutorialUI.cs"
 -langversion:9.0
