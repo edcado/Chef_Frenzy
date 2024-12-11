@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.Netcode;
 
-public class DelyveryManager : MonoBehaviour
+public class DelyveryManager : NetworkBehaviour
 {
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeCompleted;
@@ -28,6 +29,10 @@ public class DelyveryManager : MonoBehaviour
 
     private void Update()
     {
+        if (!IsServer)
+        {
+            return;
+        }
         spawnRecipeTimer -= Time.deltaTime;
         if (spawnRecipeTimer <= 0f)
         {
@@ -40,11 +45,18 @@ public class DelyveryManager : MonoBehaviour
     {
         if (KitchenGameManager.Instance.isPlayingGame() && waitingRecipeSOList.Count < waitingRecipesMax)
         {
-            RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count)];
-            Debug.Log(waitingRecipeSO.recipeName);
-            waitingRecipeSOList.Add(waitingRecipeSO);
-            OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
+            int waitingRecipeIndex = UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count);
+            SpawnNewWaitingRecipeCLientRpc(waitingRecipeIndex);
         }
+    }
+
+
+    [ClientRpc]
+    private void SpawnNewWaitingRecipeCLientRpc(int waitingRecipeIndex)
+    {
+        RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[waitingRecipeIndex];
+        waitingRecipeSOList.Add(waitingRecipeSO);
+        OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
     }
 
     public void DeliverRecipe(PlateKitchenObject plateKitchenObject)

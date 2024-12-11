@@ -70,7 +70,7 @@ public class KitchenGameManager : MonoBehaviour
                 break;
 
             case States.Playing:
-                DelyveryManager.Instance.SpawnRecipe();
+                
                 playingTimer -= Time.deltaTime;
                 if (playingTimer < 0f)
                     state = States.GameOver;
