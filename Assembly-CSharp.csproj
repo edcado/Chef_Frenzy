@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectListSO.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
     <Compile Include="Assets\Scripts\UI\TutorialUI.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\FollowTransform.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />

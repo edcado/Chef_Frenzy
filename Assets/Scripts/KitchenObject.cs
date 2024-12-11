@@ -9,6 +9,13 @@ public class KitchenObject : NetworkBehaviour
 
     private IKitchenObject KitchenObjectParent;
 
+    private FollowTransform followTransform;
+
+    protected virtual void Awake()
+    {
+        followTransform = GetComponent<FollowTransform>();  
+    }
+
     public KitchenObjectSO GetKitchenObjectSO()
     {
         return kitchenObjectSO;
@@ -16,23 +23,40 @@ public class KitchenObject : NetworkBehaviour
 
     public void SetKitchenObjectParent(IKitchenObject kitchenObjectParent)
     {
+        SetKitchenObjectParentServerRpc(kitchenObjectParent.GetNetWorkObject());
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SetKitchenObjectParentServerRpc(NetworkObjectReference kitchenObjectParentNetworkObjectReference)
+    {
+        SetKitchenObjectParentClientRpc(kitchenObjectParentNetworkObjectReference);
+    }
+
+
+    [ClientRpc]
+    private void SetKitchenObjectParentClientRpc(NetworkObjectReference kitchenObjectParentNetworkObjectReference)
+    {
+        kitchenObjectParentNetworkObjectReference.TryGet(out NetworkObject kitchenObjectParentNetworkObject);
+        IKitchenObject kitchenObjectparent = kitchenObjectParentNetworkObject.GetComponent<IKitchenObject>();
+
         if (this.KitchenObjectParent != null)
         {
             this.KitchenObjectParent.ClearKitchenObject();
         }
 
-        this.KitchenObjectParent = kitchenObjectParent;
+        this.KitchenObjectParent = kitchenObjectparent;
 
-        if (kitchenObjectParent.HasKitchenObject())
+        if (kitchenObjectparent.HasKitchenObject())
         {
             Debug.Log("counter has a counter already");
         }
 
-        kitchenObjectParent.SetKitchenObject(this);
+        kitchenObjectparent.SetKitchenObject(this);
 
-        //transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
-        //transform.localPosition = Vector3.zero;
+        followTransform.SetTransformTarget(kitchenObjectparent.GetKitchenObjectFollowTransform());
     }
+
+
 
     public IKitchenObject GetKitchenObjectParent()
     {

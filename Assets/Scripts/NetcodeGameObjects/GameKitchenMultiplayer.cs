@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class GameKitchenMultiplayer : MonoBehaviour
+public class GameKitchenMultiplayer : NetworkBehaviour
 {
 
     [SerializeField] private KitchenObjectListSO kitchenObjectListSO;
