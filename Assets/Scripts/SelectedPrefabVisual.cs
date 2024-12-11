@@ -9,7 +9,23 @@ public class SelectedPrefabVisual : MonoBehaviour
 
     void Start()
     {
-        //Player.Instance.OnSelectedCounterChange += Player_OnSelectedCounterChange;
+        if (Player.LocalInstance != null)
+        {
+            Player.LocalInstance.OnSelectedCounterChange += Player_OnSelectedCounterChange;
+        }
+        else
+        {
+            Player.OnSpawnAnyPlayer += Player_OnSpawnAnyPlayer;
+        }
+    }
+
+    private void Player_OnSpawnAnyPlayer(object sender, System.EventArgs e)
+    {
+        if (Player.LocalInstance != null)
+        {
+            Player.LocalInstance.OnSelectedCounterChange -= Player_OnSelectedCounterChange;
+            Player.LocalInstance.OnSelectedCounterChange += Player_OnSelectedCounterChange;
+        }
     }
 
     private void Player_OnSelectedCounterChange(object sender, Player.OnSelectedCounterChangeEventArgs e)

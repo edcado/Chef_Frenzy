@@ -9,7 +9,15 @@ using TMPro;
 
 public class Player : NetworkBehaviour, IKitchenObject
 {
-    //public static Player Instance { get; private set; }
+    public static Player LocalInstance { get; private set; }
+
+    public static event EventHandler OnSpawnAnyPlayer;
+    public static event EventHandler OnAnyPickUpSomething;
+
+    public static void ResetStaticData()
+    {
+        OnSpawnAnyPlayer = null;
+    }
 
     public event EventHandler<OnSelectedCounterChangeEventArgs> OnSelectedCounterChange;
     public event EventHandler OnPickUpSomething;
@@ -34,11 +42,16 @@ public class Player : NetworkBehaviour, IKitchenObject
     public bool isMoving;
 
     public string gameName { get; private set; }
-    private void Awake()
-    {
-        //Instance = this;
-    }
 
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            LocalInstance = this;
+        }
+
+        OnSpawnAnyPlayer?.Invoke(this, EventArgs.Empty);    
+    }
     private void Start()
     {
         
@@ -191,6 +204,7 @@ public class Player : NetworkBehaviour, IKitchenObject
         if (kitchenObject != null)
         {
             OnPickUpSomething?.Invoke(this, EventArgs.Empty);
+            OnAnyPickUpSomething?.Invoke(this, EventArgs.Empty);
         }
     }
 
