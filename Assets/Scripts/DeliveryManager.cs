@@ -30,7 +30,6 @@ public class DelyveryManager : NetworkBehaviour
 
     private void Update()
     {
-        SpawnRecipe();
         if (!IsServer)
         {
             return;
