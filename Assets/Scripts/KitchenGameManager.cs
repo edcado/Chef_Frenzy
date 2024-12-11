@@ -16,6 +16,7 @@ public class KitchenGameManager : MonoBehaviour
     public event EventHandler OnStateChanged;
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameUnPaused;
+    public event EventHandler OnPlayingGame;
 
     private bool isGamePaused;
 
@@ -70,7 +71,7 @@ public class KitchenGameManager : MonoBehaviour
                 break;
 
             case States.Playing:
-                
+                OnPlayingGame?.Invoke(this, EventArgs.Empty);   
                 playingTimer -= Time.deltaTime;
                 if (playingTimer < 0f)
                     state = States.GameOver;

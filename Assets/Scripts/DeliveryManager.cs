@@ -27,8 +27,10 @@ public class DelyveryManager : NetworkBehaviour
         waitingRecipeSOList = new List<RecipeSO>();
     }
 
+
     private void Update()
     {
+        SpawnRecipe();
         if (!IsServer)
         {
             return;
@@ -89,33 +91,55 @@ public class DelyveryManager : NetworkBehaviour
 
                 if (plateContentsMatchesRecipe)
                 {
-                    if (waitingRecipeSOList.Count == 0)
-                    {
-                        SpawnRecipe();
-                        spawnRecipeTimer = spawnRecipeTimerMax;
-                    }
-
-                    string plateDelivered = waitingRecipeSOList[i].recipeName;
-                    Debug.Log("Se entrego " + plateDelivered );
-                    succesfulRecipesAmount++;
-
-                    OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
-                    waitingRecipeSOList.RemoveAt(i);
-
-                    SpawnRecipe();
-                    spawnRecipeTimerMax = 0;
-
-                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty); 
-
+                    MatchDeliveryManagerCorrectUIServerRpc(i);
                     return;
-
                     //Introducir Netcode : Quien ha entregado el plato?
                 }
             }
         }
 
-        Debug.Log("No se ha entregado bien");
+        MatchDeliveryManagerInCorrectUIServerRpc();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void MatchDeliveryManagerInCorrectUIServerRpc()
+    {
+        MatchDeliveryManagerIncorrectUIClientRpc();
+    }
+
+    [ClientRpc]
+    private void MatchDeliveryManagerIncorrectUIClientRpc()
+    {
         OnRecipeFail?.Invoke(this, EventArgs.Empty);
+    }
+
+
+
+
+    [ServerRpc(RequireOwnership = false)]
+    private void MatchDeliveryManagerCorrectUIServerRpc(int waitingRecipeSOListIndex)
+    {
+        MatchDeliveryManagerUICorrectClientRpc(waitingRecipeSOListIndex);
+    }
+
+    [ClientRpc] 
+    private void MatchDeliveryManagerUICorrectClientRpc(int waitingRecipeSOListIndex)
+    {
+        if (waitingRecipeSOList.Count == 0)
+        {
+            SpawnRecipe();
+            spawnRecipeTimer = spawnRecipeTimerMax;
+        }
+
+
+        succesfulRecipesAmount++;
+
+        SpawnRecipe();
+        spawnRecipeTimerMax = 0;
+
+        waitingRecipeSOList.RemoveAt(waitingRecipeSOListIndex);
+        OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+        OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> WaitingRecipeSOList()
