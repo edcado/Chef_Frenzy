@@ -39,11 +39,7 @@ public class BaseCounter : NetworkBehaviour, IKitchenObject
     public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
-        if (kitchenObject != null)
-        {
-            OnDropSomething?.Invoke(this, EventArgs.Empty);
-
-        }
+        OnDropSomething?.Invoke(this, EventArgs.Empty);
     }
 
     public KitchenObject GetKitchenObject()
