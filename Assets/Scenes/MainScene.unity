@@ -15380,6 +15380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf23e92f23651b148ad4778a17249af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kitchenObjectSOList: {fileID: 11400000, guid: af111aae69cdda3488202d48c3b485de,
+    type: 2}
 --- !u!1 &1676994481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8491224477922897590, guid: 2b44b6f5d7e188a4e924ac322cc79c6f,

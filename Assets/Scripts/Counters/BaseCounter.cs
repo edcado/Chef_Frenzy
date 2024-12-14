@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class BaseCounter : MonoBehaviour, IKitchenObject
@@ -54,5 +55,10 @@ public class BaseCounter : MonoBehaviour, IKitchenObject
     public bool HasKitchenObject()
     {
         return kitchenObject != null;
+    }
+
+    public NetworkObject GetNetworkObject()
+    {
+        return null;
     }
 }

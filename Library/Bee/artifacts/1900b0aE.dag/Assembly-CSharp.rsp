@@ -415,6 +415,7 @@
 "Assets/Scripts/Scriptable Objects/CuttingObjectsSO.cs"
 "Assets/Scripts/Scriptable Objects/FryingObjectSO.cs"
 "Assets/Scripts/Scriptable Objects/KitchenObjectSO.cs"
+"Assets/Scripts/Scriptable Objects/KitchenObjectSOList.cs"
 "Assets/Scripts/Scriptable Objects/RecipeSO.cs"
 "Assets/Scripts/Scriptable Objects/ReciveListSO.cs"
 "Assets/Scripts/SelectedPrefabVisual.cs"

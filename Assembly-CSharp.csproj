@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\NetcodeGameObjects\ClientNetworkTransform.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\SingleIconTemplate.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSOList.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
