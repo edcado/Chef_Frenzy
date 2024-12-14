@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2E923D3A-380C-C61A-D344-0823E92914A3}</ProjectGuid>
+    <ProjectGuid>{CEAB5F84-A0CF-266D-4206-65005296DD73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\KitchenGameMultiplayer.cs" />
     <Compile Include="Assets\Scripts\Counters\Plates.cs" />
     <Compile Include="Assets\Scripts\ResetStaticClass.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />

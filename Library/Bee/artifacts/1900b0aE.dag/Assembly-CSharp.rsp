@@ -404,6 +404,7 @@
 "Assets/Scripts/KitchenGameManager.cs"
 "Assets/Scripts/KitchenObject.cs"
 "Assets/Scripts/NetcodeGameObjects/ClientNetworkTransform.cs"
+"Assets/Scripts/NetcodeGameObjects/KitchenGameMultiplayer.cs"
 "Assets/Scripts/NetcodeGameObjects/OwnerNetworkAnimator.cs"
 "Assets/Scripts/PlateCompleteVisual.cs"
 "Assets/Scripts/Player/Player.cs"
