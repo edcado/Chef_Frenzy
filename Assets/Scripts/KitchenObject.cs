@@ -9,6 +9,13 @@ public class KitchenObject : NetworkBehaviour
 
     private IKitchenObject KitchenObjectParent;
 
+    private FollowTransform followTransform;
+
+    private void Awake()
+    {
+        followTransform = GetComponent<FollowTransform>();
+    }
+
     public KitchenObjectSO GetKitchenObjectSO()
     {
         return kitchenObjectSO;
@@ -16,6 +23,23 @@ public class KitchenObject : NetworkBehaviour
 
     public void SetKitchenObjectParent(IKitchenObject kitchenObjectParent)
     {
+        SetKitchenObjectServerRpc(kitchenObjectParent.GetNetworkObject());
+    }
+
+
+    [ServerRpc (RequireOwnership = false)]
+    private void SetKitchenObjectServerRpc(NetworkObjectReference kitchenObjectParentNetworkObjectReference)
+    {
+        SetKitchenObjectClientRpc(kitchenObjectParentNetworkObjectReference);
+    }
+
+
+    [ClientRpc]
+    private void SetKitchenObjectClientRpc(NetworkObjectReference kitchenObjectParentNetworkObjectReference)
+    {
+        kitchenObjectParentNetworkObjectReference.TryGet(out NetworkObject kitchenObjectParentNetworkObject);
+        IKitchenObject kitchenObjectParent = kitchenObjectParentNetworkObject.GetComponent<IKitchenObject>();
+
         if (this.KitchenObjectParent != null)
         {
             this.KitchenObjectParent.ClearKitchenObject();
@@ -30,9 +54,11 @@ public class KitchenObject : NetworkBehaviour
 
         kitchenObjectParent.SetKitchenObject(this);
 
-        //transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
-        //transform.localPosition = Vector3.zero;
+
+        followTransform.SetTargetTransform(kitchenObjectParent.GetKitchenObjectFollowTransform());
     }
+
+
 
     public IKitchenObject GetKitchenObjectParent()
     {
