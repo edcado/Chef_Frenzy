@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7478391958859588083}
   - component: {fileID: 6814596981042659746}
   - component: {fileID: 2145264444563101649}
-  - component: {fileID: -4757962791473127428}
   m_Layer: 0
   m_Name: Meat uncook
   m_TagString: Untagged
@@ -64,18 +63,6 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &-4757962791473127428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796740095093383221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360c84446d86ebd41a6ad32d871b2ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5898800105610158115
 PrefabInstance:
   m_ObjectHideFlags: 0
