@@ -13,7 +13,7 @@ public class PlatesCounter : BaseCounter
     private float spawnPlatesTimer;
     private float spawnPlatesTimeMax = 4f;
 
-    private NetworkVariable<int> spawnPlatesAmount = new NetworkVariable<int>(0);
+    public NetworkVariable<int> spawnPlatesAmount = new NetworkVariable<int>(0);
 
     private int spawnPlatesAmountMax = 4;
 
