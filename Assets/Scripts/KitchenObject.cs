@@ -58,8 +58,7 @@ public class KitchenObject : NetworkBehaviour
         followTransform.SetTargetTransform(kitchenObjectParent.GetKitchenObjectFollowTransform());
     }
 
-    public IKitchenObject
-        GetKitchenObjectParent()
+    public IKitchenObject GetKitchenObjectParent()
     {
         return kitchenObjectParent;
     }
@@ -95,6 +94,6 @@ public class KitchenObject : NetworkBehaviour
         KitchenGameMultiplayer.Instance.SpawnKitchenObject(kitchenObjectSO, kitchenObjectParent);
     }
 
-
+    
 
 }
