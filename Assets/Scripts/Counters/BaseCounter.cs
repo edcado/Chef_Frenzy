@@ -67,5 +67,4 @@ public class BaseCounter : NetworkBehaviour, IKitchenObject
     {
         return NetworkObject;
     }
-
 }

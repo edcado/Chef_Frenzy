@@ -165,7 +165,7 @@ public class ImageControl : MonoBehaviour
 
             if (e.selectedCounter is PlatesCounter platesCounter)
             {
-               // if (!player.HasKitchenObject() && platesCounter.spawnPlatesAmount >= 1)
+                //if (!player.HasKitchenObject() && platesCounter.spawnPlatesAmount >= 1)
                    // ShowImage1();
             }
 
