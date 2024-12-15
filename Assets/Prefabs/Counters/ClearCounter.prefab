@@ -328,6 +328,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7613401389758185270}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3122692209101446834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4827353287241982340, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7613401389758185270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5462389653409829403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2478794311853108525, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
@@ -346,5 +352,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5650684d35c51ba49a4495a38b2f185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counterTopPoint: {fileID: 0}
+  counterTopPoint: {fileID: 3122692209101446834}
   kitchenObjectSO: {fileID: 11400000, guid: 39c83ffd1e92a0149a9e848d397fbc2c, type: 2}
