@@ -6,40 +6,46 @@ using UnityEngine;
 
 public class BaseCounter : NetworkBehaviour, IKitchenObject
 {
-    [SerializeField] Transform spawnPoint;
-    private KitchenObject kitchenObject;
 
-    public static event EventHandler OnDropSomething;
+
+    public static event EventHandler OnAnyObjectPlacedHere;
 
     public static void ResetStaticData()
     {
-        OnDropSomething = null;
+        OnAnyObjectPlacedHere = null;
     }
 
-    private void Start()
-    {
-        
-      
-    }
+
+    [SerializeField] private Transform counterTopPoint;
+
+
+    private KitchenObject kitchenObject;
+
+
     public virtual void Interact(Player player)
     {
-
+        Debug.LogError("BaseCounter.Interact();");
     }
 
     public virtual void InteractAlternate(Player player)
     {
-
+        //Debug.LogError("BaseCounter.InteractAlternate();");
     }
+
 
     public Transform GetKitchenObjectFollowTransform()
     {
-        return spawnPoint;
+        return counterTopPoint;
     }
 
     public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
-        OnDropSomething?.Invoke(this, EventArgs.Empty);
+
+        if (kitchenObject != null)
+        {
+            OnAnyObjectPlacedHere?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public KitchenObject GetKitchenObject()

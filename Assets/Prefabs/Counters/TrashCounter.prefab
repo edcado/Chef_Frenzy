@@ -212,6 +212,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8293927978111228088, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951099334
+      objectReference: {fileID: 0}
     - target: {fileID: 2478794311853108525, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
         type: 3}
       propertyPath: m_Name
@@ -314,4 +319,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f604befae42b0db4a87fccd64fbeb9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 4040754447167296778}
+  counterTopPoint: {fileID: 4040754447167296778}
