@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2063258895422549554, guid: e89295863b1612240a5a8ce3cc07d16e,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 951099334
+      objectReference: {fileID: 0}
     - target: {fileID: 3938328416807475422, guid: e89295863b1612240a5a8ce3cc07d16e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,6 +79,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 77b28124b8bda494381c80bd5aa42c22,
         type: 3}
+    - target: {fileID: 4301695492965701993, guid: e89295863b1612240a5a8ce3cc07d16e,
+        type: 3}
+      propertyPath: counterTopPoint
+      value: 
+      objectReference: {fileID: 2934552840316019629}
     - target: {fileID: 4301695492965701993, guid: e89295863b1612240a5a8ce3cc07d16e,
         type: 3}
       propertyPath: kitchenObjectSO
@@ -96,3 +106,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89295863b1612240a5a8ce3cc07d16e, type: 3}
+--- !u!4 &2934552840316019629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3938328416807475422, guid: e89295863b1612240a5a8ce3cc07d16e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2170278270233525107}
+  m_PrefabAsset: {fileID: 0}

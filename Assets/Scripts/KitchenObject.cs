@@ -66,12 +66,10 @@ public class KitchenObject : NetworkBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
-    }
-
-    public void ClearKitchenObjectOnParent()
-    {
         kitchenObjectParent.ClearKitchenObject();
     }
+
+
 
     public bool TryGetPlate(out PlateKitchenObject plateKitchenObject)
     {
