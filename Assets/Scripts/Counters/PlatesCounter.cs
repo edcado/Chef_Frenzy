@@ -13,7 +13,7 @@ public class PlatesCounter : BaseCounter
     private float spawnPlatesTimer;
     private float spawnPlatesTimeMax = 4f;
 
-    private NetworkVariable<int> spawnPlatesAmount = new NetworkVariable<int>(0);
+    private float spawnPlatesAmount;
 
     private int spawnPlatesAmountMax = 4;
 
@@ -26,12 +26,11 @@ public class PlatesCounter : BaseCounter
         }
 
         spawnPlatesTimer += Time.deltaTime;
-
-        if (KitchenGameManager.Instance.isPlayingGame() && spawnPlatesTimer > spawnPlatesTimeMax)
+        if (spawnPlatesTimer > spawnPlatesTimeMax)
         {
             spawnPlatesTimer = 0;
 
-            if (spawnPlatesAmount.Value < spawnPlatesAmountMax)
+            if (KitchenGameManager.Instance.isPlayingGame() && spawnPlatesAmount < spawnPlatesAmountMax)
             {
                 SpawnPlateServerRpc();
             }
@@ -41,40 +40,43 @@ public class PlatesCounter : BaseCounter
     [ServerRpc]
     private void SpawnPlateServerRpc()
     {
-        spawnPlatesAmount.Value++;
-        SpawnPlatesClientRpc(); // Actualiza visualmente para todos los clientes.
+        SpawnPlateClientRpc();
     }
 
     [ClientRpc]
-    private void SpawnPlatesClientRpc()
+    private void SpawnPlateClientRpc()
     {
+        spawnPlatesAmount++;
         OnPlateSpawned?.Invoke(this, EventArgs.Empty);
     }
 
     public override void Interact(Player player)
     {
-        if (!HasKitchenObject() && !player.HasKitchenObject())
+        if (!player.HasKitchenObject())
         {
-            if (spawnPlatesAmount.Value > 0)
+            if (spawnPlatesAmount > 0)
             {
                 KitchenObject.SpawnKitchenObject(plateKitchenObjectSO, player);
-                InteractServerRpc();
+                InteractLogicServerRpc();
             }
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void InteractServerRpc()
+    private void InteractLogicServerRpc()
     {
-        spawnPlatesAmount.Value--;
-        InteractClientRpc();
+        InteractLogicClientRpc();
     }
 
     [ClientRpc]
-    private void InteractClientRpc()
+    private void InteractLogicClientRpc()
     {
+        spawnPlatesAmount--;
         OnPlateRemove?.Invoke(this, EventArgs.Empty);
+
     }
+
+
 }
 
 
