@@ -727,9 +727,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.339139, y: -3.1930676, z: -6.210949}
+    m_Target: {x: -1.1632099, y: -0.13520908, z: 2.5518742}
     speed: 2
-    m_Value: {x: -3.339139, y: -3.1930676, z: -6.210949}
+    m_Value: {x: -1.1632099, y: -0.13520908, z: 2.5518742}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -775,9 +775,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.039330114, y: 0.93369555, z: -0.33903974, w: -0.10833945}
+    m_Target: {x: 0.2780151, y: 0.14968416, z: -0.043893017, w: 0.94784087}
     speed: 2
-    m_Value: {x: -0.03932973, y: 0.93368644, z: -0.33903643, w: -0.10833839}
+    m_Value: {x: 0.27801138, y: 0.14968216, z: -0.043892432, w: 0.94782823}
   m_Size:
     m_Target: 9.294013
     speed: 2
@@ -799,7 +799,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.039330114, y: 0.93369555, z: -0.33903974, w: -0.10833945}
+  m_LastSceneViewRotation: {x: 0.015070062, y: -0.9631475, z: 0.055261362, w: 0.26285186}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -1192,7 +1192,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c6a6ffff7ca7ffff84aaffff34abffff42b3ffff9acfffff5ed0ffff66d3ffff16d4ffff28dcffff0afbffff
+      m_ExpandedIDs: 384bffffee4bfffffe4effffb84fffffd057ffffde9effffa29fffffaaa2ffff5aa3ffff6aabffffded6ffff94d7ffffa4daffff5edbffff78e3ffff0afbffff42ca000016cb000044d00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: CLEARc
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -1264,7 +1264,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Prefabs/Counters
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: CLEARc
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
@@ -1282,18 +1282,18 @@ MonoBehaviour:
     m_ExpandedIDs: 000000003a8400003c8400003e84000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Kitchen
+      m_OriginalName: Kitchen
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 33924
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 

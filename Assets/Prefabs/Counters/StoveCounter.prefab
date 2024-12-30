@@ -177,7 +177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.322}
+  m_AnchoredPosition: {x: 0.122, y: 0.322}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1901694904265890629
@@ -780,8 +780,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e02a61786ac43df438f1ee7ed4fda451, type: 2}
   burnedRecipeSOArray:
   - {fileID: 11400000, guid: 3af640f5d2ac4d34e8239475dc912ac0, type: 2}
-  fryingTimer: 0
-  burnedTimer: 0
+  fryingTimer:
+    m_InternalValue: 0
+  burnedTimer:
+    m_InternalValue: 0
 --- !u!4 &5454581136827339423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8680427705883838064, guid: 84459f500b9dfb6428e4d32cdbae0d1e,
