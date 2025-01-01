@@ -52,8 +52,24 @@ public class Player : NetworkBehaviour, IKitchenObject
             LocalInstance = this;
         }
         transform.position = spawnPositionList[(int)OwnerClientId];
-        OnSpawnAnyPlayer?.Invoke(this, EventArgs.Empty);    
+        OnSpawnAnyPlayer?.Invoke(this, EventArgs.Empty);
+
+        if (IsServer)
+        {
+            NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
+        }
+
+
     }
+
+    private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
+    {
+        if (clientId == OwnerClientId && HasKitchenObject())
+        {
+            KitchenObject.DestroyKitchenObject(GetKitchenObject());
+        }
+    }
+
     private void Start()
     {
         

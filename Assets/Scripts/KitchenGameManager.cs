@@ -144,7 +144,7 @@ public class KitchenGameManager : NetworkBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  
             OnGamePaused?.Invoke(this, EventArgs.Empty);
-            Time.timeScale = 0f;
+            
         }
         if (!isGamePaused)
         {

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />
     <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounterVisual.cs" />
+    <Compile Include="Assets\Scripts\UI\HostDisconnected.cs" />
     <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
