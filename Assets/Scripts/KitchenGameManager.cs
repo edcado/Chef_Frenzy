@@ -163,6 +163,11 @@ public class KitchenGameManager : NetworkBehaviour
         return state.Value == States.CountDown;
     }
 
+    public bool isWaitingToStart()
+    {
+        return state.Value == States.waitingToStart;
+    }
+
     public bool PlayerLocalReady()
     {
         return localPlayerReady;
