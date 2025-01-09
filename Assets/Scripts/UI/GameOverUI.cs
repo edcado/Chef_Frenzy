@@ -18,7 +18,6 @@ public class GameOverUI : MonoBehaviour
     private Player player;
     private string username;
 
-
     private void Awake()
     {
         gameOverButton.onClick.AddListener(() =>
@@ -34,30 +33,32 @@ public class GameOverUI : MonoBehaviour
         Hide();
     }
 
-   
-
     private void KitchenGameManager_OnStateChanged(object sender, System.EventArgs e)
     {
         if (KitchenGameManager.Instance.isGameOver())
         {
             Show();
-            recipesDeliveredNumber.text = Mathf.Ceil(DelyveryManager.Instance.GetSuccesfulRecipesAmount()).ToString();
+
+            // Obtener las recetas entregadas por el cliente actual
+            ulong clientId = NetworkManager.Singleton.LocalClientId;
+            int recipesDelivered = DelyveryManager.Instance.GetPlayerSuccessfulRecipes(clientId);
+
+            recipesDeliveredNumber.text = recipesDelivered.ToString();
+
             username = PlayerPrefs.GetString("Username", username);
-            //gameEnd.GameEnd(username, recipesDeliveredNumber.);
         }
         else
         {
             Hide();
         }
-
     }
 
     private void Show()
     {
         recipesDeliveredNumber.gameObject.SetActive(true);
         backGroundImage.gameObject.SetActive(true);
-        gameOverRecipesDelivered.gameObject.SetActive(true);    
-        gameOverText.gameObject.SetActive(true);  
+        gameOverRecipesDelivered.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
         gameOverButton.gameObject.SetActive(true);
         gameOverButton.Select();
     }

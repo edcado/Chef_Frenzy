@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68383e56c10efde46bcf9d9eddd54448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playingTimerMax: 5
+  playingTimerMax: 40
   playerPrefab: {fileID: 5989837023003277785, guid: 3eb35498e0144de47a93417f25eb7428,
     type: 3}
 --- !u!4 &151591298
@@ -2046,7 +2046,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reciveListSO: {fileID: 11400000, guid: bbe85662e3a1b9745abb68f1c63ac6c5, type: 2}
-  succesfulRecipesAmount: 0
 --- !u!4 &157733601
 Transform:
   m_ObjectHideFlags: 0

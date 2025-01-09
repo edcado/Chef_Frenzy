@@ -13,13 +13,13 @@ public class DelyveryManager : NetworkBehaviour
 
     [SerializeField] private ReciveListSO reciveListSO;
     private List<RecipeSO> waitingRecipeSOList;
-    public static DelyveryManager Instance { get; private set;  }
+    public static DelyveryManager Instance { get; private set; }
 
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipesMax = 4;
 
-    public int succesfulRecipesAmount;
+    private Dictionary<ulong, int> playerSuccessfulRecipes = new Dictionary<ulong, int>();
 
     private void Awake()
     {
@@ -27,13 +27,13 @@ public class DelyveryManager : NetworkBehaviour
         waitingRecipeSOList = new List<RecipeSO>();
     }
 
-
     private void Update()
     {
         if (!IsServer)
         {
             return;
         }
+
         spawnRecipeTimer -= Time.deltaTime;
         if (spawnRecipeTimer <= 0f)
         {
@@ -47,13 +47,12 @@ public class DelyveryManager : NetworkBehaviour
         if (KitchenGameManager.Instance.isPlayingGame() && waitingRecipeSOList.Count < waitingRecipesMax)
         {
             int waitingRecipeIndex = UnityEngine.Random.Range(0, reciveListSO.recipeSOList.Count);
-            SpawnNewWaitingRecipeCLientRpc(waitingRecipeIndex);
+            SpawnNewWaitingRecipeClientRpc(waitingRecipeIndex);
         }
     }
 
-
     [ClientRpc]
-    private void SpawnNewWaitingRecipeCLientRpc(int waitingRecipeIndex)
+    private void SpawnNewWaitingRecipeClientRpc(int waitingRecipeIndex)
     {
         RecipeSO waitingRecipeSO = reciveListSO.recipeSOList[waitingRecipeIndex];
         waitingRecipeSOList.Add(waitingRecipeSO);
@@ -69,39 +68,73 @@ public class DelyveryManager : NetworkBehaviour
             if (waitingRecipeSO.kitchenObjectSOList.Count == plateKitchenObject.GetKitchenSOList().Count)
             {
                 bool plateContentsMatchesRecipe = true;
-                foreach(KitchenObjectSO recipeKitchenObjectSO in waitingRecipeSO.kitchenObjectSOList)
+                foreach (KitchenObjectSO recipeKitchenObjectSO in waitingRecipeSO.kitchenObjectSOList)
                 {
                     bool ingredientFound = false;
                     foreach (KitchenObjectSO plateKitchenObjectSO in plateKitchenObject.GetKitchenSOList())
                     {
                         if (plateKitchenObjectSO == recipeKitchenObjectSO)
                         {
-                            //Coinciden el plato entregado con el plato requerido
                             ingredientFound = true;
                             break;
                         }
                     }
                     if (!ingredientFound)
                     {
-                        //No se encontro el ingrediente en el plato proporcionado
                         plateContentsMatchesRecipe = false;
                     }
                 }
 
                 if (plateContentsMatchesRecipe)
                 {
-                    MatchDeliveryManagerCorrectUIServerRpc(i);
+                    HandleRecipeDeliverySuccessServerRpc(i);
                     return;
-                    //Introducir Netcode : Quien ha entregado el plato?
                 }
             }
         }
 
-        MatchDeliveryManagerInCorrectUIServerRpc();
+        MatchDeliveryManagerIncorrectUIServerRpc();
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void MatchDeliveryManagerInCorrectUIServerRpc()
+    private void HandleRecipeDeliverySuccessServerRpc(int waitingRecipeSOListIndex, ServerRpcParams serverRpcParams = default)
+    {
+        ulong clientId = serverRpcParams.Receive.SenderClientId;
+
+        if (!playerSuccessfulRecipes.ContainsKey(clientId))
+        {
+            playerSuccessfulRecipes[clientId] = 0;
+        }
+
+        playerSuccessfulRecipes[clientId]++;
+
+        // Notificar al cliente correspondiente de su progreso
+        ClientRpcParams clientRpcParams = new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams
+            {
+                TargetClientIds = new[] { clientId }
+            }
+        };
+
+        UpdateClientSuccessfulRecipesClientRpc(clientId, playerSuccessfulRecipes[clientId], clientRpcParams);
+
+        waitingRecipeSOList.RemoveAt(waitingRecipeSOListIndex);
+    }
+
+    [ClientRpc]
+    private void UpdateClientSuccessfulRecipesClientRpc(ulong clientId, int successfulRecipes, ClientRpcParams clientRpcParams = default)
+    {
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            // Actualiza el número de recetas exitosas solo para el cliente correspondiente
+            playerSuccessfulRecipes[clientId] = successfulRecipes;
+            OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void MatchDeliveryManagerIncorrectUIServerRpc()
     {
         MatchDeliveryManagerIncorrectUIClientRpc();
     }
@@ -112,43 +145,13 @@ public class DelyveryManager : NetworkBehaviour
         OnRecipeFail?.Invoke(this, EventArgs.Empty);
     }
 
-
-
-
-    [ServerRpc(RequireOwnership = false)]
-    private void MatchDeliveryManagerCorrectUIServerRpc(int waitingRecipeSOListIndex)
-    {
-        MatchDeliveryManagerUICorrectClientRpc(waitingRecipeSOListIndex);
-    }
-
-    [ClientRpc] 
-    private void MatchDeliveryManagerUICorrectClientRpc(int waitingRecipeSOListIndex)
-    {
-        if (waitingRecipeSOList.Count == 0)
-        {
-            SpawnRecipe();
-            spawnRecipeTimer = spawnRecipeTimerMax;
-        }
-
-
-        succesfulRecipesAmount++;
-
-        SpawnRecipe();
-        spawnRecipeTimerMax = 0;
-
-        waitingRecipeSOList.RemoveAt(waitingRecipeSOListIndex);
-        OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
-        OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
-    }
-
     public List<RecipeSO> WaitingRecipeSOList()
     {
         return waitingRecipeSOList;
     }
 
-    public int GetSuccesfulRecipesAmount()
+    public int GetPlayerSuccessfulRecipes(ulong clientId)
     {
-        return succesfulRecipesAmount;
+        return playerSuccessfulRecipes.ContainsKey(clientId) ? playerSuccessfulRecipes[clientId] : 0;
     }
-
 }
