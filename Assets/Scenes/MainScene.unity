@@ -8722,6 +8722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 845719445}
+  - component: {fileID: 845719447}
   - component: {fileID: 845719446}
   m_Layer: 5
   m_Name: HostDisconnectedUI
@@ -8764,7 +8765,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc252d0c806c5984da89fcdbd0db6e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backTomenuButton: {fileID: 773190233}
+--- !u!114 &845719447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845719444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc5e57703912c546848b193a1a0bad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &849745764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2714775388140741146, guid: 4c8df6dfdb77bb34fa183523893f0f71,
@@ -13859,7 +13871,7 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 1
+    ConnectionApproval: 0
     ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30
@@ -16195,6 +16207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1688369854}
   - component: {fileID: 1688369855}
+  - component: {fileID: 1688369856}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -16243,6 +16256,18 @@ MonoBehaviour:
   gameOverRecipesDelivered: {fileID: 147390012}
   gameOverText: {fileID: 39600390}
   gameOverButton: {fileID: 1196760819}
+--- !u!114 &1688369856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688369853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc5e57703912c546848b193a1a0bad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1715156170
 PrefabInstance:
   m_ObjectHideFlags: 0
