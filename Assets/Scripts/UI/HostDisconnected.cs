@@ -2,9 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HostDisconnected : MonoBehaviour
 {
+    [SerializeField] private Button backTomenuButton;
+
+    private void Awake()
+    {
+        backTomenuButton.onClick.AddListener(() =>
+        {
+            NetworkManager.Singleton.Shutdown();
+            Loader.Load(Loader.Scene.MainMenu);
+        });
+    }
+
     // Start is called before the first frame update
     void Start()
     {
