@@ -2,38 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] PlayerInputs playerInputs;
-    private bool canStart = false;
-    
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button quitButton;
 
-    private void PlayerInputs_onMainMenuQuit(object sender, System.EventArgs e)
+    private void Awake()
     {
-        QuitGame();
-    }
-
-    private void PlayerInputs_onMainMenuLoadIn(object sender, System.EventArgs e)
-    {
-        LoadPlayScene();
-    }
-
-    public void LoadPlayScene()
-    {
-        if (!canStart)
+        playButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.MainScene);
-            canStart = true;
-        }
+            Loader.Load(Loader.Scene.Lobby);
+        });
+        quitButton.onClick.AddListener(() =>
+        {
+            Application.Quit();
+        });
+
+        Time.timeScale = 1.0f;
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }

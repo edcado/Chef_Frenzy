@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\TestingCharacterSelected.cs" />
     <Compile Include="Assets\Scripts\Counters\DeliveryCounter.cs" />
     <Compile Include="Assets\Scripts\SelectedPrefabVisual.cs" />
     <Compile Include="Assets\Inputs\PlayerInputActions.cs" />
@@ -81,12 +82,14 @@
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\KitchenGameMultiplayer.cs" />
     <Compile Include="Assets\Scripts\Counters\Plates.cs" />
+    <Compile Include="Assets\Scripts\CleanUpMainMenu.cs" />
     <Compile Include="Assets\Scripts\ResetStaticClass.cs" />
     <Compile Include="Assets\Scripts\Counters\PlateKitchenObject.cs" />
     <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\UI\HostDisconnected.cs" />
     <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
+    <Compile Include="Assets\Scripts\UI\TestingCharacterSelectedUI.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\UI\AudioOptionsUI.cs" />
@@ -96,11 +99,14 @@
     <Compile Include="Assets\Scripts\UI\TutorialUI.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\FollowTransform.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
+    <Compile Include="Assets\Scripts\UI\ConnectingUI.cs" />
+    <Compile Include="Assets\Scripts\UI\DisconnectionGameMessage.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\KitchenGameManager.cs" />
     <Compile Include="Assets\Scripts\Base de datos\GameEnd_php.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
+    <Compile Include="Assets\Scripts\UI\TestingLobbyUI.cs" />
     <Compile Include="Assets\Scripts\Base de datos\Register_php.cs" />
     <Compile Include="Assets\Scripts\UI\DeliverySuccesFailUI.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\CuttingObjectsSO.cs" />

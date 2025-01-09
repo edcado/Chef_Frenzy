@@ -18,6 +18,8 @@ public class KitchenGameManager : NetworkBehaviour
     private NetworkVariable<float> playingTimer = new NetworkVariable<float>(0f);
     [SerializeField] private float playingTimerMax = 10f;
 
+    [SerializeField] private Transform playerPrefab;
+
     private bool localPlayerReady = false;
 
     public event EventHandler OnStateChanged;
@@ -46,11 +48,27 @@ public class KitchenGameManager : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         state.OnValueChanged += State_OnValueChanged;
+        if (IsServer)
+        {
+            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += SceneManager_OnLoadEventCompleted;
+        }
     }
 
     private void State_OnValueChanged(States previousValue, States newValue)
     {
         OnStateChanged?.Invoke(this, EventArgs.Empty);
+        
+    }
+
+    private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+    {
+        foreach (ulong ClientId in NetworkManager.Singleton.ConnectedClientsIds)
+        {
+            Debug.Log("SpawnClients");
+            Transform playerTransform = Instantiate(playerPrefab);
+            NetworkObject networkObject = playerTransform.GetComponent<NetworkObject>();
+            networkObject.SpawnAsPlayerObject(ClientId);
+        }
     }
 
     private void PlayerInputs_OnInteractAction(object sender, EventArgs e)
