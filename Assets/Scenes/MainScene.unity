@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68383e56c10efde46bcf9d9eddd54448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playingTimerMax: 40
+  playingTimerMax: 60
   playerPrefab: {fileID: 5989837023003277785, guid: 3eb35498e0144de47a93417f25eb7428,
     type: 3}
 --- !u!4 &151591298

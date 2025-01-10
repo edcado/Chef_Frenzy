@@ -119,7 +119,11 @@ public class DelyveryManager : NetworkBehaviour
 
         UpdateClientSuccessfulRecipesClientRpc(clientId, playerSuccessfulRecipes[clientId], clientRpcParams);
 
+        // Eliminar receta completada del servidor
         waitingRecipeSOList.RemoveAt(waitingRecipeSOListIndex);
+
+        // Sincronizar índices actualizados con todos los clientes
+        SyncWaitingRecipesClientRpc(GetRecipeIndices().ToArray());
     }
 
     [ClientRpc]
@@ -143,6 +147,31 @@ public class DelyveryManager : NetworkBehaviour
     private void MatchDeliveryManagerIncorrectUIClientRpc()
     {
         OnRecipeFail?.Invoke(this, EventArgs.Empty);
+    }
+
+    [ClientRpc]
+    private void SyncWaitingRecipesClientRpc(int[] recipeIndices)
+    {
+        // Reconstruir la lista local en los clientes
+        waitingRecipeSOList.Clear();
+        foreach (int index in recipeIndices)
+        {
+            waitingRecipeSOList.Add(reciveListSO.recipeSOList[index]);
+        }
+
+        // Disparar el evento para actualizar la interfaz en los clientes
+        OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+    }
+
+    private List<int> GetRecipeIndices()
+    {
+        // Devuelve los índices de las recetas actuales en la lista
+        List<int> recipeIndices = new List<int>();
+        foreach (RecipeSO recipe in waitingRecipeSOList)
+        {
+            recipeIndices.Add(reciveListSO.recipeSOList.IndexOf(recipe));
+        }
+        return recipeIndices;
     }
 
     public List<RecipeSO> WaitingRecipeSOList()
