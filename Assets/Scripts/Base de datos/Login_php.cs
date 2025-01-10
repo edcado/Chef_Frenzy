@@ -10,6 +10,8 @@ public class PlayerLogin : MonoBehaviour
     public TMP_InputField usernameField;
     public TMP_InputField passwordField;
 
+    public Player player;
+
     public void LoginPlayer()
     {
         string username = usernameField.text.Trim();
@@ -54,6 +56,8 @@ public class PlayerLogin : MonoBehaviour
                     PlayerPrefs.SetString("Username", username);
                     PlayerPrefs.Save();
 
+                    player.gameName = gameName;
+
                     SceneManager.LoadScene("MainMenu");
                 }
                 else
@@ -61,10 +65,6 @@ public class PlayerLogin : MonoBehaviour
                     string errorMessage = responseParts[1];
                     Debug.LogError("Error: " + errorMessage);
                 }
-
-
-
-
             }
             else
             {

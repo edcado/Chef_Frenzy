@@ -1,46 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\",
+  "WorkspaceRootPath": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\selectedprefabvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectedprefabvisual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|c:\\users\\edcado\\documents\\github\\overcooked\\assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\assets\\scripts\\base de datos\\login_php.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base de datos\\login_php.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|c:\\users\\dacato01\\documents\\github\\overcooked\\assets\\scripts\\basecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\basecounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|c:\\users\\edcado\\documents\\github\\overcooked\\assets\\scripts\\base de datos\\register_php.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\base de datos\\register_php.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\clearcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\clearcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|c:\\users\\dacato01\\documents\\github\\overcooked\\assets\\scripts\\containercounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\containercounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\kitchenobjectso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kitchenobjectso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\kitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\ikitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ikitchenobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\scripts\\playerinputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerinputs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\assets\\inputs\\playerinputactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\inputs\\playerinputactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E923D3A-380C-C61A-D344-0823E92914A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BaseCounter.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\BaseCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BaseCounter.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\BaseCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BaseCounter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:00:53.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ContainerCounter.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\ContainerCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ContainerCounter.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\ContainerCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ContainerCounter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:00:52.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IKitchenObject.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\IKitchenObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\IKitchenObject.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\IKitchenObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\IKitchenObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-28T13:00:53.054Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "KitchenObject.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\KitchenObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\KitchenObject.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\KitchenObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\KitchenObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA3AAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-28T13:00:53.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "KitchenObjectSO.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\KitchenObjectSO.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\KitchenObjectSO.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\KitchenObjectSO.cs",
-              "RelativeToolTip": "Assets\\Scripts\\KitchenObjectSO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAvAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-28T13:00:53.057Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SelectedPrefabVisual.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\SelectedPrefabVisual.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SelectedPrefabVisual.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\SelectedPrefabVisual.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SelectedPrefabVisual.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAArAAAA",
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Player.cs",
+              "ToolTip": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Player\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:00:53.058Z",
+              "WhenOpened": "2025-01-10T13:32:23.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register_php.cs",
+              "DocumentMoniker": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Base de datos\\Register_php.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base de datos\\Register_php.cs",
+              "ToolTip": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Base de datos\\Register_php.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base de datos\\Register_php.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCwAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T13:23:43.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ClearCounter.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\ClearCounter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ClearCounter.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\ClearCounter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ClearCounter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
+              "Title": "MainMenuUI.cs",
+              "DocumentMoniker": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "ToolTip": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenuUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:00:53.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PlayerInputActions.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Inputs\\PlayerInputActions.cs",
-              "RelativeDocumentMoniker": "Assets\\Inputs\\PlayerInputActions.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Inputs\\PlayerInputActions.cs",
-              "RelativeToolTip": "Assets\\Inputs\\PlayerInputActions.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABQAAAAMAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-28T13:00:53.06Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlayerInputs.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\PlayerInputs.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerInputs.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\PlayerInputs.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerInputs.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBkAAABeAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-10-28T13:00:53.061Z"
+              "WhenOpened": "2025-01-10T13:23:25.087Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
-              "ToolTip": "C:\\Users\\dacato01\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAAwHYAAAA1AAAA",
+              "Title": "Login_php.cs",
+              "DocumentMoniker": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Base de datos\\Login_php.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base de datos\\Login_php.cs",
+              "ToolTip": "C:\\Users\\edcado\\Documents\\GitHub\\OverCooked\\Assets\\Scripts\\Base de datos\\Login_php.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base de datos\\Login_php.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAgwCkAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T13:00:53.062Z",
+              "WhenOpened": "2025-01-10T13:20:46.228Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

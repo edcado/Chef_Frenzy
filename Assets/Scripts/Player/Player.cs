@@ -43,7 +43,7 @@ public class Player : NetworkBehaviour, IKitchenObject
     private KitchenObject kitchenObject;
     public bool isMoving;
 
-    public string gameName { get; private set; }
+    public string gameName;
 
     public override void OnNetworkSpawn()
     {
