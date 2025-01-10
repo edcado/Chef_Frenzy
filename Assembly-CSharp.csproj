@@ -88,11 +88,13 @@
     <Compile Include="Assets\Scripts\UI\Loader.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounterVisual.cs" />
     <Compile Include="Assets\Scripts\UI\HostDisconnected.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\PlayerData.cs" />
     <Compile Include="Assets\Scripts\UI\CountDownStartUI.cs" />
     <Compile Include="Assets\Scripts\UI\TestingCharacterSelectedUI.cs" />
     <Compile Include="Assets\Scripts\UI\IconTemplate.cs" />
     <Compile Include="Assets\Scripts\DeliveryManager.cs" />
     <Compile Include="Assets\Scripts\UI\AudioOptionsUI.cs" />
+    <Compile Include="Assets\Scripts\UI\CharacterSelectUI.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounterVisual.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\Scripts\Counters\ClearCounter.cs" />
     <Compile Include="Assets\Scripts\UI\GamePlayingTimerUI.cs" />
     <Compile Include="Assets\Scripts\Counters\ContainerCounter.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\CharacterSelectPlayer.cs" />
     <Compile Include="Assets\Scripts\Counters\CuttingCounter.cs" />
     <Compile Include="Assets\Scripts\Sound\StoveCounterSound.cs" />
     <Compile Include="Assets\Scripts\Counters\PlatesCounter.cs" />
