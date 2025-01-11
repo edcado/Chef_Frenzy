@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
     <Compile Include="Assets\Scripts\UI\NetcodeTestUI.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\ClientNetworkTransform.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\BurningRecipeSO.cs" />
     <Compile Include="Assets\Scripts\BarLookAt.cs" />
     <Compile Include="Assets\Scripts\UI\TutorialUI.cs" />
+    <Compile Include="Assets\Scripts\UI\CharacterColorSelectSingleUI.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\FollowTransform.cs" />
     <Compile Include="Assets\Scripts\UI\ConnectingUI.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />

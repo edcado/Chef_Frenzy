@@ -11,6 +11,7 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     public static KitchenGameMultiplayer Instance { get; private set; }
 
     [SerializeField] private KitchenObjectSOList kitchenObjectSOList;
+    [SerializeField] private List<Color> playerColorList;
 
     public event EventHandler OnTryingToJoinGame;
     public event EventHandler OnFailedToJoinGame;
@@ -144,6 +145,11 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     public PlayerData GetPlayerDataFromIndex(int playerIndex)
     {
         return playerDataNetworkList[playerIndex];
+    }
+
+    public Color GetPlayerColor(int colorId)
+    {
+        return playerColorList[colorId];
     }
 
 }

@@ -26,27 +26,31 @@ public class TestingCharacterSelected : NetworkBehaviour
     [ServerRpc (RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
     {
-        SetPlayerReadyClientRpc(serverRpcParams.Receive.SenderClientId);
+        ulong senderClientId = serverRpcParams.Receive.SenderClientId;
 
-        playerReadyDictionary[serverRpcParams.Receive.SenderClientId] = true;
+        // Marca al cliente como listo
+        playerReadyDictionary[senderClientId] = true;
 
-        bool allClientsAreReady = true;
+        // Notifica a todos los clientes sobre este cambio
+        SetPlayerReadyClientRpc(senderClientId);
 
+        // Comprueba si todos los clientes están listos después de actualizar el estado
+        if (AreAllClientsReady())
+        {
+            Loader.LoadNetwork(Loader.Scene.MainScene);
+        }
+    }
+
+    private bool AreAllClientsReady()
+    {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             if (!playerReadyDictionary.ContainsKey(clientId) || !playerReadyDictionary[clientId])
             {
-                allClientsAreReady = false;
-                break;
-            }
-
-            if (allClientsAreReady) 
-            {
-                Loader.LoadNetwork(Loader.Scene.MainScene);
+                return false;
             }
         }
-           
-        
+        return true;
     }
 
     [ClientRpc]
@@ -58,6 +62,6 @@ public class TestingCharacterSelected : NetworkBehaviour
 
     public bool IsPlayerReady(ulong clientId)
     {
-        return playerReadyDictionary[clientId];
+        return playerReadyDictionary.ContainsKey(clientId) && playerReadyDictionary[clientId];
     }
 }
