@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 50
+  controlID: 1227
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 27
+  controlID: 1110
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -197,15 +197,15 @@ MonoBehaviour:
     y: 476
     width: 892
     height: 463
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,8 +277,8 @@ MonoBehaviour:
     y: 0
     width: 376
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -727,9 +727,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.8963688, y: -1.5151365, z: 10.450013}
+    m_Target: {x: 0.12114554, y: 1.8728138, z: -0.4510601}
     speed: 2
-    m_Value: {x: 0.8963688, y: -1.5151365, z: 10.450013}
+    m_Value: {x: 0.12114554, y: 1.8728138, z: -0.4510601}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -775,13 +775,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14389679, y: -0.00008964569, z: 0.015081652, w: 0.9894787}
+    m_Target: {x: 0.15456097, y: 0.020813419, z: 0.011839035, w: 0.98769456}
     speed: 2
-    m_Value: {x: 0.14389665, y: -0.000089645604, z: 0.0150816385, w: 0.98947775}
+    m_Value: {x: 0.15456074, y: 0.020813389, z: 0.011839018, w: 0.98769313}
   m_Size:
-    m_Target: 7.9435906
+    m_Target: 1.8655604
     speed: 2
-    m_Value: 7.9435906
+    m_Value: 1.8655604
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1100,10 +1100,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 51
-    y: 539
-    width: 442
-    height: 212
+    x: 0
+    y: 549
+    width: 891
+    height: 442
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2260
+  m_LastSelectedObjectID: -22532
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1190,9 +1190,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6a690000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 74afffff7abdffff1cc0ffff2ec3fffff6c4ffffced4ffff42dcfffff8dcffff1ae0ffff26e0ffff1ce8ffff3ee8ffff0ce9ffffa8f6ffff2cf7ffff16f8ffff0afbffff5675000068750000d29c0000e49c0000089d0000
+      m_SelectedIDs: fca7ffff
+      m_LastClickedID: -22532
+      m_ExpandedIDs: f6a7fffffea7ffff24adffffa0b5ffffccc5fffff4c5ffffaccbffffc4d8ffff7cd9ffff56ddffff66ddffff5ee5ffff86e5ffff5ae6ffff0afbffff2eac0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: multiplayer
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -1264,7 +1264,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Scripts/NetcodeGameObjects
     m_Globs: []
-    m_OriginalText: multiplayer
+    m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
@@ -1277,9 +1277,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c750000
-    m_LastClickedID: 29996
-    m_ExpandedIDs: 0000000004750000067500000875000000ca9a3b
+    m_SelectedIDs: 50750000
+    m_LastClickedID: 30032
+    m_ExpandedIDs: 0000000026750000287500002a75000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1307,7 +1307,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000047500000675000008750000
+    m_ExpandedIDs: 0000000026750000287500002a75000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1338,15 +1338,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: ba7e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PlayerData
-      m_OriginalName: PlayerData
+      m_Name: CharacterSelectPlayer
+      m_OriginalName: CharacterSelectPlayer
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 44314
+      m_UserData: 29396
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

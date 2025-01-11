@@ -243,6 +243,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2892924645808229071, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: playerIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 558253840020312704, guid: 69482a8036928e44eb08fb579a2c9a30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,10 +303,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7852440576440071606, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1443371845436607223, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 69482a8036928e44eb08fb579a2c9a30, type: 3}
 --- !u!1 &104202093
 GameObject:
@@ -1136,6 +1150,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2892924645808229071, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: playerIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 558253840020312704, guid: 69482a8036928e44eb08fb579a2c9a30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1191,10 +1210,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7852440576440071606, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1443371845436607223, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 69482a8036928e44eb08fb579a2c9a30, type: 3}
 --- !u!1 &955482033
 GameObject:
@@ -1686,6 +1714,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2892924645808229071, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 558253840020312704, guid: 69482a8036928e44eb08fb579a2c9a30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1741,10 +1774,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1
       objectReference: {fileID: 0}
+    - target: {fileID: 7852440576440071606, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1443371845436607223, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 69482a8036928e44eb08fb579a2c9a30, type: 3}
 --- !u!1 &1625860043
 GameObject:
@@ -2120,10 +2162,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7852440576440071606, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1443371845436607223, guid: 69482a8036928e44eb08fb579a2c9a30,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 69482a8036928e44eb08fb579a2c9a30, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
