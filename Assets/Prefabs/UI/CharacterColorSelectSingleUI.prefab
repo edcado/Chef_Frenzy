@@ -225,3 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf8570dede4d634fba1e927878de54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1453815389040443656}
+  colorId: 0
+  selectedGameObject: {fileID: 2931427159596243364}

@@ -37,6 +37,7 @@ public class Player : NetworkBehaviour, IKitchenObject
     [SerializeField] private LayerMask collisionLayerMask;
     [SerializeField] Transform kitchenObjectPoint;
     [SerializeField] private List<Vector3> spawnPositionList;
+    [SerializeField] private PlayerVisual playerVisual;
 
     private Vector3 lastInteractDirection;
     private BaseCounter selectedCounter;
@@ -75,6 +76,9 @@ public class Player : NetworkBehaviour, IKitchenObject
         
         PlayerInputs.Instance.OnInteractAction += PlayerInputs_OnInteractAction;
         PlayerInputs.Instance.OnInteractAlternativeAction += PlayerInputs_OnInteractAlternativeAction;
+
+        PlayerData playerData = KitchenGameMultiplayer.Instance.GetPlayerDataFromClientId(OwnerClientId);
+        playerVisual.SetPlayerColor(KitchenGameMultiplayer.Instance.GetPlayerColor(playerData.colorId));
 
         gameName = PlayerPrefs.GetString("GameName", "Jugador");  // "Jugador" es el valor por defecto si no hay datos guardados
         gameNameText.text = gameName;
