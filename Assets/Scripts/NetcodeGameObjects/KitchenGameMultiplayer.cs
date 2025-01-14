@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class KitchenGameMultiplayer : NetworkBehaviour
 {
-    private static float maxPlayersAmount = 4;
+    public const int maxPlayersAmount = 4;
     public static KitchenGameMultiplayer Instance { get; private set; }
 
     [SerializeField] private KitchenObjectSOList kitchenObjectSOList;
