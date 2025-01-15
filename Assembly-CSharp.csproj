@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Sound\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UI\SingleIconTemplate.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSOList.cs" />
+    <Compile Include="Assets\Scripts\UI\LobbyMessageUI.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\KitchenObjectSO.cs" />
     <Compile Include="Assets\Scripts\PlateCompleteVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\StoveCounter.cs" />
@@ -106,7 +107,6 @@
     <Compile Include="Assets\Scripts\NetcodeGameObjects\FollowTransform.cs" />
     <Compile Include="Assets\Scripts\UI\ConnectingUI.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
-    <Compile Include="Assets\Scripts\UI\DisconnectionGameMessage.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
     <Compile Include="Assets\Scripts\KitchenGameManager.cs" />

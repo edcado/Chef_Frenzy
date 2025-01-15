@@ -25,7 +25,7 @@ public class TestingCharacterSelected : NetworkBehaviour
 
     public void SetPlayerUnready()
     {
-
+        SetPlayerUnReadyServerRpc();
     }
 
     [ServerRpc (RequireOwnership = false)]
@@ -47,6 +47,18 @@ public class TestingCharacterSelected : NetworkBehaviour
         }
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void SetPlayerUnReadyServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        ulong senderClientId = serverRpcParams.Receive.SenderClientId;
+
+        // Marca al cliente como no listo
+        playerReadyDictionary[senderClientId] = false;
+
+        // Notifica a todos los clientes sobre este cambio
+        SetPlayerUnReadyClientRpc(senderClientId);
+    }
+
     private bool AreAllClientsReady()
     {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -66,7 +78,12 @@ public class TestingCharacterSelected : NetworkBehaviour
         OnReadyChanged?.Invoke(this,EventArgs.Empty); 
     }
 
-   
+    [ClientRpc]
+    private void SetPlayerUnReadyClientRpc(ulong clientId)
+    {
+        playerReadyDictionary[clientId] = false;
+        OnReadyChanged?.Invoke(this, EventArgs.Empty);
+    }
 
     public bool IsPlayerReady(ulong clientId)
     {

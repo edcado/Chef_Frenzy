@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,15 @@ public class CharacterSelectUI : MonoBehaviour
 {
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button readyButton;
+    [SerializeField] private Button unReadyButton;
     [SerializeField] private TextMeshProUGUI lobbyNameText;
     [SerializeField] private TextMeshProUGUI lobbyCodeText;
 
 
     private void Awake()
     {
+        unReadyButton.gameObject.SetActive(false);
+
         mainMenuButton.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.Shutdown();
@@ -24,8 +28,16 @@ public class CharacterSelectUI : MonoBehaviour
 
         readyButton.onClick.AddListener(() =>
         {
-            Debug.Log("ReadyButtonPressed");
             TestingCharacterSelected.Instance.SetPlayerReady();
+            readyButton.gameObject.SetActive(false);
+            unReadyButton.gameObject.SetActive(true);        
+        });
+
+        unReadyButton.onClick.AddListener(() =>
+        {
+            TestingCharacterSelected.Instance.SetPlayerUnready();
+            readyButton.gameObject.SetActive(true);
+            unReadyButton.gameObject.SetActive(false);
         });
     }
 
