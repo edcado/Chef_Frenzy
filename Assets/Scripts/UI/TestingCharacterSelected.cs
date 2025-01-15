@@ -23,6 +23,11 @@ public class TestingCharacterSelected : NetworkBehaviour
         SetPlayerReadyServerRpc();
     }
 
+    public void SetPlayerUnready()
+    {
+
+    }
+
     [ServerRpc (RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
     {
@@ -37,6 +42,7 @@ public class TestingCharacterSelected : NetworkBehaviour
         // Comprueba si todos los clientes están listos después de actualizar el estado
         if (AreAllClientsReady())
         {
+            KitchenGameLobby.Instance.DeleteLobby();
             Loader.LoadNetwork(Loader.Scene.MainScene);
         }
     }
@@ -59,6 +65,8 @@ public class TestingCharacterSelected : NetworkBehaviour
         playerReadyDictionary[clientId] = true;
         OnReadyChanged?.Invoke(this,EventArgs.Empty); 
     }
+
+   
 
     public bool IsPlayerReady(ulong clientId)
     {

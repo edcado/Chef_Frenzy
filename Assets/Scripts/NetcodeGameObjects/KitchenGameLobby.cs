@@ -9,6 +9,7 @@ using UnityEngine;
 public class KitchenGameLobby : MonoBehaviour
 {
     public static KitchenGameLobby Instance { get; private set; }
+    private float heartTimer;
 
    private Lobby joinedLobby;
 
@@ -30,6 +31,31 @@ public class KitchenGameLobby : MonoBehaviour
 
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
+    }
+
+    private void Update()
+    {
+        HandleHeartBeat();
+    }
+
+    private void HandleHeartBeat()
+    {
+        if (IsLobbyHost())
+        {
+            heartTimer -= Time.deltaTime;
+            if (heartTimer <= 0)
+            {
+                float heartTimerMax = 15f;
+                heartTimer = heartTimerMax;
+
+                LobbyService.Instance.SendHeartbeatPingAsync(joinedLobby.Id);
+            }
+        }
+    }
+
+    public bool IsLobbyHost()
+    {
+        return joinedLobby != null && joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
     }
 
     public async void CreateLobby(string lobbyName, bool isPrivate)
@@ -74,6 +100,53 @@ public class KitchenGameLobby : MonoBehaviour
         catch (LobbyServiceException e)
         {
             Debug.Log(e);
+        }
+    }
+
+    public async void DeleteLobby()
+    {
+        if (joinedLobby != null)
+            try
+            {
+               await  LobbyService.Instance.DeleteLobbyAsync(joinedLobby.Id);
+                joinedLobby = null;
+            }
+            catch(LobbyServiceException e)
+            {
+                Debug.Log(e);
+            }
+    }
+
+    public async void LeaveLobby()
+    {
+        if (joinedLobby != null)
+        {
+            try
+            {
+                await LobbyService.Instance.RemovePlayerAsync(joinedLobby.Id, AuthenticationService.Instance.PlayerId);
+                joinedLobby = null;
+            }
+            catch (LobbyServiceException e)
+            {
+                Debug.Log(e);
+            }
+
+        }
+    }
+
+    public async void KickLobbyPlayer(string nameId)
+    {
+        if (IsLobbyHost())
+        {
+            try
+            {
+                await LobbyService.Instance.RemovePlayerAsync(joinedLobby.Id, nameId);
+                
+            }
+            catch (LobbyServiceException e)
+            {
+                Debug.Log(e);
+            }
         }
     }
 
