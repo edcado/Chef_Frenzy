@@ -6,6 +6,7 @@ using Unity.Services.Core;
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KitchenGameLobby : MonoBehaviour
 {
@@ -17,6 +18,13 @@ public class KitchenGameLobby : MonoBehaviour
     public event EventHandler OnQuickJoinStarted;
     public event EventHandler OnQuickJoinFailed;
     public event EventHandler OnJoinFailed;
+    public event EventHandler <OnLobbyListChangedEventArgs> OnLobbyListChanged;
+    public class OnLobbyListChangedEventArgs: EventArgs
+    {
+        public List<Lobby> lobbyList;
+    }
+
+    private float listLobbiesTimer;
 
     private Lobby joinedLobby;
 
@@ -29,13 +37,17 @@ public class KitchenGameLobby : MonoBehaviour
 
     private async void InitializeUnityAuthentication()
     {
+        //If the lobby is not initialized, we initialized it.
         if (UnityServices.State != ServicesInitializationState.Initialized)
         {
+            //Some options to assign a  random profile to the player
             InitializationOptions initializationOptions = new InitializationOptions();  
             initializationOptions.SetProfile(UnityEngine.Random.Range(1000, 0).ToString());
 
+            //Initialize Unity Services
             await UnityServices.InitializeAsync(initializationOptions);
 
+            //Connects the player to the system through anonymous login.
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
     }
@@ -43,8 +55,25 @@ public class KitchenGameLobby : MonoBehaviour
     private void Update()
     {
         HandleHeartBeat();
+        HandlePeriodicListLobbies();
     }
 
+    private void HandlePeriodicListLobbies()
+    {
+        if (joinedLobby == null && AuthenticationService.Instance.IsSignedIn
+            && SceneManager.GetActiveScene().name == Loader.Scene.Lobby.ToString())
+        {
+            listLobbiesTimer -= Time.deltaTime;
+            if (listLobbiesTimer <= 0)
+            {
+                float listLobbiesTimerMax = 3f;
+                listLobbiesTimer = listLobbiesTimerMax;
+                ListLobbies();
+            }
+        }    
+    }
+
+    // The host sends a heartbeat signal to keep the lobby active while other players join.
     private void HandleHeartBeat()
     {
         if (IsLobbyHost())
@@ -60,11 +89,44 @@ public class KitchenGameLobby : MonoBehaviour
         }
     }
 
+    //Obtiene si eres el host del lobby
     public bool IsLobbyHost()
     {
         return joinedLobby != null && joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
     }
 
+    public async void ListLobbies()
+    {
+        //Some options to filter in out lobby list
+        try
+        {
+            QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions
+            {
+                Filters = new List<QueryFilter>
+            {
+                //Donde se dice la cantidad de espacios en el lobby y que las lobbies tengan más de 0 espacios.
+                new QueryFilter(QueryFilter.FieldOptions.AvailableSlots, "0", QueryFilter.OpOptions.GT)
+
+            }
+            };
+
+            // Realiza una consulta asíncrona al servicio de lobbies de Unity y devuelve
+            // un QueryResponse con los lobbies que cumplen los filtros especificados en queryLobbiesOptions.
+            QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync(queryLobbiesOptions);
+
+            OnLobbyListChanged?.Invoke(this, new OnLobbyListChangedEventArgs
+            {
+                lobbyList = queryResponse.Results
+            });
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+        }
+        
+    }
+
+    //Nuestro lobby joined lobby es inicializado con nombre, numero máximo de jugadores y opciones de público o privado
     public async void CreateLobby(string lobbyName, bool isPrivate)
     {
         OnCreateLobbyStarted?.Invoke(this, EventArgs.Empty);
@@ -85,6 +147,7 @@ public class KitchenGameLobby : MonoBehaviour
 
     }
 
+    //Quick join to a public lobby
     public async void QuickJoin()
     {
         OnQuickJoinStarted?.Invoke(this, EventArgs.Empty);
@@ -101,6 +164,7 @@ public class KitchenGameLobby : MonoBehaviour
         } 
     }
 
+    //Join to a lobby by code
     public async void joinWithCode(string lobbyCode)
     {
         OnQuickJoinStarted?.Invoke(this, EventArgs.Empty);
@@ -116,6 +180,22 @@ public class KitchenGameLobby : MonoBehaviour
         }
     }
 
+    public async void joinWithId(string lobbyId)
+    {
+        OnQuickJoinStarted?.Invoke(this, EventArgs.Empty);
+        try
+        {
+            joinedLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobbyId);
+            KitchenGameMultiplayer.Instance.StartClient();
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+            OnJoinFailed?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    //Método para que cuando todos los jugadores estén listos se limpie el lobby
     public async void DeleteLobby()
     {
         if (joinedLobby != null)
@@ -130,6 +210,7 @@ public class KitchenGameLobby : MonoBehaviour
             }
     }
 
+    //Cuando un jugador se sale se limpia a este
     public async void LeaveLobby()
     {
         if (joinedLobby != null)
@@ -147,6 +228,7 @@ public class KitchenGameLobby : MonoBehaviour
         }
     }
 
+    //Expulsar a un jugador solo si eres el host
     public async void KickLobbyPlayer(string nameId)
     {
         if (IsLobbyHost())
@@ -163,6 +245,7 @@ public class KitchenGameLobby : MonoBehaviour
         }
     }
 
+    //Obtener una referencia al lobby
     public Lobby GetLobby()
     {
         return joinedLobby;

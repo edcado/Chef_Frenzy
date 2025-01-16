@@ -140,6 +140,7 @@
     <Compile Include="Assets\Scripts\ShowHidePlayerName.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\FryingObjectSO.cs" />
     <Compile Include="Assets\Scripts\UI\ShowBurnWarningUI.cs" />
+    <Compile Include="Assets\Scripts\NetcodeGameObjects\Lobby\LobbyListSingleUI.cs" />
     <Compile Include="Assets\Scripts\UI\GamePausedUI.cs" />
   </ItemGroup>
   <ItemGroup>
