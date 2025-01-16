@@ -36,7 +36,7 @@ public class LobbyUI : MonoBehaviour
 
         joinCodeButton.onClick.AddListener(() =>
         {
-            KitchenGameLobby.Instance.joinWithCode(joinCodeInputField.text);
+            KitchenGameLobby.Instance.JoinWithCode(joinCodeInputField.text);
         });
 
         lobbyTemplate.gameObject.SetActive(false);

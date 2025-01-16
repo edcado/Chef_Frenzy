@@ -4967,7 +4967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ProtocolType: 0
+  m_ProtocolType: 1
   m_UseWebSockets: 0
   m_UseEncryption: 0
   m_MaxPacketQueueSize: 128
@@ -5003,6 +5003,12 @@ MonoBehaviour:
     NetworkTransport: {fileID: 1820824404}
     PlayerPrefab: {fileID: 0}
     NetworkPrefabs:
+    - Override: 0
+      Prefab: {fileID: 2308739102644296615, guid: 3eb35498e0144de47a93417f25eb7428,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
     - Override: 0
       Prefab: {fileID: 6796740095093383221, guid: 6f2a864bc0a120e47936e62318cc2e46,
         type: 3}
@@ -5065,12 +5071,6 @@ MonoBehaviour:
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
       Prefab: {fileID: 6796740095093383221, guid: cf3591f740aacaa43825c90a2fc5a9cd,
-        type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 2308739102644296615, guid: 3eb35498e0144de47a93417f25eb7428,
         type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
