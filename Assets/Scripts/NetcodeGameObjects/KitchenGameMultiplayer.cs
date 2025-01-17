@@ -9,7 +9,10 @@ using UnityEngine.SceneManagement;
 public class KitchenGameMultiplayer : NetworkBehaviour
 {
     public const int maxPlayersAmount = 4;
+
     public static KitchenGameMultiplayer Instance { get; private set; }
+
+
 
     [SerializeField] private KitchenObjectSOList kitchenObjectSOList;
     [SerializeField] private List<Color> playerColorList;
@@ -27,6 +30,8 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         playerDataNetworkList = new NetworkList<PlayerData>();
         playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
     }
+
+   
 
     private void PlayerDataNetworkList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
     {
@@ -124,6 +129,15 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     {
         KitchenObjectSO kitchenObjectSO = GetKitchenObjectSOFromIndex(kitchenObjectSOIndex);
 
+        kitchenObjectParentNetworkObjectReference.TryGet(out NetworkObject kitchenObjectParentNetworkObject);
+        IKitchenObject kitchenObjectParent = kitchenObjectParentNetworkObject.GetComponent<IKitchenObject>();
+
+        if (kitchenObjectParent.HasKitchenObject()) 
+        {
+            return;
+        }
+
+
         Transform kitchenObjectTransform = Instantiate(kitchenObjectSO.Prefab);
 
         NetworkObject kitchenNetworkObject = kitchenObjectTransform.GetComponent<NetworkObject>();
@@ -132,8 +146,7 @@ public class KitchenGameMultiplayer : NetworkBehaviour
         KitchenObject kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
 
 
-        kitchenObjectParentNetworkObjectReference.TryGet(out NetworkObject kitchenObjectParentNetworkObject);
-        IKitchenObject kitchenObjectParent = kitchenObjectParentNetworkObject.GetComponent<IKitchenObject>();
+        
 
         kitchenObject.SetKitchenObjectParent(kitchenObjectParent);
     }
@@ -157,6 +170,12 @@ public class KitchenGameMultiplayer : NetworkBehaviour
     private void DestroyKitchenObjectServerRpc(NetworkObjectReference kitchenObjectNetworkObjectReference)
     {
         kitchenObjectNetworkObjectReference.TryGet(out NetworkObject kitchenObjectNetwork);
+
+        if (kitchenObjectNetwork == null)
+        {
+            return;
+        }
+
         KitchenObject kitchenObject = kitchenObjectNetwork.GetComponent<KitchenObject>();
 
         ClearKitchenObjectOnParentClientRpc(kitchenObjectNetworkObjectReference);
