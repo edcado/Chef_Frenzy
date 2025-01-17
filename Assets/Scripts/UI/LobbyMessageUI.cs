@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LobbyMessageUI : MonoBehaviour
 {
     [SerializeField] private Button closeButton;
+    [SerializeField] private Button createLobbyButton;
     [SerializeField] private TextMeshProUGUI messageText;
 
     private void Awake()
     {
-        closeButton.onClick.AddListener(Hide);
+        closeButton.onClick.AddListener(() =>
+        {
+            Hide();
+            createLobbyButton.Select();
+        });
+
+        
     }
 
     private void Start()
@@ -56,10 +64,12 @@ public class LobbyMessageUI : MonoBehaviour
     {
         if (NetworkManager.Singleton.DisconnectReason == "")
         {
+            //If there is not a clear reason we show the message
             ShowMessage("Failed to connect");
         }
         else
         {
+            //Show the disconnect reason
            ShowMessage(NetworkManager.Singleton.DisconnectReason);
         }
 
@@ -79,8 +89,11 @@ public class LobbyMessageUI : MonoBehaviour
     private void Show()
     {
         gameObject.SetActive(true);
+
+        closeButton.Select();
     }
 
+    
     private void OnDestroy()
     {
         KitchenGameMultiplayer.Instance.OnFailedToJoinGame -= KitchenGameMultiplayer_OnFailedToJoinGame;
