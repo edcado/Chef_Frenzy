@@ -26,7 +26,7 @@ public class CreateLobbyUI : MonoBehaviour
 
         closeButton.onClick.AddListener(() =>
         {
-            KitchenGameLobby.Instance.CreateLobby(nameLobbyInputField.text, false);
+            gameObject.SetActive(false);
             Hide();
         });
     }
