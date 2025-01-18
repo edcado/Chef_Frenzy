@@ -12,7 +12,6 @@ public class CreateLobbyUI : MonoBehaviour
     [SerializeField] private Button createPublicButton;
     [SerializeField] private Button createPrivateButton;
     [SerializeField] private Button closeButton;
-    [SerializeField] private Button templateButton;
     [SerializeField] private TMP_InputField nameLobbyInputField;
 
     public event EventHandler OnCloseButtonPressed;
@@ -25,7 +24,6 @@ public class CreateLobbyUI : MonoBehaviour
         createPublicButton.onClick.AddListener(() =>
         {
             KitchenGameLobby.Instance.CreateLobby(nameLobbyInputField.text, false);
-            templateButton.Select();
         });
 
         createPrivateButton.onClick.AddListener(() =>

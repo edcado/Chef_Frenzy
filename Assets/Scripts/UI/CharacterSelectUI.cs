@@ -31,7 +31,8 @@ public class CharacterSelectUI : MonoBehaviour
         {
             TestingCharacterSelected.Instance.SetPlayerReady();
             readyButton.gameObject.SetActive(false);
-            unReadyButton.gameObject.SetActive(true);        
+            unReadyButton.gameObject.SetActive(true);      
+            unReadyButton.Select();
         });
 
         unReadyButton.onClick.AddListener(() =>
@@ -39,6 +40,7 @@ public class CharacterSelectUI : MonoBehaviour
             TestingCharacterSelected.Instance.SetPlayerUnready();
             readyButton.gameObject.SetActive(true);
             unReadyButton.gameObject.SetActive(false);
+            readyButton.Select();
         });
     }
 

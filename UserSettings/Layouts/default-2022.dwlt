@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 14467
+  controlID: 1373
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 14335
+  controlID: 1235
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -168,8 +168,8 @@ MonoBehaviour:
     y: 0
     width: 790
     height: 453
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -727,9 +727,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 404.30066, y: 216.9012, z: -0.6809257}
+    m_Target: {x: 378.24478, y: 223.57944, z: -1.5612469}
     speed: 2
-    m_Value: {x: 404.30066, y: 216.9012, z: -0.6809257}
+    m_Value: {x: 378.24478, y: 223.57944, z: -1.5612469}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -779,9 +779,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 165.5536
+    m_Target: 253.58559
     speed: 2
-    m_Value: 165.5536
+    m_Value: 253.58559
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 68082
+  m_LastSelectedObjectID: 37346
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1190,9 +1190,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 36b20000
       m_LastClickedID: 0
-      m_ExpandedIDs: 5e00ffff1601ffff5806ffff6606ffffb60efffff60effffd20fffff302dffffe82dffff2a33ffff3833ffff883bffffca3bffffa63cffff0653ffffbe53ffff0059ffff0e59ffff6461ffffa461ffff8062ffffc282ffff7a83ffffbc88ffffca88ffffbc90fffffc90ffffd891ffff42b3ffffb0bbffff00fbffff7e870000ae870000b8870000dc880000c2ad00005cae00005ab200008ab2000094b20000eab200003cb30000e6df000016e0000020e0000076e00000c8e0000046f2000076f2000080f2000078080100a8080100b2080100080901005a090100
+      m_ExpandedIDs: d2d3ffff14dcffffccdcffff0ee2ffff1ce2ffff72eaffffb2eaffff8eebffffdaf5ffff00fbffffa8910000e291000082b20000b2b20000bcb2000012b30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: LOBBY
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -1262,23 +1262,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/NetcodeGameObjects/Lobby
+    - Assets/Scripts/UI
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: LOBBY
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/NetcodeGameObjects/Lobby
+  - Assets/Scripts/UI
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\usuario\Documents\GitHub\Chef_Frenzy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c910000
-    m_LastClickedID: 37196
+    m_SelectedIDs: 54910000
+    m_LastClickedID: 37204
     m_ExpandedIDs: 00000000f8900000fa900000fc900000fe90000000910000029100000491000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

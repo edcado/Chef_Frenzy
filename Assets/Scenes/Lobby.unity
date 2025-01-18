@@ -1289,7 +1289,6 @@ MonoBehaviour:
   createPublicButton: {fileID: 1659797586}
   createPrivateButton: {fileID: 856075662}
   closeButton: {fileID: 453819346}
-  templateButton: {fileID: 0}
   nameLobbyInputField: {fileID: 1746395996}
 --- !u!1 &536034090
 GameObject:
