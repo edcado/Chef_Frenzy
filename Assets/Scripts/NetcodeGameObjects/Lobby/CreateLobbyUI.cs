@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,17 +7,25 @@ using UnityEngine.UI;
 
 public class CreateLobbyUI : MonoBehaviour
 {
+    public static CreateLobbyUI Instance { get; private set; }  
+
     [SerializeField] private Button createPublicButton;
     [SerializeField] private Button createPrivateButton;
     [SerializeField] private Button closeButton;
+    [SerializeField] private Button templateButton;
     [SerializeField] private TMP_InputField nameLobbyInputField;
+
+    public event EventHandler OnCloseButtonPressed;
 
     private void Awake()
     {
+        Instance = this;
+
         Hide();
         createPublicButton.onClick.AddListener(() =>
         {
             KitchenGameLobby.Instance.CreateLobby(nameLobbyInputField.text, false);
+            templateButton.Select();
         });
 
         createPrivateButton.onClick.AddListener(() =>
@@ -28,6 +37,7 @@ public class CreateLobbyUI : MonoBehaviour
         {
             gameObject.SetActive(false);
             Hide();
+            OnCloseButtonPressed?.Invoke(this, EventArgs.Empty);
         });
     }
 
@@ -38,6 +48,7 @@ public class CreateLobbyUI : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true); 
+        gameObject.SetActive(true);
+        createPublicButton.Select();
     }
 }

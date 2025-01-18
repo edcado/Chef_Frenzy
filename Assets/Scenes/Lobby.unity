@@ -469,6 +469,7 @@ MonoBehaviour:
   createLobbyUI: {fileID: 498695606}
   lobbyContainer: {fileID: 965046347}
   lobbyTemplate: {fileID: 1390326811}
+  lobbyTemplateButton: {fileID: 1390326812}
 --- !u!1 &241550685
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,18 +923,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 1659797586}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.009791374, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0.007843138, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1288,6 +1289,7 @@ MonoBehaviour:
   createPublicButton: {fileID: 1659797586}
   createPrivateButton: {fileID: 856075662}
   closeButton: {fileID: 453819346}
+  templateButton: {fileID: 0}
   nameLobbyInputField: {fileID: 1746395996}
 --- !u!1 &536034090
 GameObject:
@@ -2167,18 +2169,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1659797586}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5019608, g: 0.75686276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.16862746, b: 0.32156864, a: 1}
+    m_NormalColor: {r: 0.23137255, g: 0.627451, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.15294118, g: 0.0627451, b: 0.48235294, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0, g: 0.16862746, b: 0.32156864, a: 1}
+    m_SelectedColor: {r: 0.15294118, g: 0.0627451, b: 0.48235294, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3039,12 +3041,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1972846369}
+    m_SelectOnDown: {fileID: 1741083317}
+    m_SelectOnLeft: {fileID: 1458933839}
+    m_SelectOnRight: {fileID: 1659797586}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.23137255, g: 0.627451, b: 1, a: 1}
@@ -3389,11 +3391,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 1390326812}
+    m_SelectOnDown: {fileID: 1390326812}
+    m_SelectOnLeft: {fileID: 1294566028}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -3672,7 +3674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3793,12 +3795,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 1
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 1972846369}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.4669811, g: 0.78408694, b: 1, a: 1}
@@ -4258,18 +4260,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 453819346}
+    m_SelectOnDown: {fileID: 856075662}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5019608, g: 0.75686276, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0.16862746, b: 0.32156864, a: 1}
+    m_NormalColor: {r: 0.23137255, g: 0.627451, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.15434957, g: 0.06127626, b: 0.4811321, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0, g: 0.16862746, b: 0.32156864, a: 1}
+    m_SelectedColor: {r: 0.15294118, g: 0.0627451, b: 0.48235294, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4714,12 +4716,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1294566028}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1458933839}
+    m_SelectOnRight: {fileID: 856075662}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.23137255, g: 0.627451, b: 1, a: 1}
@@ -5041,7 +5043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeButton: {fileID: 1413463801}
-  createLobbyButton: {fileID: 1972846369}
   messageText: {fileID: 1219209966}
 --- !u!1 &1809711722
 GameObject:
@@ -5442,12 +5443,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnDown: {fileID: 1294566028}
+    m_SelectOnLeft: {fileID: 1458933839}
+    m_SelectOnRight: {fileID: 1390326812}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.23113209, g: 0.62577254, b: 1, a: 1}

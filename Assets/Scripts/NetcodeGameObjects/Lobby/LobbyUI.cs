@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 
 public class LobbyUI : MonoBehaviour
 {
+
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button createLobbyButton;
     [SerializeField] private Button joinLobbyButton;
@@ -15,6 +17,8 @@ public class LobbyUI : MonoBehaviour
     [SerializeField] private CreateLobbyUI createLobbyUI;
     [SerializeField] private Transform lobbyContainer;
     [SerializeField] private Transform lobbyTemplate;
+    [SerializeField] private Button lobbyTemplateButton;
+
 
     private void Awake()
     {
@@ -45,7 +49,19 @@ public class LobbyUI : MonoBehaviour
     private void Start()
     {
         KitchenGameLobby.Instance.OnLobbyListChanged += KitchenGameLobby_OnLobbyListChanged;
+        LobbyMessageUI.Instance.OnSelectCreateLobbyButton += LobbyMessageUI_OnSelectCreateLobbyButton;
+        CreateLobbyUI.Instance.OnCloseButtonPressed += CreateLobbyUI_OnCloseButtonPressed;
         UpdateLobbyList(new List<Lobby>());
+    }
+
+    private void CreateLobbyUI_OnCloseButtonPressed(object sender, EventArgs e)
+    {
+        createLobbyButton.Select();
+    }
+
+    private void LobbyMessageUI_OnSelectCreateLobbyButton(object sender, System.EventArgs e)
+    {
+        createLobbyButton.Select();
     }
 
     private void KitchenGameLobby_OnLobbyListChanged(object sender, KitchenGameLobby.OnLobbyListChangedEventArgs e)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,16 +9,19 @@ using UnityEngine.UI;
 
 public class LobbyMessageUI : MonoBehaviour
 {
+    public static LobbyMessageUI Instance {  get; private set; }
     [SerializeField] private Button closeButton;
-    [SerializeField] private Button createLobbyButton;
     [SerializeField] private TextMeshProUGUI messageText;
+    public event EventHandler OnSelectCreateLobbyButton;
 
     private void Awake()
     {
+        Instance = this;
+
         closeButton.onClick.AddListener(() =>
         {
             Hide();
-            createLobbyButton.Select();
+            OnSelectCreateLobbyButton?.Invoke(this, EventArgs.Empty);
         });
 
         
@@ -79,6 +83,7 @@ public class LobbyMessageUI : MonoBehaviour
     {
         messageText.text = message;
         Show();
+        closeButton.Select();
     }
 
     private void Hide()
@@ -90,7 +95,6 @@ public class LobbyMessageUI : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        closeButton.Select();
     }
 
     
