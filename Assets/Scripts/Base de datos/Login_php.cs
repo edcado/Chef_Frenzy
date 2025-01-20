@@ -4,13 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class PlayerLogin : MonoBehaviour
 {
     public TMP_InputField usernameField;
     public TMP_InputField passwordField;
 
-    public Player player;
+    public UserData userData; // Objeto para almacenar datos del usuario
 
     public void LoginPlayer()
     {
@@ -22,7 +23,6 @@ public class PlayerLogin : MonoBehaviour
             Debug.LogError("El nombre de usuario o la contraseña están vacíos.");
             return;
         }
-
 
         StartCoroutine(LoginCoroutine(username, password));
     }
@@ -39,38 +39,58 @@ public class PlayerLogin : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log(www.downloadHandler.text);
-                string responseText = www.downloadHandler.text;
-                Debug.Log("Respuesta del servidor: " + responseText);
+                string json = www.downloadHandler.text;
+                Debug.Log("Respuesta del servidor: " + json); // Imprime el JSON para ver qué devuelve PHP
 
-                // Dividir la respuesta para obtener el estado y el nombre del juego
-                string[] responseParts = responseText.Split(':');
-                string status = responseParts[0];
-
-                if (status == "success")
+                // Manejo de posibles errores en la respuesta
+                if (json.Contains("error"))
                 {
-                    string gameName = responseParts[1];
-                    Debug.Log("Inicio de sesión exitoso. Game Name: " + gameName);
-
-                    PlayerPrefs.SetString("GameName", gameName);
-                    PlayerPrefs.SetString("Username", username);
-                    PlayerPrefs.Save();
-
-                    player.gameName = gameName;
-
-                    SceneManager.LoadScene("MainMenu");
+                    // Si la respuesta contiene "error", extrae y muestra el mensaje de error
+                    try
+                    {
+                        var errorResponse = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                        if (errorResponse.ContainsKey("error"))
+                        {
+                            Debug.LogError("Error del servidor: " + errorResponse["error"]);
+                        }
+                    }
+                    catch (JsonException ex)
+                    {
+                        Debug.LogError("Error al procesar la respuesta JSON de error: " + ex.Message);
+                    }
                 }
                 else
                 {
-                    string errorMessage = responseParts[1];
-                    Debug.LogError("Error: " + errorMessage);
+                    // Procesa los datos del jugador si no hay error
+                    try
+                    {
+                        userData = JsonConvert.DeserializeObject<UserData>(json);
+
+                        if (userData != null)
+                        {
+                            Debug.Log($"Inicio de sesión exitoso. Username: {userData.Username}, GameTag: {userData.GameTag}");
+
+                            // Inicializa los datos de usuario
+                            PlayerSessionManager.Instance.InitializeUserData(userData);
+
+                            // Cargar la escena principal
+                            SceneManager.LoadScene("MainMenu");
+                        }
+                        else
+                        {
+                            Debug.LogError("Error: El servidor devolvió datos incompletos o mal formateados.");
+                        }
+                    }
+                    catch (JsonException ex)
+                    {
+                        Debug.LogError("Error al procesar la respuesta JSON: " + ex.Message);
+                    }
                 }
             }
             else
             {
-                Debug.LogError("Error en el inicio de sesión: " + www.error);
+                Debug.LogError("Error en la conexión con el servidor: " + www.error);
             }
         }
     }
-
 }

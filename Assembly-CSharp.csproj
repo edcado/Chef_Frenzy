@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CEAB5F84-A0CF-266D-4206-65005296DD73}</ProjectGuid>
+    <ProjectGuid>{2E923D3A-380C-C61A-D344-0823E92914A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,8 +55,8 @@
     <UnityVersion>2022.3.37f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="C:\Users\usuario\Documents\GitHub\Chef_Frenzy\Library\PackageCache\com.unity.transport@2.2.1\Analyzers\Unity.Transport.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\eduar\Documents\Proyectos Unity\OverCooked\Library\PackageCache\com.unity.transport@2.2.1\Analyzers\Unity.Transport.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Sound\MusicManager.cs" />
     <Compile Include="Assets\Scripts\UI\NetcodeTestUI.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\RecipeSO.cs" />
+    <Compile Include="Assets\Scripts\Scriptable Objects\PlayerDataSO.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerVisual.cs" />
     <Compile Include="Assets\Scripts\Counters\TrashCounter.cs" />
     <Compile Include="Assets\Scripts\NetcodeGameObjects\ClientNetworkTransform.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\IHasProgress.cs" />
     <Compile Include="Assets\Scripts\UI\ProgressBarUI.cs" />
+    <Compile Include="Assets\Scripts\Base de datos\UserData.cs" />
     <Compile Include="Assets\Scripts\KitchenGameManager.cs" />
     <Compile Include="Assets\Scripts\Base de datos\GameEnd_php.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Assets\Scripts\NetcodeGameObjects\OwnerNetworkAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\WaitingForPlayersUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInputs.cs" />
+    <Compile Include="Assets\Scripts\Base de datos\PlayerSessionManager.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\DeliverManagerUI.cs" />
     <Compile Include="Assets\Scripts\ImageControl.cs" />
@@ -519,18 +522,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.GradleProject">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1221,12 +1212,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Authentication.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Services.Authentication.PlayerAccounts">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Authentication.PlayerAccounts.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Services.Authentication.PlayerAccounts">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Authentication.PlayerAccounts.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">

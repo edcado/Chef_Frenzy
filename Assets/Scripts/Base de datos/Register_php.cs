@@ -8,29 +8,29 @@ public class PlayerRegistration : MonoBehaviour
 {
     public TMP_InputField usernameField;
     public TMP_InputField passwordField;
-    public TMP_InputField gameNameField;
+    public TMP_InputField gameTagField;
 
     public void RegisterPlayer()
     {
         string username = usernameField.text.Trim();
         string password = passwordField.text;
-        string gameName = gameNameField.text;
+        string gameTag = gameTagField.text;
 
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
-            Debug.Log($"Registrando: {username}, {password}, {gameName}");
+            Debug.Log($"Registrando: {username}, {password}, {gameTag}");
             Debug.LogError("El nombre de usuario o la contraseña están vacíos");
             return;
         }
-        StartCoroutine(RegisterCoroutine(username, password, gameName));
+        StartCoroutine(RegisterCoroutine(username, password, gameTag));
     }
 
-    private IEnumerator RegisterCoroutine(string username, string password, string gameName)
+    private IEnumerator RegisterCoroutine(string username, string password, string gameTag)
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username);
         form.AddField("password", password);
-        form.AddField("game_name", gameName);
+        form.AddField("gameTag", gameTag);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/chefrenzy/register_player.php", form))
         {

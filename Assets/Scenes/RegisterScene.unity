@@ -913,6 +913,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &492536527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492536529}
+  - component: {fileID: 492536528}
+  m_Layer: 0
+  m_Name: PlayerSessionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &492536528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492536527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fef07bfed159904f8223a60f6a366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userData:
+    Username: 
+    GameTag: 
+    GamesPlayed: 0
+    Wins: 0
+    PlatesDelivered: 0
+--- !u!4 &492536529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492536527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 528.7883, y: 299.19696, z: 0.7729771}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562359335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameField: {fileID: 829623487}
   passwordField: {fileID: 562359337}
-  gameNameField: {fileID: 815333277}
+  gameTagField: {fileID: 815333277}
 --- !u!114 &810866380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,7 +1325,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameField: {fileID: 829623487}
   passwordField: {fileID: 562359337}
-  player: {fileID: 45075445989586865, guid: 3eb35498e0144de47a93417f25eb7428, type: 3}
+  userData:
+    Username: 
+    GameTag: 
+    GamesPlayed: 0
+    Wins: 0
+    PlatesDelivered: 0
 --- !u!4 &810866381
 Transform:
   m_ObjectHideFlags: 0
@@ -1304,7 +1359,7 @@ GameObject:
   - component: {fileID: 815333278}
   - component: {fileID: 815333277}
   m_Layer: 0
-  m_Name: GameNameField
+  m_Name: GameTagField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3614,3 +3669,4 @@ SceneRoots:
   - {fileID: 408303834}
   - {fileID: 793671249}
   - {fileID: 922803771}
+  - {fileID: 492536529}
