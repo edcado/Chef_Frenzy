@@ -1,8 +1,12 @@
 using UnityEngine;
+using Unity.Netcode;
+using System.Collections.Generic;
 
 public class PlayerSessionManager : MonoBehaviour
 {
     public static PlayerSessionManager Instance { get; private set; }
+
+    private Dictionary<ulong, string> clientIdToUsername = new Dictionary<ulong, string>();
 
     public UserData userData;
 
@@ -17,24 +21,33 @@ public class PlayerSessionManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // Mantener la instancia entre escenas
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    public void RegisterUsernameServerRpc(string username, ServerRpcParams serverRpcParams = default)
+    {
+        ulong clientId = serverRpcParams.Receive.SenderClientId;
+
+        if (!clientIdToUsername.ContainsKey(clientId))
+        {
+            clientIdToUsername.Add(clientId, username);
+            Debug.Log($"Registrado username '{username}' para clientId '{clientId}'");
+        }
+    }
+
+    public string GetUsernameByClientId(ulong clientId)
+    {
+        if (clientIdToUsername.TryGetValue(clientId, out string username))
+        {
+            return username;
+        }
+        return "Unknown";
+    }
+
+
     // Método para inicializar los datos del usuario desde el servidor
     public void InitializeUserData(UserData data)
     {
         userData = data;
     }
 
-    // Método para actualizar datos al final de una partida
-    public void UpdateGameStats(int gamesPlayed, int wins, int platesDelivered)
-    {
-        userData.GamesPlayed += gamesPlayed;
-        userData.Wins += wins;
-        userData.PlatesDelivered += platesDelivered;
-    }
 
-    // Método para sincronizar los datos con el servidor
-    public void SaveDataToServer()
-    {
-        // Aquí puedes implementar la lógica para enviar los datos actualizados al servidor
-        Debug.Log("Sincronizando datos con el servidor...");
-    }
 }

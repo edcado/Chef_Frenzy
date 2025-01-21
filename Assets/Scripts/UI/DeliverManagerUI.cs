@@ -13,8 +13,8 @@ public class DeliverManagerUI : MonoBehaviour
     }
     private void Start()
     {
-        DelyveryManager.Instance.OnRecipeSpawned += DeliveryManager_OnRecipeSpawned;
-        DelyveryManager.Instance.OnRecipeCompleted += DeliveryManager_OnRecipeCompleted;
+        DeliveryManager.Instance.OnRecipeSpawned += DeliveryManager_OnRecipeSpawned;
+        DeliveryManager.Instance.OnRecipeCompleted += DeliveryManager_OnRecipeCompleted;
         UpdateVisual();
     }
 
@@ -37,7 +37,7 @@ public class DeliverManagerUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (RecipeSO recipeSo in DelyveryManager.Instance.WaitingRecipeSOList())
+        foreach (RecipeSO recipeSo in DeliveryManager.Instance.WaitingRecipeSOList())
         {
             Transform recipeTransform = Instantiate(recipeTemplate, container);
             recipeTransform.gameObject.SetActive(true);
