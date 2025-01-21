@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -44,14 +45,19 @@ public class Player : NetworkBehaviour, IKitchenObject
     private KitchenObject kitchenObject;
     public bool isMoving;
 
-    public string gameName;
+    private NetworkVariable<FixedString64Bytes> networkGameTag = new NetworkVariable<FixedString64Bytes>();
+
 
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
         {
             LocalInstance = this;
+
+            string localGameTag = PlayerSessionManager.Instance.userData.GameTag;
+            SetGameTagServerRpc(localGameTag);
         }
+
         transform.position = spawnPositionList[KitchenGameMultiplayer.Instance.GetPlayerDataIndexFromClientId(OwnerClientId)];
         OnSpawnAnyPlayer?.Invoke(this, EventArgs.Empty);
 
@@ -60,7 +66,10 @@ public class Player : NetworkBehaviour, IKitchenObject
             NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
         }
 
-
+        networkGameTag.OnValueChanged += (oldValue, newValue) =>
+        {
+            gameNameText.text = newValue.ToString();
+        };
     }
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
@@ -80,9 +89,7 @@ public class Player : NetworkBehaviour, IKitchenObject
         PlayerData playerData = KitchenGameMultiplayer.Instance.GetPlayerDataFromClientId(OwnerClientId);
         playerVisual.SetPlayerColor(KitchenGameMultiplayer.Instance.GetPlayerColor(playerData.colorId));
 
-        gameName = PlayerPrefs.GetString("GameName", "Jugador");  // "Jugador" es el valor por defecto si no hay datos guardados
-        gameNameText.text = gameName;
-
+        gameNameText.text = networkGameTag.Value.ToString();
     }
 
 
@@ -259,5 +266,13 @@ public class Player : NetworkBehaviour, IKitchenObject
     public NetworkObject GetNetworkObject()
     {
         return NetworkObject;
+    }
+
+
+
+    [ServerRpc]
+    private void SetGameTagServerRpc(string newGameTag)
+    {
+        networkGameTag.Value = newGameTag;
     }
 }
