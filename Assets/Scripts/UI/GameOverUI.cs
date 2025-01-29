@@ -14,7 +14,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private UnityEngine.UI.Button gameOverButton;
 
-    private DeliveryManager deliveryManager;
+    private GameEnd_php gameEnd;
     private Player player;
     private string username;
 
@@ -41,11 +41,11 @@ public class GameOverUI : MonoBehaviour
 
             // Obtener las recetas entregadas por el cliente actual
             ulong clientId = NetworkManager.Singleton.LocalClientId;
-            int recipesDelivered = DeliveryManager.Instance.GetPlayerSuccessfulRecipes(clientId);
+            int recipesDelivered = DelyveryManager.Instance.GetPlayerSuccessfulRecipes(clientId);
 
             recipesDeliveredNumber.text = recipesDelivered.ToString();
 
-            EndGame();
+            username = PlayerPrefs.GetString("Username", username);
         }
         else
         {
@@ -70,22 +70,5 @@ public class GameOverUI : MonoBehaviour
         gameOverRecipesDelivered.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(false);
         gameOverButton.gameObject.SetActive(false);
-    }
-
-    private void EndGame()
-    {
-        ulong clientId = NetworkManager.Singleton.LocalClientId;
-
-        // Obtener el username del clientId.
-        string username = PlayerSessionManager.Instance.GetUsernameByClientId(clientId);
-
-        // Obtener estadísticas del jugador.
-        int platesDelivered = DeliveryManager.Instance.GetPlayerSuccessfulRecipes(clientId);
-        int gamesPlayed = PlayerSessionManager.Instance.userData.GamesPlayed++;
-        int wins = 0; // Dependiendo de si ganó o no.
-
-        // Enviar los datos al servidor PHP.
-        GameEnd_php gameEndPhp = FindObjectOfType<GameEnd_php>();
-        gameEndPhp.SendPlayerData(username, platesDelivered, gamesPlayed, wins);
     }
 }

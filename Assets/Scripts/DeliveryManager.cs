@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Unity.Netcode;
 
-public class DeliveryManager : NetworkBehaviour
+public class DelyveryManager : NetworkBehaviour
 {
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeCompleted;
@@ -13,7 +13,7 @@ public class DeliveryManager : NetworkBehaviour
 
     [SerializeField] private ReciveListSO reciveListSO;
     private List<RecipeSO> waitingRecipeSOList;
-    public static DeliveryManager Instance { get; private set; }
+    public static DelyveryManager Instance { get; private set; }
 
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;

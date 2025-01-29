@@ -269,11 +269,10 @@ public class Player : NetworkBehaviour, IKitchenObject
     }
 
 
+
     [ServerRpc]
     private void SetGameTagServerRpc(string newGameTag)
     {
         networkGameTag.Value = newGameTag;
     }
-
-
 }

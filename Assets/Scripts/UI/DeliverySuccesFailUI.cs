@@ -18,8 +18,8 @@ public class DeliverySuccesFailUI : MonoBehaviour
     private void Start()
     {
         Hide();
-        DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
-        DeliveryManager.Instance.OnRecipeFail += DelyveryManager_OnRecipeFail;
+        DelyveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
+        DelyveryManager.Instance.OnRecipeFail += DelyveryManager_OnRecipeFail;
     }
 
     private void DelyveryManager_OnRecipeFail(object sender, System.EventArgs e)

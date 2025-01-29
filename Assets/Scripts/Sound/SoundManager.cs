@@ -19,8 +19,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        DeliveryManager.Instance.OnRecipeFail += DeliveryManager_OnRecipeFail;
-        DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
+        DelyveryManager.Instance.OnRecipeFail += DeliveryManager_OnRecipeFail;
+        DelyveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
         CuttingCounter.OnAnyCut += CuttingCounter_OnAnyCut;
         Player.OnAnyPickUpSomething += Player_OnPickUpSomething;
         BaseCounter.OnAnyObjectPlacedHere += BaseCounter_OnDropSomething;

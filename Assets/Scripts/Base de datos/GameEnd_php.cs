@@ -4,37 +4,40 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class GameEnd_php : MonoBehaviour
-{
-    public void SendPlayerData(string username, int platesDelivered, int gamesPlayed, int wins)
+{ 
+    public void GameEnd(string username, int platesDelivered/*, int IngredientsGenerated, int platesCooked*/)
     {
-        StartCoroutine(SendPlayerDataCoroutine(username, platesDelivered, gamesPlayed, wins));
+        
+        StartCoroutine(GameEndCorutine(username, platesDelivered));
     }
 
-    private IEnumerator SendPlayerDataCoroutine(string username, int platesDelivered, int gamesPlayed, int wins)
+    private IEnumerator GameEndCorutine(string username, int platesDelivered/*, int IngredientsGenerated*/)
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username);
-        form.AddField("platesDelivered", platesDelivered);
-        form.AddField("gamesPlayed", gamesPlayed);
-        form.AddField("wins", wins);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/chefrenzy/game_end.php", form))
+        //All the other players
+        //form.AddField("username", username);    
+        //form.AddField("username", username);
+        //form.AddField("username", username);
+
+        //To be aplied
+        //form.AddField("IngredientsGenerated", IngredientsGenerated);
+
+        form.AddField("platesDelivered", platesDelivered);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/chefrenzy/Game_End.php", form))
         {
             yield return www.SendWebRequest();
 
             if (www.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("Datos enviados con éxito: " + www.downloadHandler.text);
-                Debug.Log($"Enviando -> username: {username}, platesDelivered: {platesDelivered}, gamesPlayed: {gamesPlayed}, wins: {wins}");
+                Debug.Log(www.downloadHandler.text);
             }
             else
             {
-                Debug.LogError("Error al enviar datos: " + www.error);
+                Debug.LogError("Error en el registro: " + www.error);
             }
         }
     }
-
-    
-
-
 }

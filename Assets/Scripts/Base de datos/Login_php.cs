@@ -72,7 +72,6 @@ public class PlayerLogin : MonoBehaviour
 
                             // Inicializa los datos de usuario
                             PlayerSessionManager.Instance.InitializeUserData(userData);
-                            PlayerSessionManager.Instance.RegisterUsernameServerRpc(username);
 
                             // Cargar la escena principal
                             SceneManager.LoadScene("MainMenu");
